@@ -2,7 +2,7 @@
 
 ---
 
-## Semi-RISC, 5 stage, MIPS pipelined processor
+## Semi-RISC Harvard, 6 stages, MIPS pipelined processor
 
 - [DESCRIPTION IN PROGRESS]
 

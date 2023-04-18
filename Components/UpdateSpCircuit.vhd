@@ -1,7 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
-ENTITY spCircuit IS
+ENTITY UpdateSpCircuit IS
     PORT (
         SP : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         SIG_MemRead : IN STD_LOGIC;
@@ -13,10 +13,10 @@ ENTITY spCircuit IS
 
     );
 
-END ENTITY spCircuit;
+END ENTITY UpdateSpCircuit;
 
 
-Architecture Behavioral of spCircuit is
+Architecture Behavioral of UpdateSpCircuit is
     begin
         process (all)
         begin

@@ -29,7 +29,7 @@ ENTITY UpdateFlagRegister IS
         outFlags : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
     );
 END UpdateFlagRegister;
-ARCHITECTURE Behavioral OF ControlUnit IS
+ARCHITECTURE Behavioral OF UpdateFlagRegister IS
 BEGIN
 
     PROCESS (ALL)
@@ -50,6 +50,7 @@ BEGIN
                     outFlags(2) <= aluCarry;
                 END IF;
             END IF;
-        END PROCESS;
+        END IF;
+    END PROCESS;
 
-    END ARCHITECTURE;
+END ARCHITECTURE;

@@ -35,9 +35,9 @@ BEGIN
     PROCESS (ALL)
     BEGIN
         IF (memRead AND jump) THEN
-            outFlags(2) <= dataMem(15);
-            outFlags(1) <= dataMem(14);
-            outFlags(0) <= dataMem(13);
+            outFlags(2) <= dataMem(2);
+            outFlags(1) <= dataMem(1);
+            outFlags(0) <= dataMem(0);
         ELSE
             outFlags(1) <= aluNeg;
             outFlags(0) <= aluZero;

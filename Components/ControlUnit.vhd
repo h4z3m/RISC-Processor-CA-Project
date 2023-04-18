@@ -62,6 +62,10 @@ Architecture Behavioral of ControlUnit is
             end if;
         elsif Instruction(31 downto 30) = "01" then
             --Instruction is R-Type
+            if Instruction(29) then
+            
+            else
+            end if;
             SIG_MemRead <= '0';
             SIG_MemWrite <= '0';
             SIG_ALUsrc <= '0';
@@ -97,6 +101,18 @@ Architecture Behavioral of ControlUnit is
                 SIG_FlagEN <= instruction(26);
                 SIG_aluop <= (others => '0'); 
             end if;
+        else
+            SIG_MemRead <= '0';
+            SIG_MemWrite <= '0';
+            SIG_ALUsrc <= '0';
+            SIG_ALUop <= "000";
+            SIG_MEMToReg <= '0';
+            SIG_Branch <= '1';
+            SIG_Jump <= '1';
+            SIG_RegDst <= '0';
+            SIG_RegWrite <= '0';
+            SIG_PortEN <= '0';
+            SIG_FlagEN <= '0';
         end if;
         end process;
         

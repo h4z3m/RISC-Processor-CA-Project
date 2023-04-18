@@ -1,41 +1,55 @@
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.numeric_std.ALL;
 
-entity UpdateFlagRegister is
-    port(
-        clk: in std_logic;
-        reset: in std_logic;
+ENTITY UpdateFlagRegister IS
+    PORT (
         -- Control Signals --
-        flagEN: in std_logic;
-        aluSrc: in std_logic;
-        portEN: in std_logic;
-        jump: in std_logic;
-        memRead: in std_logic;
-        aluOp: in std_logic_vector(7 downto 0);
+        flagEN : IN STD_LOGIC;
+        aluSrc : IN STD_LOGIC;
+        portEN : IN STD_LOGIC;
+        jump : IN STD_LOGIC;
+        memRead : IN STD_LOGIC;
+        aluOp : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
         -- Alu Data --
-        aluCarry: in std_logic;
-        aluNeg: in std_logic;
-        aluZero: in std_logic;
-        
+        aluCarry : IN STD_LOGIC;
+        aluNeg : IN STD_LOGIC;
+        aluZero : IN STD_LOGIC;
+
+        -- Data mem --
+        dataMem : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+
+        -- carry old value --
+        carryOld : IN STD_LOGIC;
+
         -- Output --
-        carryFlag: out std_logic;
-        NegFlag: out std_logic;
-        ZeroFlag: out std_logic;
+        -- outFlags(2): Carry
+        -- outFlags(1): Negative
+        -- outFlags(0): Zero
+        outFlags : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
     );
-end UpdateFlagRegister;
+END UpdateFlagRegister;
+ARCHITECTURE Behavioral OF ControlUnit IS
+BEGIN
 
+    PROCESS (ALL)
+    BEGIN
+        IF (memRead AND jump) THEN
+            outFlags(2) <= dataMem(15);
+            outFlags(1) <= dataMem(14);
+            outFlags(0) <= dataMem(13);
+        ELSE
+            outFlags(1) <= aluNeg;
+            outFlags(0) <= aluZero;
+            IF (NOT aluOp(2) AND (aluOp(1) OR aluOp(0))) THEN
+                outFlags(2) <= carryOld;
+            ELSE
+                IF (portEN AND flagEN) THEN
+                    outFlags(2) <= aluSrc;
+                ELSE
+                    outFlags(2) <= aluCarry;
+                END IF;
+            END IF;
+        END PROCESS;
 
-Architecture Behavioral of ControlUnit is
-    begin
-
-        process (all)
-        begin
-            if(reset) then
-                carryFlag <= '0';
-                NegFlag <= '0';
-                ZeroFlag <= '0';
-            end if;
-        end process;
-        
-end architecture;
+    END ARCHITECTURE;

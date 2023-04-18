@@ -17,7 +17,7 @@ ENTITY ID_EX_Buffer IS
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         SP : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        ID_ControlUnitOutput : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+        ID_ControlUnitOutput : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
         ID_RegisterFile_ReadData1 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         ID_RegisterFile_ReadData2 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         ID_WriteAddr : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -30,7 +30,7 @@ END ENTITY ID_EX_Buffer;
 
 ARCHITECTURE rtl OF ID_EX_Buffer IS
 
-    COMPONENT DFF IS
+    COMPONENT D_FF IS
         GENERIC (
             N : INTEGER := 16
         );
@@ -42,42 +42,42 @@ ARCHITECTURE rtl OF ID_EX_Buffer IS
     END COMPONENT;
 
 BEGIN
-    ID_EX_FF_ControlUnitOutput : DFF GENERIC MAP(
+    ID_EX_FF_ControlUnitOutput : D_FF GENERIC MAP(
         10
         ) PORT MAP (ControlUnitOutput, clk, rst, enable, ID_ControlUnitOutput
     );
 
-    ID_EX_FF_RegisterFile_ReadData1 : DFF GENERIC MAP(
+    ID_EX_FF_RegisterFile_ReadData1 : D_FF GENERIC MAP(
         16
         ) PORT MAP (RegisterFile_ReadData1, clk, rst, enable, ID_ControlUnitOutput
     );
 
-    ID_EX_FF_RegisterFile_ReadData2 : DFF GENERIC MAP(
+    ID_EX_FF_RegisterFile_ReadData2 : D_FF GENERIC MAP(
         16
         ) PORT MAP (RegisterFile_ReadData2, clk, rst, enable, ID_ControlUnitOutput
     );
 
-    ID_EX_FF_WriteAddr : DFF GENERIC MAP(
+    ID_EX_FF_WriteAddr : D_FF GENERIC MAP(
         3
         ) PORT MAP (WriteAddr, clk, rst, enable, ID_ControlUnitOutput
     );
 
-    ID_EX_FF_ReadAddr2 : DFF GENERIC MAP(
+    ID_EX_FF_ReadAddr2 : D_FF GENERIC MAP(
         3
         ) PORT MAP (ReadAddr2, clk, rst, enable, ID_ControlUnitOutput
     );
 
-    ID_EX_FF_SignExtOut : DFF GENERIC MAP(
+    ID_EX_FF_SignExtOut : D_FF GENERIC MAP(
         32
         ) PORT MAP (SignExtOut, clk, rst, enable, ID_ControlUnitOutput
     );
 
-    ID_EX_FF_PC : DFF GENERIC MAP(
+    ID_EX_FF_PC : D_FF GENERIC MAP(
         16
         ) PORT MAP (PC, clk, rst, enable, ID_ControlUnitOutput
     );
 
-    ID_EX_FF_SP : DFF GENERIC MAP(
+    ID_EX_FF_SP : D_FF GENERIC MAP(
         16
         ) PORT MAP (SP, clk, rst, enable, ID_ControlUnitOutput
     );

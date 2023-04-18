@@ -17,7 +17,7 @@ ENTITY MEM1_MEM2_Buffer IS
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         SP : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        MEM1_ControlUnitOutput : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+        MEM1_ControlUnitOutput : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
         MEM1_FlagRegister : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         MEM1_WriteAddr : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         MEM1_ReadAddr2 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -30,7 +30,7 @@ END ENTITY MEM1_MEM2_Buffer;
 
 ARCHITECTURE rtl OF MEM1_MEM2_Buffer IS
 
-    COMPONENT DFF IS
+    COMPONENT D_FF IS
         GENERIC (
             N : INTEGER := 16
         );
@@ -42,42 +42,42 @@ ARCHITECTURE rtl OF MEM1_MEM2_Buffer IS
     END COMPONENT;
 
 BEGIN
-    MEM1_MEM2_FF_ControlUnitOutput : DFF GENERIC MAP(
+    MEM1_MEM2_FF_ControlUnitOutput : D_FF GENERIC MAP(
         10
         ) PORT MAP (ControlUnitOutput, clk, rst, enable, MEM1_ControlUnitOutput
     );
 
-    MEM1_MEM2_FF_FlagRegister : DFF GENERIC MAP(
+    MEM1_MEM2_FF_FlagRegister : D_FF GENERIC MAP(
         3
         ) PORT MAP (FlagRegister, clk, rst, enable, MEM1_FlagRegister
     );
 
-    MEM1_MEM2_FF_WriteAddr : DFF GENERIC MAP(
+    MEM1_MEM2_FF_WriteAddr : D_FF GENERIC MAP(
         3
         ) PORT MAP (WriteAddr, clk, rst, enable, MEM1_WriteAddr
     );
 
-    MEM1_MEM2_FF_ReadAddr2 : DFF GENERIC MAP(
+    MEM1_MEM2_FF_ReadAddr2 : D_FF GENERIC MAP(
         3
         ) PORT MAP (ReadAddr2, clk, rst, enable, MEM1_ReadAddr2
     );
 
-    MEM1_MEM2_FF_SignExtOut : DFF GENERIC MAP(
+    MEM1_MEM2_FF_SignExtOut : D_FF GENERIC MAP(
         32
         ) PORT MAP (SignExtOut, clk, rst, enable, MEM1_SignExtOut
     );
 
-    MEM1_MEM2_ALU_RESULT : DFF GENERIC MAP(
+    MEM1_MEM2_ALU_RESULT : D_FF GENERIC MAP(
         16
         ) PORT MAP (PC, clk, rst, enable, MEM1_ALU_Result
     );
 
-    MEM1_MEM2_FF_PC : DFF GENERIC MAP(
+    MEM1_MEM2_FF_PC : D_FF GENERIC MAP(
         16
         ) PORT MAP (PC, clk, rst, enable, MEM1_PC
     );
 
-    MEM1_MEM2_FF_SP : DFF GENERIC MAP(
+    MEM1_MEM2_FF_SP : D_FF GENERIC MAP(
         16
         ) PORT MAP (SP, clk, rst, enable, MEM1_SP
     );

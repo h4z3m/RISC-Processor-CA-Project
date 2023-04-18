@@ -1,4 +1,13 @@
-{C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ALU.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ALU.vhd}
+{C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MUX.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MUX.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity MUX
+-- Compiling architecture when_else_mux of MUX
+
+} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ALU.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ALU.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -6,14 +15,22 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package NUMERIC_STD
 -- Compiling entity ALU
 
-} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MEM2_WB_Buffer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MEM2_WB_Buffer.vhd}
+} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity MEM2_WB_Buffer
--- Compiling architecture rtl of MEM2_WB_Buffer
+-- Compiling entity RISC_CPU
+
+} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/updatePCcircuit.vhd} {1 {vcom -work work -2008 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/updatePCcircuit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity updatePCcircuit
+-- Compiling architecture Behavioral of updatePCcircuit
 
 } {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -24,16 +41,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity Memory
 -- Compiling architecture rtl of Memory
 
-} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ID_EX_Buffer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ID_EX_Buffer.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity ID_EX_Buffer
--- Compiling architecture rtl of ID_EX_Buffer
-
-} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd} {0 {vcom -work work -2008 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd}
+} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd} {1 {vcom -work work -2008 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -41,15 +49,8 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package NUMERIC_STD
 -- Compiling entity UpdateFlagRegister
 -- Compiling architecture Behavioral of UpdateFlagRegister
-** Warning: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd(38): (vcom-1152) Index value 15 is out of index range 2 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Warning: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd(39): (vcom-1152) Index value 14 is out of index range 2 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Warning: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd(40): (vcom-1152) Index value 13 is out of index range 2 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd(38): (vcom-1152) Index value 15 is out of index range 2 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd(39): (vcom-1152) Index value 14 is out of index range 2 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd(40): (vcom-1152) Index value 13 is out of index range 2 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Note: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd(56): VHDL Compiler exiting
 
-} {12.0 15.0} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd}
+} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -58,14 +59,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity INPUT_PORT
 -- Compiling architecture rtl of INPUT_PORT
 
-} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/IF_ID_Buffer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/IF_ID_Buffer.vhd}
+} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/MUX.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/MUX.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity IF_ID_Buffer
--- Compiling architecture rtl of IF_ID_Buffer
+-- Compiling entity MUX
+-- Compiling architecture when_else_mux of MUX
 
 } {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -75,15 +76,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package NUMERIC_STD
 -- Compiling entity OUTPUT_PORT
 -- Compiling architecture rtl of OUTPUT_PORT
-
-} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/EX_MEM1_Buffer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/EX_MEM1_Buffer.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity EX_MEM1_Buffer
--- Compiling architecture rtl of EX_MEM1_Buffer
 
 } {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RegisterFile.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RegisterFile.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -103,6 +95,15 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity DFF
 -- Compiling architecture A_MY_DFF of DFF
 
+} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd} {1 {vcom -work work -2008 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity UpdateSpCircuit
+-- Compiling architecture Behavioral of UpdateSpCircuit
+
 } {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ControlUnit.vhd} {1 {vcom -work work -2008 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ControlUnit.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -111,14 +112,5 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package NUMERIC_STD
 -- Compiling entity ControlUnit
 -- Compiling architecture Behavioral of ControlUnit
-
-} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MEM1_MEM2_Buffer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MEM1_MEM2_Buffer.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity MEM1_MEM2_Buffer
--- Compiling architecture rtl of MEM1_MEM2_Buffer
 
 } {} {}}

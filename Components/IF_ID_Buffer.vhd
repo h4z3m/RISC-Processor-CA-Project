@@ -24,7 +24,7 @@ ARCHITECTURE rtl OF IF_ID_Buffer IS
     SIGNAL SIG_IF_Instruction_ReadAddr2 : STD_LOGIC_VECTOR(2 DOWNTO 0);
     SIGNAL SIG_IF_Instruction_WriteAddr : STD_LOGIC_VECTOR(2 DOWNTO 0);
     SIGNAL SIG_IF_Instruction_ImmediateVal : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    COMPONENT DFF IS
+    COMPONENT D_FF IS
         GENERIC (
             N : INTEGER := 16
         );
@@ -36,7 +36,7 @@ ARCHITECTURE rtl OF IF_ID_Buffer IS
     END COMPONENT;
 
 BEGIN
-    IF_ID_FF : DFF GENERIC MAP(
+    IF_ID_FF : D_FF GENERIC MAP(
         6
         ) PORT MAP (Instruction, clk, rst, enable, SIG_Instruction
     );

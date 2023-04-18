@@ -1,0 +1,40 @@
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd failed with 1 errors.
+# Compile of DFF.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd failed with 9 errors.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of spCircuit.vhd failed with 4 errors.
+# Compile of UpdateFlagRegister.vhd failed with 1 errors.
+# 12 compiles, 4 failed with 15 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd failed with 1 errors.
+# Compile of DFF.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of spCircuit.vhd failed with 4 errors.
+# Compile of UpdateFlagRegister.vhd failed with 1 errors.
+# 12 compiles, 3 failed with 6 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of DFF.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of spCircuit.vhd was successful.
+# Compile of UpdateFlagRegister.vhd failed with 1 errors.
+# 12 compiles, 1 failed with 1 error.
+# Load canceled

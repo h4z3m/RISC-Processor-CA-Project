@@ -1,0 +1,85 @@
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.numeric_std.ALL;
+
+ENTITY MEM2_WB_Buffer IS
+    PORT (
+        clk : IN STD_LOGIC;
+        enable : IN STD_LOGIC;
+        rst : IN STD_LOGIC;
+
+        ControlUnitOutput : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+        FlagRegister : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        WriteAddr : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        ReadAddr2 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        SignExtOut : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+        ALU_Result : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        SP : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+        MEM2_ControlUnitOutput : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+        MEM2_FlagRegister : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+        MEM2_WriteAddr : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+        MEM2_ReadAddr2 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+        MEM2_SignExtOut : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        MEM2_ALU_Result : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        MEM2_PC : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        MEM2_SP : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+    );
+END ENTITY MEM2_WB_Buffer;
+
+ARCHITECTURE rtl OF MEM2_WB_Buffer IS
+
+    COMPONENT DFF IS
+        GENERIC (
+            N : INTEGER := 16
+        );
+        PORT (
+            D : IN STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+            CLK, RST, EN : IN STD_LOGIC;
+            Q : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
+        );
+    END COMPONENT;
+
+BEGIN
+    MEM2_WB_FF_ControlUnitOutput : DFF GENERIC MAP(
+        10
+        ) PORT MAP (ControlUnitOutput, clk, rst, enable, MEM2_ControlUnitOutput
+    );
+
+    MEM2_WB_FF_FlagRegister : DFF GENERIC MAP(
+        3
+        ) PORT MAP (FlagRegister, clk, rst, enable, MEM2_FlagRegister
+    );
+
+    MEM2_WB_FF_WriteAddr : DFF GENERIC MAP(
+        3
+        ) PORT MAP (WriteAddr, clk, rst, enable, MEM2_WriteAddr
+    );
+
+    MEM2_WB_FF_ReadAddr2 : DFF GENERIC MAP(
+        3
+        ) PORT MAP (ReadAddr2, clk, rst, enable, MEM2_ReadAddr2
+    );
+
+    MEM2_WB_FF_SignExtOut : DFF GENERIC MAP(
+        32
+        ) PORT MAP (SignExtOut, clk, rst, enable, MEM2_SignExtOut
+    );
+
+    MEM2_WB_ALU_RESULT : DFF GENERIC MAP(
+        16
+        ) PORT MAP (PC, clk, rst, enable, MEM2_ALU_Result
+    );
+
+    MEM2_WB_FF_PC : DFF GENERIC MAP(
+        16
+        ) PORT MAP (PC, clk, rst, enable, MEM2_PC
+    );
+
+    MEM2_WB_FF_SP : DFF GENERIC MAP(
+        16
+        ) PORT MAP (SP, clk, rst, enable, MEM2_SP
+    );
+
+END ARCHITECTURE rtl;

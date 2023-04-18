@@ -10,7 +10,7 @@ ENTITY UpdateFlagRegister IS
         portEN : IN STD_LOGIC;
         jump : IN STD_LOGIC;
         memRead : IN STD_LOGIC;
-        aluOp : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+        aluOp : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         -- Alu Data --
         aluCarry : IN STD_LOGIC;
         aluNeg : IN STD_LOGIC;

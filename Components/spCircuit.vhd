@@ -4,11 +4,11 @@ USE IEEE.numeric_std.ALL;
 ENTITY spCircuit IS
     PORT (
         SP : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        SIG_MemRead : OUT STD_LOGIC;
-        SIG_MemWrite : OUT STD_LOGIC;
-        SIG_ALUsrc : OUT STD_LOGIC;
-        SIG_Branch : OUT STD_LOGIC;
-        SIG_Jump : OUT STD_LOGIC;
+        SIG_MemRead : IN STD_LOGIC;
+        SIG_MemWrite : IN STD_LOGIC;
+        SIG_ALUsrc : IN STD_LOGIC;
+        SIG_Branch : IN STD_LOGIC;
+        SIG_Jump : IN STD_LOGIC;
         SP_Modified : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
 
     );

@@ -70,7 +70,7 @@ BEGIN
 
     ID_EX_FF_ImmediateVal : D_FF GENERIC MAP(
         32
-        ) PORT MAP (ImmediateVal, clk, rst, enable, ImmediateVal
+        ) PORT MAP (ImmediateVal, clk, rst, enable, ID_ImmediateVal
     );
 
     ID_EX_FF_PC : D_FF GENERIC MAP(

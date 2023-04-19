@@ -88,20 +88,29 @@ ARCHITECTURE rtl OF RISC_CPU IS
     SIGNAL Decode_Execute_Out_ImmediateVal : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL Decode_Execute_Out_PC : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL Decode_Execute_Out_SP : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    ---- Port signals
+    SIGNAL OUTPUT_PORT_VALUE : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL INPUT_PORT_VALUE : STD_LOGIC_VECTOR(2 DOWNTO 0);
 
-    ---- EX M1 buffer signals
-    SIGNAL Execute_MEM1_Enable : STD_LOGIC;
+    ----ALu SIGNALS
+    SIGNAL ALU_IN_1 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    SIGNAL ALU_IN_2 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-    ----OUTPUTS
-    SIGNAL Execute_MEM1_Out_ControlUnitOutput : STD_LOGIC_VECTOR(12 DOWNTO 0);
-    SIGNAL Execute_MEM1_Out_FLAGREGISTER : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL Execute_MEM1_Out_RegisterFile_ReadData2 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL Execute_MEM1_Out_ReadAddr2 : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL Execute_MEM1_Out_WriteAddr : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL Execute_MEM1_Out_ImmediateVal : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL Execute_MEM1_Out_ALU_RESULT : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL Execute_MEM1_Out_PC : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL Execute_MEM1_Out_SP : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    --- Execute Memory 1 buffer signals
+
+    --- Inputs
+    SIGNAL Execute_Mem1_In_Enable : STD_LOGIC;
+
+    --- Outputs
+    SIGNAL Execute_Mem1_Out_ControlUnitOutput : STD_LOGIC_VECTOR(12 DOWNTO 0);
+    SIGNAL Execute_Mem1_Out_FlagRegister : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL Execute_Mem1_Out_RegisterFile_ReadData2 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    SIGNAL Execute_Mem1_Out_WriteAddr : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL Execute_Mem1_Out_ReadAddr2 : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL Execute_Mem1_Out_ImmediateVal : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    SIGNAL Execute_Mem1_Out_ALU_Result : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    SIGNAL Execute_Mem1_Out_PC : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    SIGNAL Execute_Mem1_Out_SP : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
     ---- M1 M2 buffer signals
     SIGNAL MEM1_MEM2_Enable : STD_LOGIC;
@@ -126,30 +135,7 @@ ARCHITECTURE rtl OF RISC_CPU IS
     SIGNAL MEM2_WB_Out_ImmediateVal : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL MEM2_WB_Out_ALU_RESULT : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL MEM2_WB_Out_PC : STD_LOGIC_VECTOR(15 DOWNTO 0);
-
-    ---- Port signals
-    SIGNAL OUTPUT_PORT_VALUE : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL INPUT_PORT_VALUE : STD_LOGIC_VECTOR(2 DOWNTO 0);
-
-    ----ALu SIGNALS
-    SIGNAL ALU_IN_1 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL ALU_IN_2 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-
-    --- Execute Memory 1 buffer signals
-
-    --- Inputs
-    SIGNAL Execute_Mem1_In_Enable : STD_LOGIC;
-
-    --- Outputs
-    SIGNAL Execute_Mem1_Out_ControlUnitOutput : STD_LOGIC_VECTOR(12 DOWNTO 0);
-    SIGNAL Execute_Mem1_Out_FlagRegister : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL Execute_Mem1_Out_RegisterFile_ReadData2 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL Execute_Mem1_Out_WriteAddr : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL Execute_Mem1_Out_ReadAddr2 : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL Execute_Mem1_Out_ImmediateVal : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL Execute_Mem1_Out_ALU_Result : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL Execute_Mem1_Out_PC : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL Execute_Mem1_Out_SP : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    
 BEGIN
     ----------------------- Pipeline buffers -----------------------
     ----------------------- ==== Fetch decode buffer ==== -----------------------

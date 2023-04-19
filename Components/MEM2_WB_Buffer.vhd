@@ -12,11 +12,14 @@ ENTITY MEM2_WB_Buffer IS
         WriteBackAddr : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         WriteBackData : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         PORTOUT : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        ControlUnitOutput : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
         -- SP : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
         MEM2_WriteBackAddr : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         MEM2_WriteBackData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        MEM2_PORTOUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+        MEM2_PORTOUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        MEM2_ControlUnitOutput : OUT STD_LOGIC_VECTOR(12 DOWNTO 0)
+
         -- MEM2_SP : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 END ENTITY MEM2_WB_Buffer;
@@ -47,6 +50,10 @@ BEGIN
     MEM2_WB_FF_PORTOUT : D_FF GENERIC MAP(
         16
         ) PORT MAP (PORTOUT, clk, rst, enable, MEM2_PORTOUT
+    );
+    MEM2_WB_FF_ControlUnitOutput : D_FF GENERIC MAP(
+        13
+        ) PORT MAP (ControlUnitOutput, clk, rst, enable, MEM2_ControlUnitOutput
     );
 
 END ARCHITECTURE rtl;

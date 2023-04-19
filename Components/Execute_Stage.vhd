@@ -7,7 +7,7 @@ ENTITY Execute_Stage IS
     PORT (
         --- Inputs ---
         clk, reset : IN STD_LOGIC;
-        ID_EX_ControlSignals : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        ID_EX_ControlSignals : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
         ID_EX_RegisterFile_ReadData1 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ID_EX_RegisterFile_ReadData2 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ID_EX_RegisterFile_ImmediateVal : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -33,13 +33,18 @@ ARCHITECTURE rtl OF Execute_Stage IS
     SIGNAL ALU_Negative : STD_LOGIC;
     SIGNAL ALU_Zero : STD_LOGIC;
 
+    --- temp
+    SIGNAL decoder_sel : STD_LOGIC;
 BEGIN
     ---------------------------  ALU input multiplexers  ---------------------------
+    decoder_sel <= (NOT ID_EX_ControlSignals(9) AND ID_EX_ControlSignals(8));
     DECODER_ALU_OP1 : ENTITY WORK.Decoder_1x2 GENERIC MAP(16)
         PORT MAP(
             --- Not flag EN AND Port En
-            NOT ID_EX_ControlSignals(9) AND ID_EX_ControlSignals(8),
-            ID_EX_RegisterFile_ReadData1, ALU_IN_1, OUTPUT_PORT_VALUE
+            decoder_sel,
+            ID_EX_RegisterFile_ReadData1,
+            ALU_IN_1,
+            OUTPUT_PORT_VALUE
         );
     MUX_ALU_OP2 : ENTITY WORK.MUX
         GENERIC MAP(16)

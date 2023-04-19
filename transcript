@@ -144,3 +144,752 @@ quit -sim
 # Compile of Decode_Stage.vhd was successful.
 # Compile of byte_addressable_memory.vhd failed with 1 errors.
 # 22 compiles, 5 failed with 14 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 1 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd failed with 8 errors.
+# Compile of Memory1_Stage.vhd failed with 1 errors.
+# Compile of Execute_Stage.vhd failed with 3 errors.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# 22 compiles, 5 failed with 14 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 1 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd failed with 8 errors.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd failed with 3 errors.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# 22 compiles, 4 failed with 13 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 1 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd failed with 8 errors.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd failed with 3 errors.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd failed with 1 errors.
+# 23 compiles, 5 failed with 14 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 1 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd failed with 4 errors.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd failed with 1 errors.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd was successful.
+# 23 compiles, 4 failed with 7 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 1 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd failed with 4 errors.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd failed with 1 errors.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd was successful.
+# 23 compiles, 4 failed with 7 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 1 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd failed with 4 errors.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd was successful.
+# 23 compiles, 3 failed with 6 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 1 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd failed with 4 errors.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd was successful.
+# 23 compiles, 3 failed with 6 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 1 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd failed with 4 errors.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd was successful.
+# Compile of MUX_4x1.vhd was successful.
+# 24 compiles, 3 failed with 6 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 1 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd failed with 2 errors.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd was successful.
+# Compile of MUX_4x1.vhd was successful.
+# 24 compiles, 3 failed with 4 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 1 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd was successful.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd was successful.
+# Compile of MUX_4x1.vhd was successful.
+# 24 compiles, 2 failed with 2 errors.
+#  Trace back: bad window path name ".srcobjdlg"
+#     while executing
+# "winfo screenwidth $w"
+#     (procedure "::tk::PlaceWindow" line 6)
+#     invoked from within
+# "::tk::PlaceWindow $w"
+#     (procedure "tk_dialog" line 118)
+#     invoked from within
+# "tk_dialog .srcobjdlg "Warning!" "$msg" "" 1 Overwrite Reload Ignore"
+#     (object "::.main_pane.source3.interior.cs.body.srcobj" method "::vsimwidgets::Srcobj::CheckModification" body line 18)
+#     invoked from within
+# "::.main_pane.source3.interior.cs.body.srcobj CheckModification"
+#     (in namespace inscope "::vsimwidgets::Srcobj" script line 1)
+#     invoked from within
+# "namespace inscope ::vsimwidgets::Srcobj {::.main_pane.source3.interior.cs.body.srcobj CheckModification}"
+#     (command bound to event)
+#    <2:C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/tk8.6/bgerror.tcl:106: ::tkerror {bad window path name ".srcobjdlg"}
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 16 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd was successful.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd was successful.
+# Compile of MUX_4x1.vhd was successful.
+# 24 compiles, 2 failed with 17 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 7 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd was successful.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd was successful.
+# Compile of MUX_4x1.vhd was successful.
+# 24 compiles, 2 failed with 8 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 5 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd was successful.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd was successful.
+# Compile of MUX_4x1.vhd was successful.
+# 24 compiles, 2 failed with 6 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 3 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd was successful.
+# Compile of Memory1_Stage.vhd failed with 1 errors.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd was successful.
+# Compile of MUX_4x1.vhd was successful.
+# 24 compiles, 3 failed with 5 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 1 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd was successful.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd was successful.
+# Compile of MUX_4x1.vhd was successful.
+# 24 compiles, 2 failed with 2 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd was successful.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd was successful.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# Compile of Decoder_1x2.vhd was successful.
+# Compile of MUX_4x1.vhd was successful.
+# 24 compiles, 1 failed with 1 error.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd was successful.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd was successful.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of Decoder_1x2.vhd was successful.
+# Compile of MUX_4x1.vhd was successful.
+# 23 compiles, 0 failed with no errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd was successful.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd was successful.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of Decoder_1x2.vhd was successful.
+# Compile of MUX_4x1.vhd was successful.
+# 23 compiles, 0 failed with no errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd was successful.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd was successful.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of Decoder_1x2.vhd was successful.
+# Compile of MUX_4x1.vhd was successful.
+# 23 compiles, 0 failed with no errors.
+vsim work.risc_cpu
+# vsim work.risc_cpu 
+# Start time: 01:30:58 on Apr 20,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.risc_cpu(rtl)
+# Loading work.d_ff(a_my_d_ff)
+# Loading work.memory(rtl)
+# Loading work.if_id_buffer(rtl)
+# Loading work.decode_stage(rtl)
+# Loading work.controlunit(behavioral)
+# Loading work.registerfile(rtl)
+# Loading work.updatespcircuit(behavioral)
+# Loading work.id_ex_buffer(rtl)
+# Loading work.execute_stage(rtl)
+# Loading work.decoder_1x2(rtl)
+# Loading work.mux(when_else_mux)
+# Loading work.updateflagregister(behavioral)
+# Loading work.alu(alu_imp)
+# Loading work.ex_mem1_buffer(rtl)
+# Loading work.memory1_stage(rtl)
+# Loading work.mem1_mem2_buffer(rtl)
+# Loading work.memory2_stage(rtl)
+# Loading work.updatepccircuit(behavioral)
+# Loading work.mux_4x1(when_else_mux)
+# Loading work.input_port(rtl)
+# Loading work.mem2_wb_buffer(rtl)
+# Loading work.output_port(rtl)
+add wave -position end  sim:/risc_cpu/clk
+add wave -position end  sim:/risc_cpu/reset
+add wave -position end  sim:/risc_cpu/in_port
+add wave -position end  sim:/risc_cpu/out_port
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: h4z3m  Hostname: LAPTOP-FNO6L2D9  ProcessID: 13220
+#           Attempting to use alternate WLF file "./wlfta0bf50".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfta0bf50
+add wave -position end  sim:/risc_cpu/INPUT_PORT_VALUE
+mem load -filltype value -filldata 000 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(0)
+force -freeze sim:/risc_cpu/reset 1 0
+force -freeze sim:/risc_cpu/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/risc_cpu/in_port 0 0
+# Value length (1) does not equal array index length (16).
+# ** UI-Msg: (vsim-4011) Invalid force value: 0 0.
+# 
+force -freeze sim:/risc_cpu/out_port 0 0
+# Value length (1) does not equal array index length (16).
+# ** UI-Msg: (vsim-4011) Invalid force value: 0 0.
+# 
+force -freeze sim:/risc_cpu/INPUT_PORT_VALUE 0 0
+# Value length (1) does not equal array index length (16).
+# ** UI-Msg: (vsim-4011) Invalid force value: 0 0.
+# 
+force -freeze sim:/risc_cpu/in_port 0000 0
+force -freeze sim:/risc_cpu/out_port 0 0
+force -freeze sim:/risc_cpu/INPUT_PORT_VALUE 0 0
+add wave -position end  sim:/risc_cpu/ProgramCounter_Current
+add wave -position end  sim:/risc_cpu/ProgramCounter_Updated
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /risc_cpu/memory2_stage_inst/Data_Memory
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /risc_cpu/memory2_stage_inst/UpdateProgramCounter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /risc_cpu/decode_stage_inst/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /risc_cpu/decode_stage_inst/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /risc_cpu/Instruction_Memory
+run
+run
+run
+mem load -filltype value -filldata 0 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(1)
+mem load -filltype value -filldata 0 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(2)
+mem load -filltype value -filldata 0 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(3)
+mem load -filltype value -filldata 0 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(4)
+mem load -filltype value -filldata 0 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(5)
+mem load -filltype value -filldata 0 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(6)
+mem load -filltype value -filldata 0 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(7)
+mem load -filltype value -filldata 0 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(9)
+mem load -filltype value -filldata 0 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(8)
+mem load -filltype value -filldata 0 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(10)
+mem load -filltype value -filldata 0 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(11)
+mem load -filltype value -filldata 0 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(12)
+force -freeze sim:/risc_cpu/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -filltype value -filldata 001010 -fillradix hexadecimal /risc_cpu/Instruction_Memory/ram(2)
+mem load -filltype value -filldata 00101 -fillradix binary /risc_cpu/Instruction_Memory/ram(2)
+mem load -filltype value -filldata 0010100000000000011011010111111 -fillradix binary /risc_cpu/Instruction_Memory/ram(2)
+run
+run
+run
+run
+run
+run
+run
+run
+# WARNING: No extended dataflow license exists
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/risc_cpu/Fetch_Decode_Buffer/enable
+force -freeze sim:/risc_cpu/Fetch_Decode_Buffer/enable 1 0
+# ** Warning: (vsim-8780) Forcing /risc_cpu/Fetch_Decode_Enable as root of /risc_cpu/Fetch_Decode_Buffer/enable specified in the force.
+run
+add wave -position end  sim:/risc_cpu/Decode_Execute_Buffer/enable
+add wave -position end  sim:/risc_cpu/ex_mem1_buffer_inst/enable
+add wave -position end  sim:/risc_cpu/mem1_mem2_buffer_inst/enable
+add wave -position end  sim:/risc_cpu/mem2_wb_buffer_inst/enable
+force -freeze sim:/risc_cpu/Fetch_Decode_Buffer/enable 1 0
+# ** Warning: (vsim-8780) Forcing /risc_cpu/Fetch_Decode_Enable as root of /risc_cpu/Fetch_Decode_Buffer/enable specified in the force.
+force -freeze sim:/risc_cpu/Decode_Execute_Buffer/enable 1 0
+# ** Warning: (vsim-8780) Forcing /risc_cpu/Decode_Execute_Enable as root of /risc_cpu/Decode_Execute_Buffer/enable specified in the force.
+force -freeze sim:/risc_cpu/ex_mem1_buffer_inst/enable 1 0
+# ** Warning: (vsim-8780) Forcing /risc_cpu/Execute_Mem1_Enable as root of /risc_cpu/ex_mem1_buffer_inst/enable specified in the force.
+force -freeze sim:/risc_cpu/mem1_mem2_buffer_inst/enable 1 0
+# ** Warning: (vsim-8780) Forcing /risc_cpu/MEM1_MEM2_Enable as root of /risc_cpu/mem1_mem2_buffer_inst/enable specified in the force.
+force -freeze sim:/risc_cpu/mem2_wb_buffer_inst/enable 1 0
+# ** Warning: (vsim-8780) Forcing /risc_cpu/MEM2_WB_Enable as root of /risc_cpu/mem2_wb_buffer_inst/enable specified in the force.
+run
+mem load -filltype value -filldata {00101000000000000110110101111110 } -fillradix binary /risc_cpu/Instruction_Memory/ram(2)
+run
+run
+run
+run
+run
+force -freeze sim:/risc_cpu/ProgramCounter_Current 0000 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+noforce sim:/risc_cpu/ProgramCounter_Current
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Break key hit
+force -freeze sim:/risc_cpu/ProgramCounter_Current 0 0
+run
+noforce sim:/risc_cpu/ProgramCounter_Current
+run
+force -freeze sim:/risc_cpu/ProgramCounter_Current 0 0
+run
+noforce sim:/risc_cpu/ProgramCounter_Current
+run
+add wave -position end  sim:/risc_cpu/Fetch_Decode_Buffer/IF_Instruction_Opcode
+add wave -position end  sim:/risc_cpu/Fetch_Decode_Buffer/SIG_instruction
+force -freeze sim:/risc_cpu/Fetch_Decode_Buffer/SIG_instruction(31) 1 0
+force -freeze sim:/risc_cpu/Fetch_Decode_Buffer/SIG_instruction(30) 0 0
+force -freeze sim:/risc_cpu/Fetch_Decode_Buffer/SIG_instruction(29) 0 0
+run
+run
+run
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 12200 ps  Iteration: 1  Instance: /risc_cpu/Instruction_Memory
+run
+run
+run
+noforce sim:/risc_cpu/ProgramCounter_Updated
+noforce sim:/risc_cpu/ProgramCounter_Current
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/risc_cpu/execute_stage_inst/reset
+force -freeze sim:/risc_cpu/execute_stage_inst/reset 1 0
+# ** Warning: (vsim-8780) Forcing /risc_cpu/reset as root of /risc_cpu/execute_stage_inst/reset specified in the force.
+run
+run
+run
+force -freeze sim:/risc_cpu/execute_stage_inst/reset 0 0
+# ** Warning: (vsim-8780) Forcing /risc_cpu/reset as root of /risc_cpu/execute_stage_inst/reset specified in the force.
+run
+run
+run
+force -freeze sim:/risc_cpu/execute_stage_inst/reset 1 0
+# ** Warning: (vsim-8780) Forcing /risc_cpu/reset as root of /risc_cpu/execute_stage_inst/reset specified in the force.
+run
+force -freeze sim:/risc_cpu/execute_stage_inst/reset 1 0
+# ** Warning: (vsim-8780) Forcing /risc_cpu/reset as root of /risc_cpu/execute_stage_inst/reset specified in the force.
+force -freeze sim:/risc_cpu/execute_stage_inst/reset 0 0
+# ** Warning: (vsim-8780) Forcing /risc_cpu/reset as root of /risc_cpu/execute_stage_inst/reset specified in the force.
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 01:55:08 on Apr 20,2023, Elapsed time: 0:24:10
+# Errors: 0, Warnings: 51

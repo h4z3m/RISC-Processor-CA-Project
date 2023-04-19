@@ -1,7 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
-library work;
+LIBRARY work;
 ENTITY Memory2_Stage IS
     PORT (
         clk : IN STD_LOGIC;
@@ -23,34 +23,36 @@ ENTITY Memory2_Stage IS
         SIG_RegDst : IN STD_LOGIC;
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        PC_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         ----INPUT PORT
         Input_value : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         Input_enable : IN STD_LOGIC;
 
         --Write_Back_Address
         Immediate_value : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        Write_data_RDST : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
 
         --Decoder
-        PC_Mux_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
         ALU_Result : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
         --Write_back_address_mux_2x1
         Write_back_address_mux_2x1_in0 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         Write_back_address_mux_2x1_in1 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        Write_back_address_mux_2x1_out : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
+
+        PC_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        PC_Mux_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        Write_data_RDST : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        Write_back_address_mux_2x1_out : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+        Input_port_value : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 END ENTITY Memory2_Stage;
 
 ARCHITECTURE rtl OF Memory2_Stage IS
-    SIGNAL Input_port_value : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL RDST : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL Decoder_out_0 : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL Decoder_out_1 : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL After_memory_mux_2x1_out : STD_LOGIC_VECTOR(16 DOWNTO 0);
+    SIGNAL After_memory_mux_2x1_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL input_port_reading : STD_LOGIC_VECTOR(15 DOWNTO 0);
 BEGIN
-    PC_Mux_out <= Decoder_out_1;
+    PC_Mux_out <= Decoder_out_0;
 
     UpdateProgramCounter : ENTITY WORK.UpdatePCcircuit PORT MAP (
         PC => PC,
@@ -68,17 +70,18 @@ BEGIN
     Data_Memory : ENTITY work.Memory GENERIC MAP (
         32, 1024
         ) PORT MAP (
-        ReadAddr => DataMemory_ReadAddr,
+        ReadAddr => DataMemory_ReadAddr(9 DOWNTO 0),
         ReadData => RDST,
         write_enable => Write_enable,
         clk => clk,
         WriteData => WriteData
         );
+    input_port_reading <= Input_port_value;
     MUX_4x1 : ENTITY work.MUX_4x1 GENERIC MAP(16)
         PORT MAP(
             in0 => Immediate_value,
             in1 => Decoder_out_1(31 DOWNTO 16),
-            in2 => Input_port_value,
+            in2 => input_port_reading,
             in3 => (OTHERS => '0'),
             sel => (port_en & (sig_memtoreg OR flag_en)),
             out1 => Write_data_RDST
@@ -102,7 +105,7 @@ BEGIN
             in0 => RDST(15 DOWNTO 0),
             in1 => ALU_Result,
             sel => SIG_MemToReg,
-            out1 => After_memory_mux_2x1_out
+            out1 => After_memory_mux_2x1_out(31 DOWNTO 16)
         );
     Write_back_address_mux_2x1 : ENTITY work.MUX GENERIC MAP(3)
         PORT MAP(

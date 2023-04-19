@@ -22,7 +22,7 @@ Architecture Behavioral of UpdateSpCircuit is
         process (all)
         begin
             if (SIG_jump and SIG_branch) then
-                SP_Modified <= "0000001111111111";
+                SP_Modified <= "0000001111111110";---------- For call/int which push 32bits to the stack
             else
                 if (not SIG_MemRead and SIG_MemWrite and not SIG_ALUsrc) then
                     SP_Modified <= std_logic_vector(to_unsigned(to_integer((signed(SP)) - 2),16));

@@ -12,7 +12,7 @@ ENTITY Memory IS
         clk, write_enable : IN STD_LOGIC;
         WriteData : IN STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         ReadData : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-        ReadAddr : IN STD_LOGIC_VECTOR(INTEGER(CEIL(LOG(REAL(CELL_COUNT)))) - 1 DOWNTO 0)
+        ReadAddr : IN STD_LOGIC_VECTOR(INTEGER(ceil(log2(real(CELL_COUNT)))) - 1 DOWNTO 0)
     );
 END ENTITY Memory;
 

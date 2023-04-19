@@ -7,7 +7,8 @@ ENTITY RISC_CPU IS
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
         in_port : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        out_port : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+        out_port : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        INPUT_PORT_VALUE : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 END ENTITY;
 
@@ -47,11 +48,15 @@ ARCHITECTURE rtl OF RISC_CPU IS
     SIGNAL ProgramCounter_Updated : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL ProgramCounter_Current : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL ProgramCounter_Enable : STD_LOGIC;
+    ---- Stack pointer signals
+    SIGNAL StackPointer_Updated : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    SIGNAL StackPointer_Current : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
     ---- Instruction Memory signals
     SIGNAL InstructionMemory_ReadData : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
     ---- Data Memory signals
+    SIGNAL DataMemory_WriteData : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL DataMemory_ReadData : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL DataMemory_ReadAddr : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
@@ -67,7 +72,6 @@ ARCHITECTURE rtl OF RISC_CPU IS
     SIGNAL Fetch_Decode_Instruction_ReadAddr2 : STD_LOGIC_VECTOR(2 DOWNTO 0);
     SIGNAL Fetch_Decode_Instruction_WriteAddr : STD_LOGIC_VECTOR(2 DOWNTO 0);
     SIGNAL Fetch_Decode_Instruction_ImmediateVal : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL SignExtended_Immediate : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
     ---- ID EX buffer signals
     SIGNAL Decode_Execute_Enable : STD_LOGIC;
@@ -82,13 +86,12 @@ ARCHITECTURE rtl OF RISC_CPU IS
     SIGNAL Decode_Execute_Out_PC : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL Decode_Execute_Out_SP : STD_LOGIC_VECTOR(15 DOWNTO 0);
     ---- Port signals
-    SIGNAL OUTPUT_PORT_VALUE : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL INPUT_PORT_VALUE : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL OUTPUT_PORT_VALUE : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
     --- Execute Memory 1 buffer signals
 
     --- Inputs
-    SIGNAL Execute_Mem1_In_Enable : STD_LOGIC;
+    SIGNAL Execute_Mem1_Enable : STD_LOGIC;
 
     --- Outputs
     SIGNAL Execute_Mem1_Out_ControlUnitOutput : STD_LOGIC_VECTOR(12 DOWNTO 0);
@@ -117,11 +120,13 @@ ARCHITECTURE rtl OF RISC_CPU IS
 
     -- M2 WB buffer signals
     SIGNAL MEM2_WB_Enable : STD_LOGIC;
-
+    SIGNAL MEM2_WB_IN_WriteBackAddr : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL MEM2_WB_IN_WriteBackData : STD_LOGIC_VECTOR(15 DOWNTO 0);
     ----OUTPUTS
     SIGNAL MEM2_WB_Out_WriteBackAddr : STD_LOGIC_VECTOR(2 DOWNTO 0);
     SIGNAL MEM2_WB_Out_WriteBackData : STD_LOGIC_VECTOR(15 DOWNTO 0);
-
+    SIGNAL MEM2_WB_OutControlUnitOutput : STD_LOGIC_VECTOR(12 DOWNTO 0);
+    SIGNAL Memory_ReturnInterrupt_Out : STD_LOGIC_VECTOR(31 DOWNTO 0);
 BEGIN
     ProgramCounter_Enable <= '1';
     ProgramCounter : ENTITY work.D_FF GENERIC MAP (
@@ -132,13 +137,22 @@ BEGIN
         ProgramCounter_Enable,
         ProgramCounter_Current
         );
-
+    StackPointer : ENTITY work.D_FF
+        GENERIC MAP(
+            16)
+        PORT MAP(
+            D => StackPointer_Updated,
+            CLK => CLK,
+            RST => reset,
+            EN => '1',
+            Q => StackPointer_Current
+        );
     Instruction_Memory : ENTITY work.Memory GENERIC MAP (
         32, 1024
         ) PORT MAP (
-        ReadAddr => ProgramCounter_Current,
+        ReadAddr => ProgramCounter_Current(9 DOWNTO 0),
         ReadData => InstructionMemory_ReadData,
-        we => '0',
+        write_enable => '0',
         clk => clk,
         WriteData => (OTHERS => '0')
         );
@@ -170,10 +184,12 @@ BEGIN
             IF_ID_ReadAddr2 => Fetch_Decode_Instruction_ReadAddr2,
             MEM2_WB_RegisterFile_WriteData => MEM2_WB_Out_WriteBackData,
             MEM2_WB_RegisterFile_WriteAddr => MEM2_WB_Out_WriteBackAddr,
+            SP_currentValue => StackPointer_Current,
             --- Outputs
             IF_ID_ControlSignals => DecodeStage_ControlSignals,
             RegFile_ReadData1 => DecodeStage_RegFile_ReadData1,
-            RegFile_ReadData2 => DecodeStage_RegFile_ReadData2
+            RegFile_ReadData2 => DecodeStage_RegFile_ReadData2,
+            SP_UpdatedValue => StackPointer_Updated
         );
 
     Decode_Execute_Buffer : ENTITY work.ID_EX_Buffer PORT MAP (
@@ -189,6 +205,7 @@ BEGIN
         ReadAddr2 => Fetch_Decode_Instruction_ReadAddr2,
         ImmediateVal => Fetch_Decode_Instruction_ImmediateVal,
         PC => Fetch_Decode_PC,
+        SP => StackPointer_Updated,
 
         --- Outputs
         ID_ControlUnitOutput => Decode_Execute_Out_ControlUnitOutput,
@@ -210,8 +227,7 @@ BEGIN
             ID_EX_RegisterFile_ReadData1 => Decode_Execute_Out_RegisterFile_ReadData1,
             ID_EX_RegisterFile_ReadData2 => Decode_Execute_Out_RegisterFile_ReadData2,
             ID_EX_RegisterFile_ImmediateVal => Decode_Execute_Out_ImmediateVal,
-            flagRegisterUpdateCircuit_dataMem => ---- from ali in memory2,
-            ,
+            flagRegisterUpdateCircuit_dataMem => Memory_ReturnInterrupt_Out,
             --- Outputs
             OUTPUT_PORT_VALUE => ExecuteStage_OUTPUT_PORT_VALUE,
             ALU_Result => ExecuteStage_ALU_Result,
@@ -258,7 +274,7 @@ BEGIN
             ReadData2 => Execute_Mem1_Out_RegisterFile_ReadData2,
 
             --- Outputs
-            DataMemory_ReadData => DataMemory_ReadData,
+            DataMemory_WriteData => DataMemory_WriteData,
             DataMemory_ReadAddr => DataMemory_ReadAddr
         );
     mem1_mem2_buffer_inst : ENTITY work.MEM1_MEM2_Buffer
@@ -284,59 +300,74 @@ BEGIN
             MEM1_PC => MEM1_MEM2_Out_PC,
             MEM1_PORTOUT => MEM1_MEM2_Out_PORTOUT
         );
-
+    ---- Control unit Signals
+    ---- 0 -> MemRead,
+    -- 1 -> MemWrite,
+    -- 2 -> ALUsrc,
+    -- 3 -> MemToReg,
+    -- 4 -> Branch,
+    -- 5 -> Jump,
+    -- 6 -> RegDst,
+    -- 7 -> RegWrite,
+    -- 8 -> PortEN,
+    -- 9 -> FlagEN,
+    -- 12 - 10 -> ALUop
     memory2_stage_inst : ENTITY work.Memory2_Stage
         PORT MAP(
+            --- Inputs
             clk => clk,
             DataMemory_ReadAddr => DataMemory_ReadAddr,
-            WriteData => WriteData,
-            SIG_MemWrite => SIG_MemWrite,
-            Write_enable => Write_enable,
-            SIG_MemRead => SIG_MemRead,
-            SIG_MemToReg => SIG_MemToReg,
-            SIG_Branch => SIG_Branch,
-            SIG_Jump => SIG_Jump,
-            SIG_ALUop => SIG_ALUop,
-            Zero_flag => Zero_flag,
-            Carry_flag => Carry_flag,
-            Flag_en => Flag_en,
-            Port_en => Port_en,
-            RegDst => RegDst,
-            PC => PC,
-            PC_out => PC_out,
-            Input_value => Input_value,
-            Input_enable => Input_enable,
-            Immediate_value => Immediate_value,
-            Write_data_RDST => Write_data_RDST,
-            PC_Mux_out => PC_Mux_out,
-            ALU_Result => ALU_Result,
-            Write_back_address_mux_2x1_in0 => Write_back_address_mux_2x1_in0,
-            Write_back_address_mux_2x1_in1 => Write_back_address_mux_2x1_in1,
-            Write_back_address_mux_2x1_out => Write_back_address_mux_2x1_out
+            WriteData => DataMemory_WriteData,
+            Write_enable => MEM1_MEM2_Out_ControlUnitOutput(1),
+            SIG_MemRead => MEM1_MEM2_Out_ControlUnitOutput(0),
+            SIG_MemToReg => MEM1_MEM2_Out_ControlUnitOutput(3),
+            SIG_Branch => MEM1_MEM2_Out_ControlUnitOutput(4),
+            SIG_Jump => MEM1_MEM2_Out_ControlUnitOutput(5),
+            SIG_ALUop => MEM1_MEM2_Out_ControlUnitOutput(12 DOWNTO 10),
+            Zero_flag => MEM1_MEM2_Out_FLAGREGISTER(0),
+            Carry_flag => MEM1_MEM2_Out_FLAGREGISTER(2),
+            Flag_en => MEM1_MEM2_Out_ControlUnitOutput(9),
+            Port_en => MEM1_MEM2_Out_ControlUnitOutput(8),
+            SIG_RegDst => MEM1_MEM2_Out_ControlUnitOutput(6),
+            PC => MEM1_MEM2_Out_PC,
+            Input_value => in_port,
+            Input_enable => MEM1_MEM2_Out_ControlUnitOutput(7),
+            Immediate_value => MEM1_MEM2_Out_ImmediateVal,
+            Write_back_address_mux_2x1_in0 => MEM1_MEM2_Out_WriteAddr,
+            Write_back_address_mux_2x1_in1 => MEM1_MEM2_Out_ReadAddr2,
+            ALU_Result => MEM1_MEM2_Out_ALU_RESULT,
+            --- Outputs
+            PC_out => ProgramCounter_Updated,
+            Write_data_RDST => MEM2_WB_IN_WriteBackData,
+            PC_Mux_out => Memory_ReturnInterrupt_Out,
+            Write_back_address_mux_2x1_out => MEM2_WB_IN_WriteBackAddr,
+            INPUT_PORT_VALUE => Input_port_value
         );
 
     mem2_wb_buffer_inst : ENTITY work.MEM2_WB_Buffer
         PORT MAP(
+            --- Inputs
             clk => clk,
             enable => MEM2_WB_Enable,
             rst => reset,
-            WriteBackAddr = >,
-            WriteBackData = >,
+            WriteBackAddr => MEM2_WB_IN_WriteBackAddr,
+            WriteBackData => MEM2_WB_IN_WriteBackData,
             PORTOUT => Mem1_MEM2_Out_PORTOUT,
-
+            --- Outputs
+            ControlUnitOutput => MEM1_MEM2_Out_ControlUnitOutput,
             MEM2_WriteBackAddr => MEM2_WB_Out_WriteBackAddr,
             MEM2_WriteBackData => MEM2_WB_Out_WriteBackData,
-            MEM2_PORTOUT => MEM2_WB_Out_PORTOUT
+            MEM2_PORTOUT => OUTPUT_PORT_VALUE,
+            MEM2_ControlUnitOutput => MEM2_WB_OutControlUnitOutput
         );
 
-    ----------------------- Pipeline buffers -----------------------
     output_port_inst : ENTITY work.OUTPUT_PORT
         GENERIC MAP(
             16)
         PORT MAP(
             port_value => OUTPUT_PORT_VALUE,
-            enable => enable,
-            out_value => out_value
+            enable => (NOT MEM2_WB_OutControlUnitOutput(8)),
+            out_value => out_port
         );
 
 END ARCHITECTURE;

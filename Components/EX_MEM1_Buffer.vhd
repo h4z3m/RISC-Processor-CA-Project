@@ -14,8 +14,8 @@ ENTITY EX_MEM1_Buffer IS
         RegisterFile_ReadData2 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         WriteAddr : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         ReadAddr2 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        ImmediateVal : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-        ALU_Result : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+        ImmediateVal : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        ALU_Result : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         SP : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         PORTOUT : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -25,7 +25,7 @@ ENTITY EX_MEM1_Buffer IS
         EX_RegisterFile_ReadData2 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         EX_WriteAddr : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         EX_ReadAddr2 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-        EX_ImmediateVal : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        EX_ImmediateVal : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         EX_ALU_Result : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         EX_PC : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         EX_SP : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -53,7 +53,7 @@ BEGIN
     );
 
     EX_MEM1_FF_FlagRegister : D_FF GENERIC MAP(
-        2
+        3
         ) PORT MAP (FlagRegister, clk, rst, enable, EX_FlagRegister
     );
 
@@ -73,7 +73,7 @@ BEGIN
     );
 
     EX_MEM1_FF_ImmediateVal : D_FF GENERIC MAP(
-        32
+        16
         ) PORT MAP (ImmediateVal, clk, rst, enable, EX_ImmediateVal
     );
 

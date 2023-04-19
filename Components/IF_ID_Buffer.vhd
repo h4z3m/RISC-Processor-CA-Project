@@ -40,7 +40,7 @@ ARCHITECTURE rtl OF IF_ID_Buffer IS
 
 BEGIN
     IF_ID_FF : D_FF GENERIC MAP(
-        6
+        32
         ) PORT MAP (Instruction, clk, rst, enable, SIG_Instruction
     );
     IF_ID_FF_PC : D_FF GENERIC MAP(

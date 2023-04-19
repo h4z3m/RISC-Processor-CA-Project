@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CGXFC7C7F23C8
-set_global_assignment -name TOP_LEVEL_ENTITY Fetch_Stage
+set_global_assignment -name TOP_LEVEL_ENTITY RISC_CPU
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:49:46  APRIL 19, 2023"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -56,12 +56,33 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
+set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name VHDL_FILE Components/RISC_CPU.vhd -hdl_version VHDL_2008
+set_global_assignment -name VHDL_FILE Components/UpdateSpCircuit.vhd -hdl_version VHDL_2008
+set_global_assignment -name VHDL_FILE Components/UpdateFlagRegister.vhd
+set_global_assignment -name VHDL_FILE Components/RegisterFile.vhd
+set_global_assignment -name VHDL_FILE Components/OUTPUT_PORT.vhd
+set_global_assignment -name VHDL_FILE Components/INPUT_PORT.vhd
+set_global_assignment -name VHDL_FILE Components/D_FF.vhd
+set_global_assignment -name VHDL_FILE Components/MUX.vhd
+set_global_assignment -name VHDL_FILE Components/Decoder_1x2.vhd
+set_global_assignment -name VHDL_FILE Components/ID_EX_Buffer.vhd
+set_global_assignment -name VHDL_FILE Components/ALU.vhd -hdl_version VHDL_2008
+set_global_assignment -name VHDL_FILE Components/EX_MEM1_Buffer.vhd -hdl_version VHDL_2008
+set_global_assignment -name VHDL_FILE Components/MEM1_MEM2_Buffer.vhd
+set_global_assignment -name VHDL_FILE Components/MEM2_WB_Buffer.vhd
+set_global_assignment -name VHDL_FILE Components/IF_ID_Buffer.vhd
+set_global_assignment -name VHDL_FILE Components/updatePCcircuit.vhd
+set_global_assignment -name VHDL_FILE Components/Memory.vhd
+set_global_assignment -name VHDL_FILE Components/ControlUnit.vhd
+set_global_assignment -name VHDL_FILE Components/byte_addressable_memory.vhd
+set_global_assignment -name VHDL_FILE Components/Decode_Stage.vhd
+set_global_assignment -name VHDL_FILE Components/Memory1_Stage.vhd
+set_global_assignment -name VHDL_FILE Components/Memory2_Stage.vhd
+set_global_assignment -name VHDL_FILE Components/Execute_Stage.vhd
+set_global_assignment -name VHDL_FILE Components/MUX_4x1.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VHDL_FILE Components/RegisterFile.vhd
-set_global_assignment -name VHDL_FILE Components/ControlUnit.vhd
-set_global_assignment -name VHDL_FILE Components/Fetch_Stage.vhd
-set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
-set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

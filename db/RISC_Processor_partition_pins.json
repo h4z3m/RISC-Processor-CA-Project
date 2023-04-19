@@ -4,327 +4,535 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "IF_ID_ControlSignals[0]",
+					"name" : "DataMemory_ReadData[0]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ControlSignals[1]",
+					"name" : "DataMemory_ReadData[1]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ControlSignals[2]",
+					"name" : "DataMemory_ReadData[2]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ControlSignals[3]",
+					"name" : "DataMemory_ReadData[3]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ControlSignals[4]",
+					"name" : "DataMemory_ReadData[4]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ControlSignals[5]",
+					"name" : "DataMemory_ReadData[5]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ControlSignals[6]",
+					"name" : "DataMemory_ReadData[6]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ControlSignals[7]",
+					"name" : "DataMemory_ReadData[7]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ControlSignals[8]",
+					"name" : "DataMemory_ReadData[8]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ControlSignals[9]",
+					"name" : "DataMemory_ReadData[9]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ControlSignals[10]",
+					"name" : "DataMemory_ReadData[10]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ControlSignals[11]",
+					"name" : "DataMemory_ReadData[11]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ControlSignals[12]",
+					"name" : "DataMemory_ReadData[12]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[0]",
+					"name" : "DataMemory_ReadData[13]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[1]",
+					"name" : "DataMemory_ReadData[14]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[2]",
+					"name" : "DataMemory_ReadData[15]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[3]",
+					"name" : "DataMemory_ReadData[16]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[4]",
+					"name" : "DataMemory_ReadData[17]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[5]",
+					"name" : "DataMemory_ReadData[18]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[6]",
+					"name" : "DataMemory_ReadData[19]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[7]",
+					"name" : "DataMemory_ReadData[20]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[8]",
+					"name" : "DataMemory_ReadData[21]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[9]",
+					"name" : "DataMemory_ReadData[22]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[10]",
+					"name" : "DataMemory_ReadData[23]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[11]",
+					"name" : "DataMemory_ReadData[24]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[12]",
+					"name" : "DataMemory_ReadData[25]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[13]",
+					"name" : "DataMemory_ReadData[26]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[14]",
+					"name" : "DataMemory_ReadData[27]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData1[15]",
+					"name" : "DataMemory_ReadData[28]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[0]",
+					"name" : "DataMemory_ReadData[29]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[1]",
+					"name" : "DataMemory_ReadData[30]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[2]",
+					"name" : "DataMemory_ReadData[31]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[3]",
+					"name" : "DataMemory_ReadAddr[0]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[4]",
+					"name" : "DataMemory_ReadAddr[1]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[5]",
+					"name" : "DataMemory_ReadAddr[2]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[6]",
+					"name" : "DataMemory_ReadAddr[3]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[7]",
+					"name" : "DataMemory_ReadAddr[4]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[8]",
+					"name" : "DataMemory_ReadAddr[5]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[9]",
+					"name" : "DataMemory_ReadAddr[6]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[10]",
+					"name" : "DataMemory_ReadAddr[7]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[11]",
+					"name" : "DataMemory_ReadAddr[8]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[12]",
+					"name" : "DataMemory_ReadAddr[9]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[13]",
+					"name" : "DataMemory_ReadAddr[10]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[14]",
+					"name" : "DataMemory_ReadAddr[11]",
 					"strict" : false
 				},
 				{
-					"name" : "RegFile_ReadData2[15]",
+					"name" : "DataMemory_ReadAddr[12]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_Instruction[28]",
+					"name" : "DataMemory_ReadAddr[13]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_Instruction[29]",
+					"name" : "DataMemory_ReadAddr[14]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_Instruction[30]",
+					"name" : "DataMemory_ReadAddr[15]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_Instruction[27]",
+					"name" : "jump",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_Instruction[31]",
+					"name" : "ReadData2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_Instruction[26]",
+					"name" : "ReadData2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_Instruction[14]",
+					"name" : "ReadData2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_Instruction[15]",
+					"name" : "ReadData2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_Instruction[16]",
+					"name" : "ReadData2[4]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ReadAddr1[2]",
+					"name" : "ReadData2[5]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ReadAddr1[0]",
+					"name" : "ReadData2[6]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ReadAddr1[1]",
+					"name" : "ReadData2[7]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ReadAddr2[2]",
+					"name" : "ReadData2[8]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ReadAddr2[0]",
+					"name" : "ReadData2[9]",
 					"strict" : false
 				},
 				{
-					"name" : "IF_ID_ReadAddr2[1]",
+					"name" : "ReadData2[10]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "ReadData2[11]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[0]",
+					"name" : "ReadData2[12]",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "Execute_Mem1_Out_FlagRegister[0]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteAddr[1]",
+					"name" : "ReadData2[13]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteAddr[2]",
+					"name" : "Execute_Mem1_Out_FlagRegister[1]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteAddr[0]",
+					"name" : "ReadData2[14]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[1]",
+					"name" : "Execute_Mem1_Out_FlagRegister[2]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[2]",
+					"name" : "ReadData2[15]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[3]",
+					"name" : "Decode_Execute_Out_PC[0]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[4]",
+					"name" : "ReadData2[16]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[5]",
+					"name" : "Decode_Execute_Out_PC[1]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[6]",
+					"name" : "ReadData2[17]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[7]",
+					"name" : "Decode_Execute_Out_PC[2]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[8]",
+					"name" : "ReadData2[18]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[9]",
+					"name" : "Decode_Execute_Out_PC[3]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[10]",
+					"name" : "ReadData2[19]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[11]",
+					"name" : "Decode_Execute_Out_PC[4]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[12]",
+					"name" : "ReadData2[20]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[13]",
+					"name" : "Decode_Execute_Out_PC[5]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[14]",
+					"name" : "ReadData2[21]",
 					"strict" : false
 				},
 				{
-					"name" : "MEM2_WB_RegisterFile_WriteData[15]",
+					"name" : "Decode_Execute_Out_PC[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadData2[22]",
+					"strict" : false
+				},
+				{
+					"name" : "Decode_Execute_Out_PC[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadData2[23]",
+					"strict" : false
+				},
+				{
+					"name" : "Decode_Execute_Out_PC[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadData2[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Decode_Execute_Out_PC[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadData2[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Decode_Execute_Out_PC[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadData2[26]",
+					"strict" : false
+				},
+				{
+					"name" : "Decode_Execute_Out_PC[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadData2[27]",
+					"strict" : false
+				},
+				{
+					"name" : "Decode_Execute_Out_PC[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadData2[28]",
+					"strict" : false
+				},
+				{
+					"name" : "Decode_Execute_Out_PC[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadData2[29]",
+					"strict" : false
+				},
+				{
+					"name" : "Decode_Execute_Out_PC[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadData2[30]",
+					"strict" : false
+				},
+				{
+					"name" : "Decode_Execute_Out_PC[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadData2[31]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_src",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[0]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[1]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[2]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[3]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[4]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[5]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[6]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[7]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[8]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[9]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[10]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[11]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[12]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[13]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[14]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Result[15]",
+					"strict" : false
+				},
+				{
+					"name" : "StackPointer[15]",
 					"strict" : false
 				}
 			]

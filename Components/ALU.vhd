@@ -3,99 +3,182 @@ LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
 ENTITY ALU IS
-    PORT (
-        Opcode : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        Operand_1 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        Operand_2 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        Output : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        CARRY : OUT STD_LOGIC;
-        ZERO : OUT STD_LOGIC;
-        NEGATIVE : OUT STD_LOGIC
-    );
+        PORT (
+                Opcode : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+                Operand_1 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+                Operand_2 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+                Output : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+                CARRY : OUT STD_LOGIC;
+                ZERO : OUT STD_LOGIC;
+                NEGATIVE : OUT STD_LOGIC
+        );
 END ALU;
 
-architecture ALU_IMP OF ALU is
-        signal temp_output: STD_LOGIC_VECTOR(16 DOWNTO 0);
-        begin
-        process(all)
-        variable operand1_int : integer;
-        variable operand2_int : integer;
-        variable output_int : integer;
-        begin
+ARCHITECTURE ALU_IMP OF ALU IS
+        SIGNAL temp_output : STD_LOGIC_VECTOR(16 DOWNTO 0);
+BEGIN
+        PROCESS (ALL)
+                VARIABLE operand1_int : INTEGER;
+                VARIABLE operand2_int : INTEGER;
+                VARIABLE output_int : INTEGER;
+        BEGIN
 
-        case Opcode is 
-        when "000" => -- NOP
-        Output <= Operand_1;
-        ZERO <= '0';
-        CARRY <= '0';
-        NEGATIVE <= '0';
+                IF Opcode = "000" THEN -- NOP
+                        Output <= Operand_1;
+                        ZERO <= '0';
+                        CARRY <= '0';
+                        NEGATIVE <= '0';
+                        temp_output <= (OTHERS => '0');
 
-        when "111" => -- INC
-	operand1_int := to_integer(signed(Operand_1));
-	output_int := operand1_int + 1;
-        temp_output <= std_logic_vector(to_signed(output_int,17));
-        Output <= std_logic_vector(to_signed(output_int,16));
-        CARRY <= '1' when temp_output(16) = '1' else '0';
-        ZERO <= '1' when to_integer(signed(Output)) = 0 else '0';
-        NEGATIVE <= '1' when Output(15) = '1' else '0';
+                ELSIF Opcode = "111" THEN -- INC
 
-        when "100" => -- ADD
-	operand1_int := to_integer(signed(Operand_1));
-        operand2_int := to_integer(signed(Operand_2));
-	output_int := operand1_int + operand2_int;
-        temp_output <= std_logic_vector(to_signed(output_int,17));
-        Output <= std_logic_vector(to_signed(output_int,16));
-        CARRY <= '1' when temp_output(16) = '1' else '0';
-        ZERO <= '1' when to_integer(signed(Output)) = 0 else '0';
-        NEGATIVE <= '1' when Output(15) = '1' else '0';
+                        operand1_int := to_integer(signed(Operand_1));
+                        output_int := operand1_int + 1;
+                        temp_output <= STD_LOGIC_VECTOR(to_signed(output_int, 17));
+                        Output <= STD_LOGIC_VECTOR(to_signed(output_int, 16));
+                        IF temp_output(16) = '1' THEN
+                                CARRY <= '1';
+                        ELSE
+                                carry <= '0';
+                        END IF;
 
-        when "101" => -- SUB
-	operand1_int := to_integer(signed(Operand_1));
-        operand2_int := to_integer(signed(Operand_2));
-	output_int := operand1_int - operand2_int;
-        temp_output <= std_logic_vector(to_unsigned(output_int,17));
-        Output <= temp_output(15 downto 0);
-        CARRY <= '1' when temp_output(16) = '1' else '0';
-        ZERO <= '1' when to_integer(signed(Output)) = 0 else '0';
-        NEGATIVE <= '1' when Output(15) = '1' else '0';
+                        IF Output = "0000000000000000"THEN
+                                ZERO <= '1';
+                        ELSE
+                                ZERO <= '0';
+                        END IF;
+                        IF Output(15) = '1' THEN
+                                NEGATIVE <= '1';
+                        ELSE
+                                NEGATIVE <= '0';
+                        END IF;
 
-        when "110" => -- DEC
-	operand1_int := to_integer(signed(Operand_1));
-	output_int := operand1_int - 1;
-        temp_output <= std_logic_vector(to_unsigned(output_int,17));
-        Output <= temp_output(15 downto 0);
-        CARRY <= '1' when temp_output(16) = '1' else '0';
-        ZERO <= '1' when to_integer(signed(Output)) = 0 else '0';
-        NEGATIVE <= '1' when Output(15) = '1' else '0';
+                ELSIF Opcode = "100" THEN -- ADD
 
-        when "001" => -- AND
-        Output <= Operand_1 and Operand_2;
-        CARRY <= '0';
-        ZERO <= '1' when Output = "0000000000000000" else '0';
-        NEGATIVE <= '1' when Output(15) = '1' else '0';
+                        operand1_int := to_integer(signed(Operand_1));
+                        operand2_int := to_integer(signed(Operand_2));
+                        output_int := operand1_int + operand2_int;
+                        temp_output <= STD_LOGIC_VECTOR(to_signed(output_int, 17));
+                        Output <= STD_LOGIC_VECTOR(to_signed(output_int, 16));
 
-        when "010" => -- OR
-        Output <= Operand_1 or Operand_2;
-        CARRY <= '0';
-        ZERO <= '1' when Output = "0000000000000000" else '0';
-        NEGATIVE <= '1' when Output(15) = '1' else '0';
+                        IF temp_output(16) = '1' THEN
+                                CARRY <= '1';
+                        ELSE
+                                carry <= '0';
+                        END IF;
 
-        when "011" => -- NOT
-        Output <= not Operand_1;
-        CARRY <= '0';
-        ZERO <= '1' when Output = "0000000000000000" else '0';
-        NEGATIVE <= '1' when Output(15) = '1' else '0';
+                        IF Output = "0000000000000000" THEN
+                                ZERO <= '1';
+                        ELSE
+                                ZERO <= '0';
+                        END IF;
+                        IF Output(15) = '1' THEN
+                                NEGATIVE <= '1';
+                        ELSE
+                                NEGATIVE <= '0';
+                        END IF;
+                ELSIF Opcode = "101" THEN -- SUB
 
-        when others => -- Garbage
-        Output <= (others => '0');
-        CARRY <= '0';
-        ZERO <= '0';
-        NEGATIVE <= '0';
-        
-        end case;
+                        operand1_int := to_integer(signed(Operand_1));
+                        operand2_int := to_integer(signed(Operand_2));
+                        output_int := operand1_int - operand2_int;
+                        temp_output <= STD_LOGIC_VECTOR(to_unsigned(output_int, 17));
+                        Output <= temp_output(15 DOWNTO 0);
 
-        end process;
-        end architecture ALU_IMP;
-        
-        
+                        IF temp_output(16) = '1' THEN
+                                CARRY <= '1';
+                        ELSE
+                                carry <= '0';
+                        END IF;
 
+                        IF Output = "0000000000000000" THEN
+                                ZERO <= '1';
+                        ELSE
+                                ZERO <= '0';
+                        END IF;
+                        IF Output(15) = '1' THEN
+                                NEGATIVE <= '1';
+                        ELSE
+                                NEGATIVE <= '0';
+                        END IF;
+
+                ELSIF Opcode = "110" THEN -- DEC
+
+                        operand1_int := to_integer(signed(Operand_1));
+                        output_int := operand1_int - 1;
+                        temp_output <= STD_LOGIC_VECTOR(to_unsigned(output_int, 17));
+                        Output <= temp_output(15 DOWNTO 0);
+
+                        IF temp_output(16) = '1' THEN
+                                CARRY <= '1';
+                        ELSE
+                                carry <= '0';
+                        END IF;
+
+                        IF Output = "0000000000000000"THEN
+                                ZERO <= '1';
+                        ELSE
+                                ZERO <= '0';
+                        END IF;
+                        IF Output(15) = '1' THEN
+                                NEGATIVE <= '1';
+                        ELSE
+                                NEGATIVE <= '0';
+                        END IF;
+
+                ELSIF Opcode = "001" THEN -- AND
+
+                        Output <= Operand_1 AND Operand_2;
+                        temp_output <= (OTHERS => '0');
+
+                        CARRY <= '0';
+                        IF Output = "0000000000000000" THEN
+                                ZERO <= '1';
+                        ELSE
+                                ZERO <= '0';
+                        END IF;
+                        IF Output(15) = '1' THEN
+                                NEGATIVE <= '1';
+                        ELSE
+                                NEGATIVE <= '0';
+                        END IF;
+                ELSIF Opcode = "010" THEN -- OR
+
+                        Output <= Operand_1 OR Operand_2;
+                        temp_output <= (OTHERS => '0');
+
+                        CARRY <= '0';
+                        IF Output = "0000000000000000" THEN
+                                ZERO <= '1';
+                        ELSE
+                                ZERO <= '0';
+                        END IF;
+                        IF Output(15) = '1' THEN
+                                NEGATIVE <= '1';
+                        ELSE
+                                NEGATIVE <= '0';
+                        END IF;
+                ELSIF Opcode = "011" THEN -- NOT
+                        temp_output <= (OTHERS => '0');
+                        Output <= NOT Operand_1;
+                        CARRY <= '0';
+                        IF Output = "0000000000000000" THEN
+                                ZERO <= '1';
+                        ELSE
+                                ZERO <= '0';
+                        END IF;
+                        IF Output(15) = '1' THEN
+                                NEGATIVE <= '1';
+                        ELSE
+                                NEGATIVE <= '0';
+                        END IF;
+                ELSE
+                        temp_output <= (OTHERS => '0');
+                        Output <= (OTHERS => '0');
+                        CARRY <= '0';
+                        ZERO <= '0';
+                        NEGATIVE <= '0';
+
+                END IF;
+        END PROCESS;
+END ARCHITECTURE ALU_IMP;

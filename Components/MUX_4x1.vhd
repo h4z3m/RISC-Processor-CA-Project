@@ -1,6 +1,6 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
-
+LIBRARY work;
 ENTITY MUX_4x1 IS
     GENERIC (n : INTEGER := 16);
     PORT (

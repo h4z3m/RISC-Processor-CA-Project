@@ -11,14 +11,15 @@ ENTITY Memory1_Stage IS
         ALU_Result : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         Decode_Execute_Out_PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         Execute_Mem1_Out_FlagRegister : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        ReadData2 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+        ReadData2 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        DataMemory_ReadData : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        DataMemory_WriteData : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
         DataMemory_ReadAddr : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 END ENTITY;
 
 ARCHITECTURE rtl OF Memory1_Stage IS
+    SIGNAL temp_mux_in1 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 BEGIN
 
     Data_Memory_ReadAddr_MUX : ENTITY work.MUX
@@ -31,15 +32,18 @@ BEGIN
             sel => alu_src,
             out1 => DataMemory_ReadAddr
         );
-    Data_Memory_ReadData_MUX : ENTITY work.MUX
+
+    temp_mux_in1 <= Decode_Execute_Out_PC & Execute_Mem1_Out_FlagRegister & "0000000000000";
+    Data_Memory_WriteData_MUX : ENTITY work.MUX
         GENERIC MAP(
             32
         )
         PORT MAP(
-            in0 => ReadData2,
-            in1 => Decode_Execute_Out_PC & Execute_Mem1_Out_FlagRegister & "000000000000",
+            ----- endianness?
+            in0 => "0000000000000000" & ReadData2,
+            in1 => temp_mux_in1,
             sel => jump,
-            out1 => DataMemory_ReadData
+            out1 => DataMemory_WriteData
         );
 
 END ARCHITECTURE rtl;

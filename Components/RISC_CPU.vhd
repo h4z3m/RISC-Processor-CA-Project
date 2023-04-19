@@ -188,7 +188,7 @@ BEGIN
     ------------------    
     ProgramCounter_Enable <= '1';
     ------------------    
-
+    ---/ Before Fetch /---------------------------------------------------
     ProgramCounter : ENTITY work.D_FF GENERIC MAP (
         16
         ) PORT MAP (ProgramCounter_Updated,
@@ -206,15 +206,7 @@ BEGIN
         clk => clk,
         WriteData => (OTHERS => '0')
         );
-    Data_Memory : ENTITY work.Memory GENERIC MAP (
-        32, 1024
-        ) PORT MAP (
-        ReadAddr => DataMemory_ReadAddr,
-        ReadData => DataMemory_ReadData,
-        we => -- from mux,
-        clk => clk,
-        WriteData => (OTHERS => '0')
-        );
+    ---/ Fetch /---------------------------------------------------
     RegFile : ENTITY WORK.RegisterFile GENERIC MAP (
         16,
         8
@@ -352,5 +344,15 @@ BEGIN
             in1 => Decode_Execute_Out_PC & Execute_Mem1_Out_FlagRegister & "000000000000",
             sel => Execute_Mem1_Out_ControlUnitOutput(5),
             out1 => DataMemory_ReadData
+        );
+
+    Data_Memory : ENTITY work.Memory GENERIC MAP (
+        32, 1024
+        ) PORT MAP (
+        ReadAddr => DataMemory_ReadAddr,
+        ReadData => DataMemory_ReadData,
+        we => -- from mux,
+        clk => clk,
+        WriteData => (OTHERS => '0')
         );
 END ARCHITECTURE;

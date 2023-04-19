@@ -9,8 +9,8 @@ ENTITY Memory1_Stage IS
         alu_src : IN STD_LOGIC;
         StackPointer : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ALU_Result : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        Decode_Execute_Out_PC  : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        Execute_Mem1_Out_FlagRegister : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+        Decode_Execute_Out_PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        Execute_Mem1_Out_FlagRegister : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         ReadData2 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 
         DataMemory_ReadData : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);

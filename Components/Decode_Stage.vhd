@@ -1,11 +1,10 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
-ENTITY Fetch_Stage IS
+ENTITY Decode_Stage IS
     PORT (
         clk, reset : IN STD_LOGIC;
         IF_ID_Instruction : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-        IF_ID_Opcode : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
         IF_ID_ReadAddr1 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         IF_ID_ReadAddr2 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         MEM2_WB_RegisterFile_WriteData : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -15,9 +14,9 @@ ENTITY Fetch_Stage IS
         RegFile_ReadData1 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         RegFile_ReadData2 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
-END ENTITY Fetch_Stage;
+END ENTITY Decode_Stage;
 
-ARCHITECTURE rtl OF Fetch_Stage IS
+ARCHITECTURE rtl OF Decode_Stage IS
     SIGNAL TEMP_IF_ID_ControlSignals : STD_LOGIC_VECTOR(12 DOWNTO 0);
 BEGIN
     ControlUnit : ENTITY WORK.ControlUnit PORT MAP (

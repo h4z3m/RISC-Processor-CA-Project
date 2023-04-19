@@ -1,39 +1,57 @@
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.numeric_std.ALL;
+library work;
 ENTITY Memory2_Stage IS
     PORT (
         clk : IN STD_LOGIC;
         ---Memory
         DataMemory_ReadAddr : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         WriteData : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-        SIG_MemWrite : IN STD_LOGIC;
         Write_enable : IN STD_LOGIC;
 
         ---- UPDATE PC
         SIG_MemRead : IN STD_LOGIC;
+        SIG_MemToReg : IN STD_LOGIC;
         SIG_Branch : IN STD_LOGIC;
         SIG_Jump : IN STD_LOGIC;
         SIG_ALUop : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         Zero_flag : IN STD_LOGIC;
         Carry_flag : IN STD_LOGIC;
         Flag_en : IN STD_LOGIC;
+        Port_en : IN STD_LOGIC;
+        SIG_RegDst : IN STD_LOGIC;
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        
+
         PC_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-
-
         ----INPUT PORT
         Input_value : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         Input_enable : IN STD_LOGIC;
-        
-        Input_port_value : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
-
 
         --Write_Back_Address
+        Immediate_value : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        Write_data_RDST : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
+
+        --Decoder
+        PC_Mux_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        ALU_Result : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+        --Write_back_address_mux_2x1
+        Write_back_address_mux_2x1_in0 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        Write_back_address_mux_2x1_in1 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        Write_back_address_mux_2x1_out : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
     );
 END ENTITY Memory2_Stage;
 
-ARCHITECTURE rtl OF ent IS
+ARCHITECTURE rtl OF Memory2_Stage IS
+    SIGNAL Input_port_value : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL RDST : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL Decoder_out_0 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL Decoder_out_1 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL After_memory_mux_2x1_out : STD_LOGIC_VECTOR(16 DOWNTO 0);
 BEGIN
+    PC_Mux_out <= Decoder_out_1;
+
     UpdateProgramCounter : ENTITY WORK.UpdatePCcircuit PORT MAP (
         PC => PC,
         Flag_en => Flag_en,
@@ -43,26 +61,54 @@ BEGIN
         SIG_AluOP0 => Sig_aluop(0),
         Zero_flag => Zero_flag,
         Carry_flag => Carry_flag,
-        PC_Return_Stack 
+        PC_Return_Stack => Decoder_out_0(31 DOWNTO 16),
         PC_out => PC_out,
-        rdst => RDST(31 downto 16)
+        rdst => RDST(31 DOWNTO 16)
         );
     Data_Memory : ENTITY work.Memory GENERIC MAP (
         32, 1024
         ) PORT MAP (
         ReadAddr => DataMemory_ReadAddr,
         ReadData => RDST,
-        we => Write_enable,
+        write_enable => Write_enable,
         clk => clk,
         WriteData => WriteData
         );
-    input_port_inst : ENTITY work.INPUT_PORT
-        GENERIC MAP(
-            16
-        )
+    MUX_4x1 : ENTITY work.MUX_4x1 GENERIC MAP(16)
+        PORT MAP(
+            in0 => Immediate_value,
+            in1 => Decoder_out_1(31 DOWNTO 16),
+            in2 => Input_port_value,
+            in3 => (OTHERS => '0'),
+            sel => (port_en & (sig_memtoreg OR flag_en)),
+            out1 => Write_data_RDST
+        );
+
+    input_port_inst : ENTITY work.INPUT_PORT GENERIC MAP(16)
         PORT MAP(
             in_value => Input_value,
             enable => Input_enable,
             port_value => Input_port_value
+        );
+    Decoder : ENTITY work.Decoder_1x2 GENERIC MAP(32)
+        PORT MAP(
+            sel => (SIG_Jump AND SIG_MemRead),
+            input => After_memory_mux_2x1_out,
+            output_a => Decoder_out_0,
+            output_b => Decoder_out_1
+        );
+    After_memory_mux_2x1 : ENTITY work.MUX GENERIC MAP(16)
+        PORT MAP(
+            in0 => RDST(15 DOWNTO 0),
+            in1 => ALU_Result,
+            sel => SIG_MemToReg,
+            out1 => After_memory_mux_2x1_out
+        );
+    Write_back_address_mux_2x1 : ENTITY work.MUX GENERIC MAP(3)
+        PORT MAP(
+            in0 => Write_back_address_mux_2x1_in0,
+            in1 => Write_back_address_mux_2x1_in1,
+            sel => SIG_RegDst,
+            out1 => Write_back_address_mux_2x1_out
         );
 END ARCHITECTURE;

@@ -2,7 +2,7 @@
 # Compile of ControlUnit.vhd was successful.
 # Compile of EX_MEM1_Buffer.vhd was successful.
 # Compile of ID_EX_Buffer.vhd was successful.
-# Compile of IF_ID_Buffer.vhd failed with 1 errors.
+# Compile of IF_ID_Buffer.vhd was successful.
 # Compile of MEM1_MEM2_Buffer.vhd was successful.
 # Compile of MEM2_WB_Buffer.vhd was successful.
 # Compile of Memory.vhd was successful.
@@ -13,27 +13,9 @@
 # Compile of UpdateSpCircuit.vhd was successful.
 # Compile of MUX.vhd was successful.
 # Compile of updatePCcircuit.vhd was successful.
-# Compile of RISC_CPU.vhd failed with 9 errors.
+# Compile of RISC_CPU.vhd failed with 1 errors.
 # Compile of D_FF.vhd was successful.
-# 17 compiles, 4 failed with 47 errors.
-# Compile of ALU.vhd failed with 37 errors.
-# Compile of ControlUnit.vhd was successful.
-# Compile of EX_MEM1_Buffer.vhd was successful.
-# Compile of ID_EX_Buffer.vhd was successful.
-# Compile of IF_ID_Buffer.vhd failed with 1 errors.
-# Compile of MEM1_MEM2_Buffer.vhd was successful.
-# Compile of MEM2_WB_Buffer.vhd was successful.
-# Compile of Memory.vhd was successful.
-# Compile of RegisterFile.vhd was successful.
-# Compile of UpdateFlagRegister.vhd was successful.
-# Compile of OUTPUT_PORT.vhd was successful.
-# Compile of INPUT_PORT.vhd was successful.
-# Compile of UpdateSpCircuit.vhd was successful.
-# Compile of MUX.vhd was successful.
-# Compile of updatePCcircuit.vhd was successful.
-# Compile of RISC_CPU.vhd failed with 9 errors.
-# Compile of D_FF.vhd was successful.
-# 17 compiles, 4 failed with 47 errors.
+# 17 compiles, 3 failed with 38 errors.
 # Compile of ALU.vhd failed with 37 errors.
 # Compile of ControlUnit.vhd was successful.
 # Compile of EX_MEM1_Buffer.vhd was successful.
@@ -49,10 +31,10 @@
 # Compile of UpdateSpCircuit.vhd was successful.
 # Compile of MUX.vhd was successful.
 # Compile of updatePCcircuit.vhd was successful.
-# Compile of RISC_CPU.vhd failed with 8 errors.
+# Compile of RISC_CPU.vhd failed with 1 errors.
 # Compile of D_FF.vhd was successful.
-# 17 compiles, 3 failed with 45 errors.
-# Compile of ALU.vhd failed with 37 errors.
+# 17 compiles, 3 failed with 38 errors.
+# Compile of ALU.vhd was successful.
 # Compile of ControlUnit.vhd was successful.
 # Compile of EX_MEM1_Buffer.vhd was successful.
 # Compile of ID_EX_Buffer.vhd was successful.
@@ -67,11 +49,33 @@
 # Compile of UpdateSpCircuit.vhd was successful.
 # Compile of MUX.vhd was successful.
 # Compile of updatePCcircuit.vhd was successful.
-# Compile of RISC_CPU.vhd failed with 6 errors.
+# Compile of RISC_CPU.vhd failed with 1 errors.
 # Compile of D_FF.vhd was successful.
-# Compile of Fetch_Stage.vhd failed with 10 errors.
-# 18 compiles, 4 failed with 53 errors.
-# Compile of ALU.vhd failed with 37 errors.
+# 17 compiles, 2 failed with 1 error.
+vsim stratixiv_hssi.stratixiv_hssi_clock_divider
+# vsim stratixiv_hssi.stratixiv_hssi_clock_divider 
+# Start time: 21:59:30 on Apr 19,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading stratixiv_hssi.stratixiv_hssi_components(body)
+# Loading stratixiv_hssi.stratixiv_hssi_clock_divider(trans)
+# Loading stratixiv_hssi.stratixiv_hssi_pma_c_clkgenbuf_cmu(trans)
+# Loading stratixiv_hssi.stratixiv_hssi_pma_c_clkgenbuf(trans)
+# Loading stratixiv_hssi.stratixiv_hssi_pma_c_divby2q(trans)
+# Loading stratixiv_hssi.stratixiv_hssi_pma_c_clkgendrv(trans)
+# Loading stratixiv_hssi.stratixiv_hssi_pma_c_pcie_sw(trans)
+# Loading stratixiv_hssi.stratixiv_hssi_pma_c_clkgenbuf_tx10g(trans)
+# Loading stratixiv_hssi.stratixiv_hssi_pma_c_clkgendrv_tx10g(trans)
+# Loading stratixiv_hssi.stratixiv_hssi_aux_clock_div(clock_div_arch)
+quit -sim
+# End time: 21:59:55 on Apr 19,2023, Elapsed time: 0:00:25
+# Errors: 0, Warnings: 6
+# Compile of ALU.vhd was successful.
 # Compile of ControlUnit.vhd was successful.
 # Compile of EX_MEM1_Buffer.vhd was successful.
 # Compile of ID_EX_Buffer.vhd was successful.
@@ -86,11 +90,15 @@
 # Compile of UpdateSpCircuit.vhd was successful.
 # Compile of MUX.vhd was successful.
 # Compile of updatePCcircuit.vhd was successful.
-# Compile of RISC_CPU.vhd failed with 6 errors.
+# Compile of RISC_CPU.vhd failed with 1 errors.
 # Compile of D_FF.vhd was successful.
-# Compile of Fetch_Stage.vhd failed with 1 errors.
-# 18 compiles, 4 failed with 44 errors.
-# Compile of ALU.vhd failed with 37 errors.
+# Compile of Memory2_Stage.vhd failed with 8 errors.
+# Compile of Memory1_Stage.vhd failed with 1 errors.
+# Compile of Execute_Stage.vhd failed with 9 errors.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# 22 compiles, 6 failed with 20 errors.
+# Compile of ALU.vhd was successful.
 # Compile of ControlUnit.vhd was successful.
 # Compile of EX_MEM1_Buffer.vhd was successful.
 # Compile of ID_EX_Buffer.vhd was successful.
@@ -105,11 +113,15 @@
 # Compile of UpdateSpCircuit.vhd was successful.
 # Compile of MUX.vhd was successful.
 # Compile of updatePCcircuit.vhd was successful.
-# Compile of RISC_CPU.vhd failed with 6 errors.
+# Compile of RISC_CPU.vhd failed with 1 errors.
 # Compile of D_FF.vhd was successful.
-# Compile of Fetch_Stage.vhd failed with 1 errors.
-# 18 compiles, 4 failed with 44 errors.
-# Compile of ALU.vhd failed with 37 errors.
+# Compile of Memory2_Stage.vhd failed with 8 errors.
+# Compile of Memory1_Stage.vhd failed with 1 errors.
+# Compile of Execute_Stage.vhd failed with 3 errors.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# 22 compiles, 5 failed with 14 errors.
+# Compile of ALU.vhd was successful.
 # Compile of ControlUnit.vhd was successful.
 # Compile of EX_MEM1_Buffer.vhd was successful.
 # Compile of ID_EX_Buffer.vhd was successful.
@@ -124,7 +136,11 @@
 # Compile of UpdateSpCircuit.vhd was successful.
 # Compile of MUX.vhd was successful.
 # Compile of updatePCcircuit.vhd was successful.
-# Compile of RISC_CPU.vhd failed with 6 errors.
+# Compile of RISC_CPU.vhd failed with 1 errors.
 # Compile of D_FF.vhd was successful.
-# Compile of Fetch_Stage.vhd was successful.
-# 18 compiles, 3 failed with 43 errors.
+# Compile of Memory2_Stage.vhd failed with 8 errors.
+# Compile of Memory1_Stage.vhd failed with 1 errors.
+# Compile of Execute_Stage.vhd failed with 3 errors.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of byte_addressable_memory.vhd failed with 1 errors.
+# 22 compiles, 5 failed with 14 errors.

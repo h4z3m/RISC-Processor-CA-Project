@@ -6,7 +6,7 @@ LIBRARY work;
 ENTITY Execute_Stage IS
     PORT (
         --- Inputs ---
-        clk, reset, enable : IN STD_LOGIC;
+        clk, reset : IN STD_LOGIC;
         ID_EX_ControlSignals : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ID_EX_RegisterFile_ReadData1 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ID_EX_RegisterFile_ReadData2 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -29,9 +29,9 @@ ARCHITECTURE rtl OF Execute_Stage IS
     SIGNAL FlagRegisterTemp : STD_LOGIC_VECTOR(2 DOWNTO 0);
 
     ---- ALU output signals
-    SIGNAL ALU_Carry : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL ALU_Negative : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL ALU_Zero : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    SIGNAL ALU_Carry : STD_LOGIC;
+    SIGNAL ALU_Negative : STD_LOGIC;
+    SIGNAL ALU_Zero : STD_LOGIC;
 
 BEGIN
     ---------------------------  ALU input multiplexers  ---------------------------
@@ -72,7 +72,7 @@ BEGIN
             aluCarry => ALU_Carry,
             aluNeg => ALU_Negative,
             aluZero => ALU_Zero,
-            dataMem => flagRegisterUpdateCircuit_dataMem,
+            dataMem => flagRegisterUpdateCircuit_dataMem(15 DOWNTO 13),
             carryOld => FlagRegisterTemp(2),
             outFlags => FlagRegisterIn
         );

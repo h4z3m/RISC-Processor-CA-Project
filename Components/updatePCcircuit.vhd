@@ -8,7 +8,6 @@ ENTITY updatePCcircuit IS
         PC_Return_Stack : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         Flag_en : IN STD_LOGIC;
-        SIG_MemWrite : IN STD_LOGIC;
         SIG_MemRead : IN STD_LOGIC;
         SIG_Branch : IN STD_LOGIC;
         SIG_Jump : IN STD_LOGIC;

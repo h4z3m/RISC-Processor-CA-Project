@@ -9,7 +9,7 @@ ENTITY Memory IS
         CELL_COUNT : INTEGER := 4
     );
     PORT (
-        clk, we : IN STD_LOGIC;
+        clk, write_enable : IN STD_LOGIC;
         WriteData : IN STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         ReadData : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         ReadAddr : IN STD_LOGIC_VECTOR(INTEGER(CEIL(LOG(REAL(CELL_COUNT)))) - 1 DOWNTO 0)
@@ -25,7 +25,7 @@ BEGIN
     PROCESS (clk) IS
     BEGIN
         IF rising_edge(clk) THEN
-            IF we = '1' THEN
+            IF write_enable = '1' THEN
                 ram(to_integer(unsigned(WriteData))) <= WriteData;
             END IF;
         END IF;

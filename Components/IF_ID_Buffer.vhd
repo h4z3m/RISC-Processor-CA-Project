@@ -11,7 +11,7 @@ ENTITY IF_ID_Buffer IS
         Instruction : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         IF_PC : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        IF_Instruction : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+        IF_Instruction : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
         IF_Instruction_Opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
         IF_Instruction_ReadAddr1 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         IF_Instruction_ReadAddr2 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);

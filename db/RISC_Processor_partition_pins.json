@@ -1,0 +1,333 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "IF_ID_ControlSignals[0]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ControlSignals[1]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ControlSignals[2]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ControlSignals[3]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ControlSignals[4]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ControlSignals[5]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ControlSignals[6]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ControlSignals[7]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ControlSignals[8]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ControlSignals[9]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ControlSignals[10]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ControlSignals[11]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ControlSignals[12]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[8]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[9]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[10]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[11]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[12]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[13]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[14]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData1[15]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[8]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[9]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[10]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[11]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[12]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[13]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[14]",
+					"strict" : false
+				},
+				{
+					"name" : "RegFile_ReadData2[15]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_Instruction[28]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_Instruction[29]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_Instruction[30]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_Instruction[27]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_Instruction[31]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_Instruction[26]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_Instruction[14]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_Instruction[15]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_Instruction[16]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ReadAddr1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ReadAddr1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ReadAddr1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ReadAddr2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ReadAddr2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_ReadAddr2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteAddr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteAddr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteAddr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[8]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[9]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[10]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[11]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[12]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[13]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[14]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM2_WB_RegisterFile_WriteData[15]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

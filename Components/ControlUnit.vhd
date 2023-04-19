@@ -62,10 +62,6 @@ BEGIN
             END IF;
         ELSIF Instruction(31 DOWNTO 30) = "01" THEN
             --Instruction is R-Type
-            IF Instruction(29) THEN
-
-            ELSE
-            END IF;
             SIG_MemRead <= '0';
             SIG_MemWrite <= '0';
             SIG_ALUsrc <= '0';

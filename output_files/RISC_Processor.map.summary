@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Wed Apr 19 19:01:21 2023
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : RISC_Processor
+Top-level Entity Name : Fetch_Stage
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 128
+Total pins : 110
+Total virtual pins : 0
+Total block memory bits : 0
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

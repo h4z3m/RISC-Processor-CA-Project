@@ -1,6 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
+library work;
 
 ENTITY OUTPUT_PORT IS
     GENERIC (n : INTEGER := 16);

@@ -1,6 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
+LIBRARY work;
 
 ENTITY EX_MEM1_Buffer IS
     PORT (
@@ -8,22 +9,22 @@ ENTITY EX_MEM1_Buffer IS
         enable : IN STD_LOGIC;
         rst : IN STD_LOGIC;
 
-        ControlUnitOutput : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+        ControlUnitOutput : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
         FlagRegister : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         RegisterFile_ReadData2 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         WriteAddr : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         ReadAddr2 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        SignExtOut : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+        ImmediateVal : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         ALU_Result : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         SP : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        EX_ControlUnitOutput : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+        EX_ControlUnitOutput : OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
         EX_FlagRegister : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         EX_RegisterFile_ReadData2 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         EX_WriteAddr : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         EX_ReadAddr2 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-        EX_SignExtOut : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        EX_ImmediateVal : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
         EX_ALU_Result : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         EX_PC : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         EX_SP : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
@@ -45,7 +46,7 @@ ARCHITECTURE rtl OF EX_MEM1_Buffer IS
 
 BEGIN
     EX_MEM1_FF_ControlUnitOutput : D_FF GENERIC MAP(
-        10
+        13
         ) PORT MAP (ControlUnitOutput, clk, rst, enable, EX_ControlUnitOutput
     );
 
@@ -69,14 +70,14 @@ BEGIN
         ) PORT MAP (ReadAddr2, clk, rst, enable, EX_ReadAddr2
     );
 
-    EX_MEM1_FF_SignExtOut : D_FF GENERIC MAP(
+    EX_MEM1_FF_ImmediateVal : D_FF GENERIC MAP(
         32
-        ) PORT MAP (SignExtOut, clk, rst, enable, EX_SignExtOut
+        ) PORT MAP (ImmediateVal, clk, rst, enable, EX_ImmediateVal
     );
 
     EX_MEM1_ALU_RESULT : D_FF GENERIC MAP(
         16
-        ) PORT MAP (PC, clk, rst, enable, EX_ALU_Result
+        ) PORT MAP (ALU_Result, clk, rst, enable, EX_ALU_Result
     );
 
     EX_MEM1_FF_PC : D_FF GENERIC MAP(

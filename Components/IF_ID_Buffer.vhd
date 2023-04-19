@@ -1,6 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
+LIBRARY work;
 
 ENTITY IF_ID_Buffer IS
     PORT (
@@ -9,6 +10,8 @@ ENTITY IF_ID_Buffer IS
         rst : IN STD_LOGIC;
         Instruction : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        IF_PC : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        IF_Instruction : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
         IF_Instruction_Opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
         IF_Instruction_ReadAddr1 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         IF_Instruction_ReadAddr2 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -19,11 +22,11 @@ END ENTITY IF_ID_Buffer;
 
 ARCHITECTURE rtl OF IF_ID_Buffer IS
     SIGNAL SIG_instruction : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL SIG_IF_Instruction_Opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
-    SIGNAL SIG_IF_Instruction_ReadAddr1 : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL SIG_IF_Instruction_ReadAddr2 : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL SIG_IF_Instruction_WriteAddr : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL SIG_IF_Instruction_ImmediateVal : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    -- SIGNAL SIG_IF_Instruction_Opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
+    -- SIGNAL SIG_IF_Instruction_ReadAddr1 : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    -- SIGNAL SIG_IF_Instruction_ReadAddr2 : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    -- SIGNAL SIG_IF_Instruction_WriteAddr : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    -- SIGNAL SIG_IF_Instruction_ImmediateVal : STD_LOGIC_VECTOR(15 DOWNTO 0);
     COMPONENT D_FF IS
         GENERIC (
             N : INTEGER := 16
@@ -40,10 +43,14 @@ BEGIN
         6
         ) PORT MAP (Instruction, clk, rst, enable, SIG_Instruction
     );
-
-    SIG_IF_Instruction_Opcode <= SIG_Instruction(31 DOWNTO 26);
-    SIG_IF_Instruction_ReadAddr1 <= SIG_Instruction(25 DOWNTO 23);
-    SIG_IF_Instruction_ReadAddr2 <= SIG_Instruction(22 DOWNTO 20);
-    SIG_IF_Instruction_WriteAddr <= SIG_Instruction(19 DOWNTO 17);
-    SIG_IF_Instruction_ImmediateVal <= SIG_Instruction(15 DOWNTO 0);
+    IF_ID_FF_PC : D_FF GENERIC MAP(
+        16
+        ) PORT MAP (PC, clk, rst, enable, IF_PC
+    );
+    IF_Instruction <= SIG_Instruction;
+    IF_Instruction_Opcode <= SIG_Instruction(31 DOWNTO 26);
+    IF_Instruction_ReadAddr1 <= SIG_Instruction(25 DOWNTO 23);
+    IF_Instruction_ReadAddr2 <= SIG_Instruction(22 DOWNTO 20);
+    IF_Instruction_WriteAddr <= SIG_Instruction(19 DOWNTO 17);
+    IF_Instruction_ImmediateVal <= SIG_Instruction(15 DOWNTO 0);
 END ARCHITECTURE rtl;

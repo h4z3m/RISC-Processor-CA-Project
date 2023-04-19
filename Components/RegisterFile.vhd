@@ -1,6 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
+library work;
 USE ieee.math_real.ALL;
 
 ENTITY RegisterFile IS

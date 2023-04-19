@@ -1,6 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
+library work;
 ENTITY updatePCcircuit IS
     PORT (
         rdst : IN STD_LOGIC_VECTOR(15 DOWNTO 0);

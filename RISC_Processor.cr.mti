@@ -1,29 +1,4 @@
-{C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MUX.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MUX.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity MUX
--- Compiling architecture when_else_mux of MUX
-
-} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ALU.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ALU.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity ALU
-
-} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity RISC_CPU
-
-} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/updatePCcircuit.vhd} {1 {vcom -work work -2008 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/updatePCcircuit.vhd}
+{C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/updatePCcircuit.vhd} {1 {vcom -work work -2008 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/updatePCcircuit.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -31,15 +6,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package NUMERIC_STD
 -- Compiling entity updatePCcircuit
 -- Compiling architecture Behavioral of updatePCcircuit
-
-} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity Memory
--- Compiling architecture rtl of Memory
 
 } {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd} {1 {vcom -work work -2008 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -58,15 +24,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package NUMERIC_STD
 -- Compiling entity INPUT_PORT
 -- Compiling architecture rtl of INPUT_PORT
-
-} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/MUX.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/MUX.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity MUX
--- Compiling architecture when_else_mux of MUX
 
 } {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -87,14 +44,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity RegisterFile
 -- Compiling architecture rtl of RegisterFile
 
-} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/DFF.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/DFF.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity DFF
--- Compiling architecture A_MY_DFF of DFF
-
 } {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd} {1 {vcom -work work -2008 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -103,14 +52,5 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package NUMERIC_STD
 -- Compiling entity UpdateSpCircuit
 -- Compiling architecture Behavioral of UpdateSpCircuit
-
-} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ControlUnit.vhd} {1 {vcom -work work -2008 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ControlUnit.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity ControlUnit
--- Compiling architecture Behavioral of ControlUnit
 
 } {} {}}

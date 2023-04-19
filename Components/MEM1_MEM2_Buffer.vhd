@@ -1,6 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
+LIBRARY work;
 
 ENTITY MEM1_MEM2_Buffer IS
     PORT (
@@ -8,25 +9,25 @@ ENTITY MEM1_MEM2_Buffer IS
         enable : IN STD_LOGIC;
         rst : IN STD_LOGIC;
 
-        ControlUnitOutput : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+        ControlUnitOutput : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
         FlagRegister : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         WriteAddr : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         ReadAddr2 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        SignExtOut : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+        ImmediateVal : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ALU_Result : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        SP : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        -- SP : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        MEM1_ControlUnitOutput : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+        MEM1_ControlUnitOutput : OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
         MEM1_FlagRegister : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         MEM1_WriteAddr : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         MEM1_ReadAddr2 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-        MEM1_SignExtOut : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        MEM1_ImmediateVal : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         MEM1_ALU_Result : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        MEM1_PC : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        MEM1_SP : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+        MEM1_PC : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+        -- MEM1_SP : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
-END ENTITY MEM1_MEM2_Buffer;
+END MEM1_MEM2_Buffer;
 
 ARCHITECTURE rtl OF MEM1_MEM2_Buffer IS
 
@@ -43,7 +44,7 @@ ARCHITECTURE rtl OF MEM1_MEM2_Buffer IS
 
 BEGIN
     MEM1_MEM2_FF_ControlUnitOutput : D_FF GENERIC MAP(
-        10
+        13
         ) PORT MAP (ControlUnitOutput, clk, rst, enable, MEM1_ControlUnitOutput
     );
 
@@ -62,14 +63,14 @@ BEGIN
         ) PORT MAP (ReadAddr2, clk, rst, enable, MEM1_ReadAddr2
     );
 
-    MEM1_MEM2_FF_SignExtOut : D_FF GENERIC MAP(
-        32
-        ) PORT MAP (SignExtOut, clk, rst, enable, MEM1_SignExtOut
+    MEM1_MEM2_FF_ImmediateVal : D_FF GENERIC MAP(
+        16
+        ) PORT MAP (ImmediateVal, clk, rst, enable, MEM1_ImmediateVal
     );
 
     MEM1_MEM2_ALU_RESULT : D_FF GENERIC MAP(
         16
-        ) PORT MAP (PC, clk, rst, enable, MEM1_ALU_Result
+        ) PORT MAP (ALU_Result, clk, rst, enable, MEM1_ALU_Result
     );
 
     MEM1_MEM2_FF_PC : D_FF GENERIC MAP(
@@ -77,9 +78,9 @@ BEGIN
         ) PORT MAP (PC, clk, rst, enable, MEM1_PC
     );
 
-    MEM1_MEM2_FF_SP : D_FF GENERIC MAP(
-        16
-        ) PORT MAP (SP, clk, rst, enable, MEM1_SP
-    );
+    -- MEM1_MEM2_FF_SP : D_FF GENERIC MAP(
+    --     16
+    --     ) PORT MAP (SP, clk, rst, enable, MEM1_SP
+    -- );
 
 END ARCHITECTURE rtl;

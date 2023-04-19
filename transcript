@@ -1,0 +1,236 @@
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of DFF.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd failed with 3 errors.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd failed with 4 errors.
+# Compile of MUX.vhd was successful.
+# Compile of MUX.vhd was successful.
+# 16 compiles, 2 failed with 7 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of DFF.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd failed with 4 errors.
+# Compile of MUX.vhd was successful.
+# Compile of MUX.vhd was successful.
+# 16 compiles, 1 failed with 4 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of DFF.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of MUX.vhd was successful.
+# 16 compiles, 0 failed with no errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of DFF.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd failed with 7 errors.
+# Compile of RISC_CPU.vhd was successful.
+# 18 compiles, 1 failed with 7 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of DFF.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd was successful.
+# 18 compiles, 0 failed with no errors.
+vsim -gui work.updateflagregister
+# vsim -gui work.updateflagregister 
+# Start time: 20:40:05 on Apr 18,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.updateflagregister(behavioral)
+add wave -position end  sim:/updateflagregister/flagEN
+add wave -position end  sim:/updateflagregister/aluSrc
+add wave -position end  sim:/updateflagregister/portEN
+add wave -position end  sim:/updateflagregister/jump
+add wave -position end  sim:/updateflagregister/memRead
+add wave -position end  sim:/updateflagregister/aluOp
+add wave -position end  sim:/updateflagregister/aluCarry
+add wave -position end  sim:/updateflagregister/aluNeg
+add wave -position end  sim:/updateflagregister/aluZero
+add wave -position end  sim:/updateflagregister/dataMem
+add wave -position end  sim:/updateflagregister/carryOld
+add wave -position end  sim:/updateflagregister/outFlags
+force -freeze sim:/updateflagregister/memRead 1 0
+force -freeze sim:/updateflagregister/memRead b1 0
+# ** UI-Msg: (vsim-4026) Value "b1" does not represent a literal of the enumeration type.
+# ** UI-Msg: (vsim-4011) Invalid force value: b1 0.
+# 
+force -freeze sim:/updateflagregister/memRead '0' 0
+force -freeze sim:/updateflagregister/memRead 1 0
+force -freeze sim:/updateflagregister/memRead 1 0
+force -freeze sim:/updateflagregister/jump 1 0
+force -freeze sim:/updateflagregister/dataMem 101 0
+run
+force -freeze sim:/updateflagregister/jump 0 0
+force -freeze sim:/updateflagregister/memRead 0 0
+force -freeze sim:/updateflagregister/aluOp 110 0
+run
+force -freeze sim:/updateflagregister/carryOld 100 0
+# ** UI-Msg: (vsim-4026) Value "100" does not represent a literal of the enumeration type.
+# ** UI-Msg: (vsim-4011) Invalid force value: 100 0.
+# 
+run
+force -freeze sim:/updateflagregister/carryOld 110 0
+# ** UI-Msg: (vsim-4026) Value "110" does not represent a literal of the enumeration type.
+# ** UI-Msg: (vsim-4011) Invalid force value: 110 0.
+# 
+run
+force -freeze sim:/updateflagregister/carryOld 1 0
+run
+force -freeze sim:/updateflagregister/jump 1 0
+force -freeze sim:/updateflagregister/memRead 1 0
+run
+force -freeze sim:/updateflagregister/memRead 0 0
+run
+force -freeze sim:/updateflagregister/aluNeg 1 0
+force -freeze sim:/updateflagregister/aluZero 1 0
+force -freeze sim:/updateflagregister/memRead 1 0
+run
+force -freeze sim:/updateflagregister/memRead 0 0
+run
+force -freeze sim:/updateflagregister/flagEN 1 0
+force -freeze sim:/updateflagregister/aluSrc 0 0
+run
+force -freeze sim:/updateflagregister/memRead 1 0
+run
+force -freeze sim:/updateflagregister/memRead 0 0
+force -freeze sim:/updateflagregister/portEN 1 0
+force -freeze sim:/updateflagregister/aluCarry 0 0
+run
+force -freeze sim:/updateflagregister/aluSrc 1 0
+run
+force -freeze sim:/updateflagregister/flagEN 0 0
+run
+force -freeze sim:/updateflagregister/aluOp 011 0
+run
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 3 errors.
+# 17 compiles, 2 failed with 3 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 3 errors.
+# Compile of D_FF.vhd was successful.
+# 18 compiles, 1 failed with 3 errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd was successful.
+# Compile of D_FF.vhd was successful.
+# 18 compiles, 0 failed with no errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd was successful.
+# Compile of D_FF.vhd was successful.
+# 17 compiles, 1 failed with no errors.

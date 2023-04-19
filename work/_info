@@ -1,0 +1,809 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/20.1
+Ealu
+Z0 w1681850902
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 237
+Z4 dC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project
+8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ALU.vhd
+FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ALU.vhd
+l0
+L6 1
+Vc4C=5DNQBWVU^ilJ2E3F43
+!s100 R:KL[=Z6MF4RQGdb::8Y@2
+Z5 OV;C;2020.1;71
+32
+Z6 !s110 1681850975
+!i10b 1
+Z7 !s108 1681850975.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ALU.vhd|
+!s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ALU.vhd|
+!i113 1
+Z8 o-work work -2002 -explicit
+Z9 tExplicit 1 CvgOpt 0
+Econtrolunit
+R0
+R1
+R2
+R3
+!i122 238
+R4
+Z10 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ControlUnit.vhd
+Z11 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ControlUnit.vhd
+l0
+L5 1
+VN<:=hH8M[d>d@1MjM0Vgl1
+!s100 Fo^mkW:Jo6P1fMdS=9zn43
+R5
+33
+R6
+!i10b 1
+R7
+Z12 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ControlUnit.vhd|
+Z13 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ControlUnit.vhd|
+!i113 1
+Z14 o-work work -2008 -explicit
+R9
+Abehavioral
+R1
+R2
+R3
+DEx4 work 11 controlunit 0 22 N<:=hH8M[d>d@1MjM0Vgl1
+!i122 238
+l26
+L25 96
+VCiXz0:7A3jI4?U2S305OM1
+!s100 O^adY@ImOm9S;;H=Kh?K72
+R5
+33
+R6
+!i10b 1
+R7
+R12
+R13
+!i113 1
+R14
+R9
+Ed_ff
+Z15 w1681850815
+R2
+R3
+!i122 253
+R4
+Z16 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/D_FF.vhd
+Z17 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/D_FF.vhd
+l0
+L4 1
+V:zgeloZ>Ca9zDd[;iWZXB1
+!s100 U`U>]MaV0KBZUEFT3E2mN2
+R5
+32
+Z18 !s110 1681850979
+!i10b 1
+Z19 !s108 1681850979.000000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/D_FF.vhd|
+Z21 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/D_FF.vhd|
+!i113 1
+R8
+R9
+Aa_my_d_ff
+R2
+R3
+Z22 DEx4 work 4 d_ff 0 22 :zgeloZ>Ca9zDd[;iWZXB1
+!i122 253
+l16
+Z23 L15 13
+Z24 V^V=4S;G7PcM5_;jfLIWcR3
+Z25 !s100 inPIQHS^SmJb6AFleYIOR1
+R5
+32
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 1
+R8
+R9
+Edff
+Z26 w1681834333
+R2
+R3
+!i122 168
+R4
+Z27 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/DFF.vhd
+Z28 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/DFF.vhd
+l0
+L3 1
+VahmGT;4g478U7?KWGO_nn3
+!s100 R0]]zdL_KF=Vi^_cG<fH63
+R5
+32
+Z29 !s110 1681843149
+!i10b 1
+Z30 !s108 1681843149.000000
+Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/DFF.vhd|
+Z32 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/DFF.vhd|
+!i113 1
+R8
+R9
+Aa_my_dff
+R2
+R3
+DEx4 work 3 dff 0 22 ahmGT;4g478U7?KWGO_nn3
+!i122 168
+l15
+L14 13
+V[iUHJK?XB[=iUQ7`7lNSS0
+!s100 Mm?M[SNjcl7n[?;UThY243
+R5
+32
+R29
+!i10b 1
+R30
+R31
+R32
+!i113 1
+R8
+R9
+Eex_mem1_buffer
+R0
+R1
+R2
+R3
+!i122 239
+R4
+Z33 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/EX_MEM1_Buffer.vhd
+Z34 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/EX_MEM1_Buffer.vhd
+l0
+L6 1
+VG:QOTKULFM2d8G9U:2TLi2
+!s100 mca]bPLGaO;5X07UlH<gA1
+R5
+32
+R6
+!i10b 1
+R7
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/EX_MEM1_Buffer.vhd|
+Z36 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/EX_MEM1_Buffer.vhd|
+!i113 1
+R8
+R9
+Artl
+R1
+R2
+R3
+DEx4 work 14 ex_mem1_buffer 0 22 G:QOTKULFM2d8G9U:2TLi2
+!i122 239
+l47
+L34 58
+VQD?_NWB7`UN=@7i3o019;2
+!s100 Ff3aN4`OhOLSN68GONFPA0
+R5
+32
+R6
+!i10b 1
+R7
+R35
+R36
+!i113 1
+R8
+R9
+Eid_ex_buffer
+R0
+R1
+R2
+R3
+!i122 240
+R4
+Z37 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ID_EX_Buffer.vhd
+Z38 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ID_EX_Buffer.vhd
+l0
+L6 1
+V4`QMLNCE97b`8Z5^J^9Fl2
+!s100 KzBF5VK8Wn[E:_2HloH6Q0
+R5
+32
+R6
+!i10b 1
+R7
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ID_EX_Buffer.vhd|
+Z40 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ID_EX_Buffer.vhd|
+!i113 1
+R8
+R9
+Artl
+R1
+R2
+R3
+DEx4 work 12 id_ex_buffer 0 22 4`QMLNCE97b`8Z5^J^9Fl2
+!i122 240
+l45
+Z41 L32 55
+VD;H[G7K<QP@XQ1?7k>L>O3
+!s100 WnkBj>AlU8oMc=]P^G8bX3
+R5
+32
+R6
+!i10b 1
+R7
+R39
+R40
+!i113 1
+R8
+R9
+Eif_id_buffer
+R0
+R1
+R2
+R3
+!i122 241
+R4
+Z42 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/IF_ID_Buffer.vhd
+Z43 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/IF_ID_Buffer.vhd
+l0
+L6 1
+V7NSIC<kdUgMJK^;<K^4T]1
+!s100 JN^Aaa9`?2@d:17c_Qom80
+R5
+32
+R6
+!i10b 1
+R7
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/IF_ID_Buffer.vhd|
+Z45 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/IF_ID_Buffer.vhd|
+!i113 1
+R8
+R9
+Artl
+R1
+R2
+R3
+DEx4 work 12 if_id_buffer 0 22 7NSIC<kdUgMJK^;<K^4T]1
+!i122 241
+l39
+L21 30
+VC<mR6Q8hD^WViEP]I7Y2`1
+!s100 UhY;n>nD2KJZHZ:mn1b3_0
+R5
+32
+R6
+!i10b 1
+R7
+R44
+R45
+!i113 1
+R8
+R9
+Einput_port
+R0
+R1
+R2
+R3
+!i122 248
+R4
+Z46 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd
+Z47 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd
+l0
+L6 1
+Vg`=SUa^iUT=AYMgk[ddEJ1
+!s100 J=Om<3E=icRonBcbQS]ch3
+R5
+32
+Z48 !s110 1681850976
+!i10b 1
+Z49 !s108 1681850976.000000
+Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd|
+Z51 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd|
+!i113 1
+R8
+R9
+Artl
+R1
+R2
+R3
+DEx4 work 10 input_port 0 22 g`=SUa^iUT=AYMgk[ddEJ1
+!i122 248
+l16
+Z52 L15 4
+VM;4mA:hI<0IOLj7]L`WDE3
+!s100 IkIJBIMMdiWF6FoCcBYko2
+R5
+32
+R48
+!i10b 1
+R49
+R50
+R51
+!i113 1
+R8
+R9
+Emem1_mem2_buffer
+R0
+R1
+R2
+R3
+!i122 242
+R4
+Z53 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MEM1_MEM2_Buffer.vhd
+Z54 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MEM1_MEM2_Buffer.vhd
+l0
+L6 1
+VTQ`aki3jQOUAd`^a<W6:K3
+!s100 0cGJfzOXLKB=CbXdUlnWY3
+R5
+32
+R6
+!i10b 1
+R7
+Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MEM1_MEM2_Buffer.vhd|
+Z56 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MEM1_MEM2_Buffer.vhd|
+!i113 1
+R8
+R9
+Artl
+R1
+R2
+R3
+DEx4 work 16 mem1_mem2_buffer 0 22 TQ`aki3jQOUAd`^a<W6:K3
+!i122 242
+l45
+R41
+Vj@f8co[mQ41[BMN5c50YE1
+!s100 4ZSl]idXSXR]0EW<AdG_O0
+R5
+32
+R6
+!i10b 1
+R7
+R55
+R56
+!i113 1
+R8
+R9
+Emem2_wb_buffer
+R0
+R1
+R2
+R3
+!i122 243
+R4
+Z57 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MEM2_WB_Buffer.vhd
+Z58 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MEM2_WB_Buffer.vhd
+l0
+L6 1
+VaM]<L4m0gVnLm2_SoZNC=3
+!s100 ClKUl?JW`[jfYI5JEFNlZ1
+R5
+32
+R48
+!i10b 1
+R7
+Z59 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MEM2_WB_Buffer.vhd|
+Z60 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MEM2_WB_Buffer.vhd|
+!i113 1
+R8
+R9
+Artl
+R1
+R2
+R3
+DEx4 work 14 mem2_wb_buffer 0 22 aM]<L4m0gVnLm2_SoZNC=3
+!i122 243
+l45
+R41
+V:zZNnGXA?3RS^d93J4`[A3
+!s100 Zl8zGLoYZI75a_<Abg;=c2
+R5
+32
+R48
+!i10b 1
+R7
+R59
+R60
+!i113 1
+R8
+R9
+Ememory
+R0
+R1
+R2
+R3
+!i122 244
+R4
+Z61 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory.vhd
+Z62 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory.vhd
+l0
+L5 1
+Va3`[WmI28HX19@0j5Ml6L3
+!s100 N[<f0dh2g_igSNa84b6Cc2
+R5
+32
+R48
+!i10b 1
+R49
+Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory.vhd|
+Z64 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory.vhd|
+!i113 1
+R8
+R9
+Artl
+R1
+R2
+R3
+DEx4 work 6 memory 0 22 a3`[WmI28HX19@0j5Ml6L3
+!i122 244
+l20
+L15 16
+VM@>0Y?hoBJN=51gaMZ6dS1
+!s100 dUT7TVkPBb`5JIfd`@B6P2
+R5
+32
+R48
+!i10b 1
+R49
+R63
+R64
+!i113 1
+R8
+R9
+Emux
+Z65 w1681850917
+R1
+R2
+R3
+!i122 250
+R4
+Z66 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MUX.vhd
+Z67 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MUX.vhd
+l0
+L6 1
+VhBi36>mz2@Hak@lde2h;j2
+!s100 7fOBg2:k0`_3dD]ZziI1P0
+R5
+32
+Z68 !s110 1681850977
+!i10b 1
+R49
+Z69 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MUX.vhd|
+Z70 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MUX.vhd|
+!i113 1
+R8
+R9
+Awhen_else_mux
+R1
+R2
+R3
+DEx4 work 3 mux 0 22 hBi36>mz2@Hak@lde2h;j2
+!i122 250
+l15
+L14 6
+V1m_dSm0Pc^JCd10<d6QOV0
+!s100 _emVPSJ=;5I7C3ka0>HiE3
+R5
+32
+R68
+!i10b 1
+R49
+R69
+R70
+!i113 1
+R8
+R9
+Eoutput_port
+R0
+R1
+R2
+R3
+!i122 247
+R4
+Z71 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd
+Z72 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd
+l0
+L6 1
+VjG`5>dVLDB@QlWHZW:iB02
+!s100 =nYled_amK_72eKbd@<nj1
+R5
+32
+R48
+!i10b 1
+R49
+Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd|
+Z74 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd|
+!i113 1
+R8
+R9
+Artl
+R1
+R2
+R3
+DEx4 work 11 output_port 0 22 jG`5>dVLDB@QlWHZW:iB02
+!i122 247
+l16
+R52
+V16_3[zMzgfOz3aWSe2Dd43
+!s100 nb>zEjoEK>2`7PL`BZa`<2
+R5
+32
+R48
+!i10b 1
+R49
+R73
+R74
+!i113 1
+R8
+R9
+Eregisterfile
+R0
+Z75 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+R1
+R2
+R3
+!i122 245
+R4
+Z76 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RegisterFile.vhd
+Z77 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RegisterFile.vhd
+l0
+L7 1
+V8UWl4PRhJmZ;`03fD=SBT2
+!s100 Jef:iOfk9g70LR3>4[kA91
+R5
+32
+R48
+!i10b 1
+R49
+Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RegisterFile.vhd|
+Z79 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RegisterFile.vhd|
+!i113 1
+R8
+R9
+Artl
+R75
+R1
+R2
+R3
+DEx4 work 12 registerfile 0 22 8UWl4PRhJmZ;`03fD=SBT2
+!i122 245
+l28
+L25 22
+VgcQ_F=RRA70DAcSeMoGbL3
+!s100 S;XbFnTYo3c]g[U5BPJVG0
+R5
+32
+R48
+!i10b 1
+R49
+R78
+R79
+!i113 1
+R8
+R9
+Erisc_cpu
+R0
+R1
+R2
+R3
+!i122 252
+R4
+Z80 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd
+Z81 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd
+l0
+L6 1
+Va32if3XS7@fh6UXfGdUUD3
+!s100 0]^TQNB9z2m7RKe1E]Cob3
+R5
+32
+R18
+!i10b 1
+R19
+Z82 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd|
+Z83 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd|
+!i113 1
+R8
+R9
+Artl
+R22
+R1
+R2
+R3
+DEx4 work 8 risc_cpu 0 22 a32if3XS7@fh6UXfGdUUD3
+!i122 252
+l17
+L15 10
+VU4G1F@;J?gDNKZ[749JY82
+!s100 YMdSW>b`hZ4458fKD9H?h0
+R5
+32
+R18
+!i10b 1
+R19
+R82
+R83
+!i113 1
+R8
+R9
+Espcircuit
+Z84 w1681840562
+R1
+R2
+R3
+!i122 113
+R4
+Z85 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd
+Z86 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd
+l0
+L4 1
+V]7MTmJ45Pm63Vdi>NEAZ>1
+!s100 k<f8O:@?G;DnmgA_BJ>G=3
+R5
+32
+!s110 1681843034
+!i10b 1
+!s108 1681843034.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd|
+Z87 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd|
+!i113 1
+R8
+R9
+Abehavioral
+R1
+R2
+R3
+DEx4 work 9 spcircuit 0 22 D8H?IR>IPgPEQ_U8DCR4L0
+!i122 32
+l20
+L19 21
+VdZL9=l[4`:neRcfn1RMmV1
+!s100 CkF63VD^<<gT?@TogTiEU3
+R5
+33
+!s110 1681839587
+!i10b 1
+!s108 1681839587.000000
+!s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/spCircuit.vhd|
+!s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/spCircuit.vhd|
+!i113 1
+R14
+R9
+FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/spCircuit.vhd
+8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/spCircuit.vhd
+Eupdateflagregister
+R0
+R1
+R2
+R3
+!i122 246
+R4
+Z88 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd
+Z89 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd
+l0
+L6 1
+V2>[RnD]Y:5<J^eRgYC@5]3
+!s100 G0[TGIb_V1<`4cQCl0hOe3
+R5
+33
+R48
+!i10b 1
+R49
+Z90 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd|
+Z91 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateFlagRegister.vhd|
+!i113 1
+R14
+R9
+Abehavioral
+R1
+R2
+R3
+DEx4 work 18 updateflagregister 0 22 2>[RnD]Y:5<J^eRgYC@5]3
+!i122 246
+l34
+L33 25
+VIollLZiB2UhE2Gnoi6]eT1
+!s100 9j[inK4eHh>FOE:g^^5?k3
+R5
+33
+R48
+!i10b 1
+R49
+R90
+R91
+!i113 1
+R14
+R9
+Eupdatepccircuit
+R0
+R1
+R2
+R3
+!i122 251
+R4
+Z92 8C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/updatePCcircuit.vhd
+Z93 FC:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/updatePCcircuit.vhd
+l0
+L5 1
+VgGBjz]mo?Y4ObB9fbz9@02
+!s100 5FPd2Z87Umn9KEHOJA=L;0
+R5
+33
+R18
+!i10b 1
+R19
+Z94 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/updatePCcircuit.vhd|
+Z95 !s107 C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/updatePCcircuit.vhd|
+!i113 1
+R14
+R9
+Abehavioral
+R1
+R2
+R3
+DEx4 work 15 updatepccircuit 0 22 gGBjz]mo?Y4ObB9fbz9@02
+!i122 251
+l26
+L25 28
+V`<PWgCWmO=K7TJNIG1b]b0
+!s100 4Wc>]P53dS`Tm8LF3DbmV1
+R5
+33
+R18
+!i10b 1
+R19
+R94
+R95
+!i113 1
+R14
+R9
+Eupdatespcircuit
+R0
+R1
+R2
+R3
+!i122 249
+R4
+R85
+R86
+l0
+L5 1
+VJ>mGkfMkIe0i@ig?JA54f2
+!s100 _nLGa@Km=gUOY3mi=jiJ]2
+R5
+33
+R48
+!i10b 1
+R49
+Z96 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd|
+R87
+!i113 1
+R14
+R9
+Abehavioral
+R1
+R2
+R3
+DEx4 work 15 updatespcircuit 0 22 J>mGkfMkIe0i@ig?JA54f2
+!i122 249
+l21
+L20 21
+VJRWzW8KfG_>QB4a@dJNMN0
+!s100 ;cS=YeiATMhgYaSQ?V6lm1
+R5
+33
+R48
+!i10b 1
+R49
+R96
+R87
+!i113 1
+R14
+R9

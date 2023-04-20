@@ -32,3 +32,4 @@ force -freeze sim:/risc_cpu/in_port 001f 0
 run 500ps 
 force -freeze sim:/risc_cpu/in_port 00fc 0
 run 300ps
+run 4000ps

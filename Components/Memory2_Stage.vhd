@@ -76,6 +76,7 @@ BEGIN
         clk => clk,
         WriteData => WriteData
         );
+
     input_port_reading <= Input_port_value;
     MUX_4x1 : ENTITY work.MUX_4x1 GENERIC MAP(16)
         PORT MAP(

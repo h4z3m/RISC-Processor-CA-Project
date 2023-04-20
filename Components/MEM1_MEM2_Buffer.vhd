@@ -17,7 +17,8 @@ ENTITY MEM1_MEM2_Buffer IS
         ALU_Result : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         PORTOUT : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-
+        DataMemory_ReadAddr : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        DataMemory_WriteData : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         -- SP : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
         MEM1_ControlUnitOutput : OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
@@ -27,7 +28,9 @@ ENTITY MEM1_MEM2_Buffer IS
         MEM1_ImmediateVal : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         MEM1_ALU_Result : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         MEM1_PC : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        MEM1_PORTOUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+        MEM1_PORTOUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        MEM1_DataMemory_ReadAddr : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        MEM1_DataMemory_WriteData : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
         -- MEM1_SP : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 END MEM1_MEM2_Buffer;
@@ -86,4 +89,13 @@ BEGIN
         ) PORT MAP (PORTOUT, clk, rst, enable, MEM1_PORTOUT
     );
 
+    MEM1_MEM2_FF_DataMemory_ReadAddr : D_FF GENERIC MAP(
+        16
+        ) PORT MAP (DataMemory_ReadAddr, clk, rst, enable, MEM1_DataMemory_ReadAddr
+    );
+
+    MEM1_MEM2_FF_DataMemory_WriteData : D_FF GENERIC MAP(
+        32
+        ) PORT MAP (DataMemory_WriteData, clk, rst, enable, MEM1_DataMemory_WriteData
+    );
 END ARCHITECTURE rtl;

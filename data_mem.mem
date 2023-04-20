@@ -1,7 +1,7 @@
 // memory data file (do not edit the following line - required for mem load use)
 // instance=/risc_cpu/memory2_stage_inst/Data_Memory/ram
 // format=mti addressradix=h dataradix=s version=1.0 wordsperline=1
-  0: 00111011101110110101010101111111
+  0: 00000000000000000000000000000000
   1: 00000000000000000001001000110100
   2: 00001111111110101010101111001010
   3: 00110011001100110011001100110011

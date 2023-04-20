@@ -65,7 +65,7 @@ BEGIN
         Carry_flag => Carry_flag,
         PC_Return_Stack => Decoder_out_0(31 DOWNTO 16),
         PC_out => PC_out,
-        rdst => RDST(31 DOWNTO 16)
+        rdst => DataMemory_ReadAddr
         );
     Data_Memory : ENTITY work.Memory GENERIC MAP (
         32, 1024

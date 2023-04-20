@@ -18,7 +18,7 @@ BEGIN
     BEGIN
         IF (RST = '1') THEN
             Q <= (OTHERS => '0');
-        ELSIF RISING_EDGE(CLK) THEN
+        ELSIF falling_edge(CLK) THEN
             IF EN = '1' THEN
                 Q <= D;
             END IF;

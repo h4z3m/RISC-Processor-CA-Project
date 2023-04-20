@@ -1,5 +1,4 @@
 vsim -gui work.risc_cpu
-
 add wave -position end  sim:/risc_cpu/clk
 add wave -position end  sim:/risc_cpu/reset
 add wave -position end  sim:/risc_cpu/in_port
@@ -21,15 +20,14 @@ force -freeze sim:/risc_cpu/in_port fffe 0
 add log -r sim:/risc_cpu/*
 run 1000ps
 force -freeze sim:/risc_cpu/reset 0 0
-run 4800ps 
+run 1300ps 
 force -freeze sim:/risc_cpu/in_port 0001 0
-run 500ps 
+run 100ps 
 force -freeze sim:/risc_cpu/in_port 000f 0
-run 500ps 
+run 100ps 
 force -freeze sim:/risc_cpu/in_port 00c8 0
-run 500ps 
+run 100ps 
 force -freeze sim:/risc_cpu/in_port 001f 0
-run 500ps 
+run 100ps 
 force -freeze sim:/risc_cpu/in_port 00fc 0
-run 300ps
-run 4000ps
+run 5000ps

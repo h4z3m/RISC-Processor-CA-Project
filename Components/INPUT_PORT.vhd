@@ -1,7 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
-library work;
+LIBRARY work;
 
 ENTITY INPUT_PORT IS
     GENERIC (n : INTEGER := 16);
@@ -14,5 +14,6 @@ END ENTITY;
 
 ARCHITECTURE rtl OF INPUT_PORT IS
 BEGIN
-    port_value <= in_value WHEN enable = '1';
+    port_value <= in_value WHEN enable = '1' else port_value;
+
 END ARCHITECTURE rtl;

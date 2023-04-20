@@ -128,6 +128,14 @@ ARCHITECTURE rtl OF RISC_CPU IS
     SIGNAL MEM2_WB_OutControlUnitOutput : STD_LOGIC_VECTOR(12 DOWNTO 0);
     SIGNAL Memory_ReturnInterrupt_Out : STD_LOGIC_VECTOR(31 DOWNTO 0);
 BEGIN
+    --------------------Enable all buffers -------------------
+    Fetch_Decode_Enable <= '1';
+    Decode_Execute_Enable <= '1';
+    Execute_Mem1_Enable <= '1';
+    MEM1_MEM2_Enable <= '1';
+    MEM2_WB_Enable <= '1';
+    --------------------Enable all buffers -------------------
+
     ProgramCounter_Enable <= '1';
     ProgramCounter : ENTITY work.D_FF GENERIC MAP (
         16

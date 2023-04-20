@@ -31,7 +31,7 @@ Architecture Behavioral of updatePCcircuit is
                 if ((Sig_aluop0 and carry_flag) or (not Sig_aluop0 and Zero_flag)) then
                     PC_out <= rdst;
                 else
-                    pc_out <= std_logic_vector(to_unsigned(to_integer((signed(pc)) + 2),16));                    
+                    pc_out <= std_logic_vector(to_unsigned(to_integer((signed(pc)) + 1),16));                    
                 end if;
             elsif (SIG_Jump and not SIG_Branch) then
                 if (SIG_MemRead) then
@@ -42,7 +42,7 @@ Architecture Behavioral of updatePCcircuit is
                     pc_out <= rdst;
                 end if;
             else
-                pc_out <= std_logic_vector(to_unsigned(to_integer((signed(pc)) + 2),16));
+                pc_out <= std_logic_vector(to_unsigned(to_integer((signed(pc)) + 1),16));
             
             end if;
         end process;

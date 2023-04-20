@@ -97,20 +97,20 @@ BEGIN
         PORT MAP(
             sel => (SIG_Jump AND SIG_MemRead),
             input => After_memory_mux_2x1_out,
-            output_a => Decoder_out_0,
-            output_b => Decoder_out_1
+            output_a => Decoder_out_1,
+            output_b => Decoder_out_0
         );
     After_memory_mux_2x1 : ENTITY work.MUX GENERIC MAP(16)
         PORT MAP(
-            in0 => RDST(15 DOWNTO 0),
-            in1 => ALU_Result,
+            in0 => ALU_Result,
+            in1 => RDST(15 DOWNTO 0),
             sel => SIG_MemToReg,
             out1 => After_memory_mux_2x1_out(31 DOWNTO 16)
         );
     Write_back_address_mux_2x1 : ENTITY work.MUX GENERIC MAP(3)
         PORT MAP(
-            in0 => Write_back_address_mux_2x1_in0,
-            in1 => Write_back_address_mux_2x1_in1,
+            in0 => Write_back_address_mux_2x1_in1,
+            in1 => Write_back_address_mux_2x1_in0,
             sel => SIG_RegDst,
             out1 => Write_back_address_mux_2x1_out
         );

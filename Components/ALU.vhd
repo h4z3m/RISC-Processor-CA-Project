@@ -34,8 +34,9 @@ BEGIN
 
                         operand1_int := to_integer(signed(Operand_1));
                         output_int := operand1_int + 1;
-                        temp_output <= STD_LOGIC_VECTOR(to_signed(output_int, 17));
+                        temp_output <= STD_LOGIC_VECTOR(to_unsigned(output_int, 17));
                         Output <= STD_LOGIC_VECTOR(to_signed(output_int, 16));
+
                         IF temp_output(16) = '1' THEN
                                 CARRY <= '1';
                         ELSE
@@ -58,7 +59,7 @@ BEGIN
                         operand1_int := to_integer(signed(Operand_1));
                         operand2_int := to_integer(signed(Operand_2));
                         output_int := operand1_int + operand2_int;
-                        temp_output <= STD_LOGIC_VECTOR(to_signed(output_int, 17));
+                        temp_output <= STD_LOGIC_VECTOR(to_unsigned(output_int, 17));
                         Output <= STD_LOGIC_VECTOR(to_signed(output_int, 16));
 
                         IF temp_output(16) = '1' THEN

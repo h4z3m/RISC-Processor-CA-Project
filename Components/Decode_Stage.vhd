@@ -10,7 +10,7 @@ ENTITY Decode_Stage IS
         MEM2_WB_RegisterFile_WriteData : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         MEM2_WB_RegisterFile_WriteAddr : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         SP_CurrentValue : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-
+        RegFile_RegWrite_Enable : IN STD_LOGIC;
         IF_ID_ControlSignals : OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
         RegFile_ReadData1 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         RegFile_ReadData2 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -41,7 +41,7 @@ BEGIN
         )PORT MAP (
         CLK => clk,
         rst => reset,
-        WR_ENABLE => TEMP_IF_ID_ControlSignals(7),
+        WR_ENABLE => RegFile_RegWrite_Enable,
         WRITE_PORT => MEM2_WB_RegisterFile_WriteData,
         WRITE_ADDR => MEM2_WB_RegisterFile_WriteAddr,
         READ_ADDR_1 => IF_ID_ReadAddr1,

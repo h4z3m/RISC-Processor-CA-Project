@@ -193,6 +193,7 @@ BEGIN
             MEM2_WB_RegisterFile_WriteData => MEM2_WB_Out_WriteBackData,
             MEM2_WB_RegisterFile_WriteAddr => MEM2_WB_Out_WriteBackAddr,
             SP_currentValue => StackPointer_Current,
+            RegFile_RegWrite_Enable=>MEM2_WB_OutControlUnitOutput(7),
             --- Outputs
             IF_ID_ControlSignals => DecodeStage_ControlSignals,
             RegFile_ReadData1 => DecodeStage_RegFile_ReadData1,
@@ -326,7 +327,7 @@ BEGIN
             clk => clk,
             DataMemory_ReadAddr => DataMemory_ReadAddr,
             WriteData => DataMemory_WriteData,
-            Write_enable => MEM1_MEM2_Out_ControlUnitOutput(1),
+            Write_enable => Execute_Mem1_Out_ControlUnitOutput(1),
             SIG_MemRead => MEM1_MEM2_Out_ControlUnitOutput(0),
             SIG_MemToReg => MEM1_MEM2_Out_ControlUnitOutput(3),
             SIG_Branch => MEM1_MEM2_Out_ControlUnitOutput(4),

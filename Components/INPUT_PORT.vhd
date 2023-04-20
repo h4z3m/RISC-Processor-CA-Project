@@ -14,5 +14,5 @@ END ENTITY;
 
 ARCHITECTURE rtl OF INPUT_PORT IS
 BEGIN
-    port_value <= in_value WHEN enable = '0';
+    port_value <= in_value WHEN enable = '1';
 END ARCHITECTURE rtl;

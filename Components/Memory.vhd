@@ -26,7 +26,7 @@ BEGIN
     BEGIN
         IF rising_edge(clk) THEN
             IF write_enable = '1' THEN
-                ram(to_integer(unsigned(WriteData))) <= WriteData;
+                ram(to_integer(unsigned(ReadAddr))) <= WriteData;
             END IF;
         END IF;
     END PROCESS;

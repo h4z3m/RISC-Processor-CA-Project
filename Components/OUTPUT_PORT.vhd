@@ -14,5 +14,5 @@ END ENTITY;
 
 ARCHITECTURE rtl OF OUTPUT_PORT IS
 BEGIN
-    out_value <= port_value WHEN enable = '0';
+    out_value <= port_value WHEN enable = '1';
 END ARCHITECTURE rtl;

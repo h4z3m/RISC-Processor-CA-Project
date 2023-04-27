@@ -1,5 +1,6 @@
 import argparse
 
+
 class Assembler:
     register_indices = {
         "R0": "000",
@@ -55,22 +56,32 @@ class Assembler:
     }
 
     def assemble(self, inputFilename: str, outputFilename: str):
-        pass
+        """_summary_
 
+        Args:
+            inputFilename (str): _description_
+            outputFilename (str): _description_
+        """
+        pass
 
     def getOpcode(self, instruction: str):
+        """_summary_
+
+        Args:
+            instruction (str): _description_
+        """
         pass
 
 
-
-
-
-
-
-if __name__=="__main__":
-    
-    parser = argparse.ArgumentParser(description='An assembler for a RISC-like processor.')
-    parser.add_argument("-a", "--assemble", help="Assembles a given file and outputs assembled bitcode.", nargs='*')
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="An assembler for a RISC-like processor."
+    )
+    parser.add_argument(
+        "-a",
+        "--assemble",
+        help="Assembles a given file and outputs assembled bitcode.",
+        nargs="*",
+    )
     args = parser.parse_args()
     print(args.assemble)
-  

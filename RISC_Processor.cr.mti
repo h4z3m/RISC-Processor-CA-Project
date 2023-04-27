@@ -61,6 +61,28 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity MUX_4x1
 -- Compiling architecture when_else_mux of MUX_4x1
 
+} {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd} {1 {vcom -work work -2008 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity RISC_CPU
+-- Compiling architecture rtl of RISC_CPU
+-- Loading entity D_FF
+-- Loading package MATH_REAL
+-- Loading entity Memory
+-- Loading entity IF_ID_Buffer
+-- Loading entity Decode_Stage
+-- Loading entity ID_EX_Buffer
+-- Loading entity Execute_Stage
+-- Loading entity EX_MEM1_Buffer
+-- Loading entity Memory1_Stage
+-- Loading entity MEM1_MEM2_Buffer
+-- Loading entity Memory2_Stage
+-- Loading entity MEM2_WB_Buffer
+-- Loading entity OUTPUT_PORT
+
 } {} {}} {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD

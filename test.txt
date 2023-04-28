@@ -1,0 +1,26 @@
+not r1, r2
+inc r3, R4
+dec r3, R5
+mov r4, R6
+add r1, r2, r3
+sub r4, r5, r3
+and r2, r1, r3
+or r3, r4, r6 
+SETC
+CLRC
+in r1
+out r2
+Iadd r1, r3, 000000000000
+LDM r1, 01010010101
+ldd r1, r3
+std r3, r4
+push r1
+pop r4
+jz r1
+jmp r2
+jc r3
+call r1
+RET
+RTI
+INT
+reset

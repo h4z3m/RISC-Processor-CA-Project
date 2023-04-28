@@ -11,8 +11,7 @@ ENTITY MEM1_MEM2_Buffer IS
 
         ControlUnitOutput : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
         FlagRegister : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        WriteAddr : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        ReadAddr2 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        Writeback_RegAddr : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         ImmediateVal : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ALU_Result : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -23,8 +22,7 @@ ENTITY MEM1_MEM2_Buffer IS
 
         MEM1_ControlUnitOutput : OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
         MEM1_FlagRegister : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-        MEM1_WriteAddr : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-        MEM1_ReadAddr2 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+        MEM1_Writeback_RegAddr : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         MEM1_ImmediateVal : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         MEM1_ALU_Result : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         MEM1_PC : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -59,16 +57,10 @@ BEGIN
         ) PORT MAP (FlagRegister, clk, rst, enable, MEM1_FlagRegister
     );
 
-    MEM1_MEM2_FF_WriteAddr : D_FF GENERIC MAP(
+    MEM1_MEM2_FF_Writeback_RegAddr : D_FF GENERIC MAP(
         3
-        ) PORT MAP (WriteAddr, clk, rst, enable, MEM1_WriteAddr
+        ) PORT MAP (Writeback_RegAddr, clk, rst, enable, MEM1_Writeback_RegAddr
     );
-
-    MEM1_MEM2_FF_ReadAddr2 : D_FF GENERIC MAP(
-        3
-        ) PORT MAP (ReadAddr2, clk, rst, enable, MEM1_ReadAddr2
-    );
-
     MEM1_MEM2_FF_ImmediateVal : D_FF GENERIC MAP(
         16
         ) PORT MAP (ImmediateVal, clk, rst, enable, MEM1_ImmediateVal

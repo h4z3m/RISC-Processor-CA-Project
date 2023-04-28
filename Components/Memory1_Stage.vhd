@@ -5,6 +5,7 @@ LIBRARY work;
 
 ENTITY Memory1_Stage IS
     PORT (
+        -- Inputs
         jump : IN STD_LOGIC;
         alu_src : IN STD_LOGIC;
         StackPointer : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -12,9 +13,16 @@ ENTITY Memory1_Stage IS
         Decode_Execute_Out_PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         Execute_Mem1_Out_FlagRegister : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         ReadData2 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        --Write_back_address_mux_2x1
+        Write_back_address_mux_2x1_in0 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        Write_back_address_mux_2x1_in1 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        SIG_RegDst : IN STD_LOGIC;
 
+        -- Outputs
         DataMemory_WriteData : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-        DataMemory_ReadAddr : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+        DataMemory_ReadAddr : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        Write_back_address_mux_2x1_out : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
+
     );
 END ENTITY;
 
@@ -45,5 +53,11 @@ BEGIN
             sel => jump,
             out1 => DataMemory_WriteData
         );
-
+    Write_back_address_mux_2x1 : ENTITY work.MUX GENERIC MAP(3)
+        PORT MAP(
+            in0 => Write_back_address_mux_2x1_in1,
+            in1 => Write_back_address_mux_2x1_in0,
+            sel => SIG_RegDst,
+            out1 => Write_back_address_mux_2x1_out
+        );
 END ARCHITECTURE rtl;

@@ -1,7 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
-library work;
+LIBRARY work;
 ENTITY UpdateSpCircuit IS
     PORT (
         SP : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -15,26 +15,22 @@ ENTITY UpdateSpCircuit IS
     );
 
 END ENTITY UpdateSpCircuit;
+ARCHITECTURE Behavioral OF UpdateSpCircuit IS
+BEGIN
+    PROCESS (ALL)
+    BEGIN
+        IF (SIG_jump AND SIG_branch) THEN
+            SP_Modified <= "0000001111111110";---------- For call/int which push 32bits to the stack
+        ELSE
+            IF (NOT SIG_MemRead AND SIG_MemWrite AND NOT SIG_ALUsrc) THEN
+                SP_Modified <= STD_LOGIC_VECTOR(to_unsigned(to_integer((signed(SP)) - 2), 16));
+            ELSIF (SIG_MemRead AND NOT SIG_MemWrite AND NOT SIG_ALUsrc) THEN
+                --add 2 to SP
+                SP_Modified <= STD_LOGIC_VECTOR(to_unsigned(to_integer((signed(SP)) + 2), 16));
+            ELSE
+                SP_Modified <= SP;
 
-
-Architecture Behavioral of UpdateSpCircuit is
-    begin
-        process (all)
-        begin
-            if (SIG_jump and SIG_branch) then
-                SP_Modified <= "0000001111111110";---------- For call/int which push 32bits to the stack
-            else
-                if (not SIG_MemRead and SIG_MemWrite and not SIG_ALUsrc) then
-                    SP_Modified <= std_logic_vector(to_unsigned(to_integer((signed(SP)) - 2),16));
-                elsif (SIG_MemRead and not SIG_MemWrite and not SIG_ALUsrc) then
-                    --add 2 to SP
-                    SP_Modified <= std_logic_vector(to_unsigned(to_integer((signed(SP)) + 2),16));
-                else
-                    SP_Modified <= SP;   
-                    
-                end if;
-            end if;
-        end process;
-        
-        
-end architecture;
+            END IF;
+        END IF;
+    END PROCESS;
+END ARCHITECTURE;

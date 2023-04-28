@@ -1,7 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
-library work;
+LIBRARY work;
 ENTITY updatePCcircuit IS
     PORT (
         rdst : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -19,33 +19,29 @@ ENTITY updatePCcircuit IS
     );
 
 END ENTITY updatePCcircuit;
+ARCHITECTURE Behavioral OF updatePCcircuit IS
+BEGIN
+    PROCESS (ALL)
+    BEGIN
+        IF (SIG_Branch AND SIG_Jump) THEN
+            PC_out <= (OTHERS => '0');
+        ELSIF (SIG_Branch AND NOT SIG_Jump) THEN
+            IF ((Sig_aluop0 AND carry_flag) OR (NOT Sig_aluop0 AND Zero_flag)) THEN
+                PC_out <= rdst;
+            ELSE
+                pc_out <= STD_LOGIC_VECTOR(to_unsigned(to_integer((signed(pc)) + 1), 16));
+            END IF;
+        ELSIF (SIG_Jump AND NOT SIG_Branch) THEN
+            IF (SIG_MemRead) THEN
+                pc_out <= PC_Return_Stack;
+            ELSIF (flag_en) THEN
+                pc_out <= "0000000000000001";
+            ELSE
+                pc_out <= rdst;
+            END IF;
+        ELSE
+            pc_out <= STD_LOGIC_VECTOR(to_unsigned(to_integer((signed(pc)) + 1), 16));
 
-
-Architecture Behavioral of updatePCcircuit is
-    begin
-        process (all)
-        begin
-            if (SIG_Branch and SIG_Jump) then
-                PC_out <= (others => '0') ;
-            elsif (SIG_Branch and not SIG_Jump) then
-                if ((Sig_aluop0 and carry_flag) or (not Sig_aluop0 and Zero_flag)) then
-                    PC_out <= rdst;
-                else
-                    pc_out <= std_logic_vector(to_unsigned(to_integer((signed(pc)) + 1),16));                    
-                end if;
-            elsif (SIG_Jump and not SIG_Branch) then
-                if (SIG_MemRead) then
-                    pc_out <= PC_Return_Stack;
-                elsif (flag_en) then
-                    pc_out <= "0000000000000001";
-                else
-                    pc_out <= rdst;
-                end if;
-            else
-                pc_out <= std_logic_vector(to_unsigned(to_integer((signed(pc)) + 1),16));
-            
-            end if;
-        end process;
-        
-        
-end architecture;
+        END IF;
+    END PROCESS;
+END ARCHITECTURE;

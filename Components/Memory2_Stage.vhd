@@ -20,27 +20,18 @@ ENTITY Memory2_Stage IS
         Carry_flag : IN STD_LOGIC;
         Flag_en : IN STD_LOGIC;
         Port_en : IN STD_LOGIC;
-        SIG_RegDst : IN STD_LOGIC;
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
         ----INPUT PORT
         Input_value : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         Input_enable : IN STD_LOGIC;
 
-        --Write_Back_Address
         Immediate_value : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        --Decoder
         ALU_Result : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-
-        --Write_back_address_mux_2x1
-        Write_back_address_mux_2x1_in0 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        Write_back_address_mux_2x1_in1 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-
         PC_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         PC_Mux_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
         Write_data_RDST : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        Write_back_address_mux_2x1_out : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         Input_port_value : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 END ENTITY Memory2_Stage;
@@ -108,11 +99,5 @@ BEGIN
             sel => SIG_MemToReg,
             out1 => After_memory_mux_2x1_out(31 DOWNTO 16)
         );
-    Write_back_address_mux_2x1 : ENTITY work.MUX GENERIC MAP(3)
-        PORT MAP(
-            in0 => Write_back_address_mux_2x1_in1,
-            in1 => Write_back_address_mux_2x1_in0,
-            sel => SIG_RegDst,
-            out1 => Write_back_address_mux_2x1_out
-        );
+
 END ARCHITECTURE;

@@ -13,7 +13,7 @@ ENTITY MUX IS
 END MUX;
 
 ARCHITECTURE when_else_mux OF MUX IS
-    
+
 BEGIN
     out1 <= in0 WHEN sel = '0'
         ELSE

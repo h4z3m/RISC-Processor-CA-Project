@@ -58,19 +58,6 @@ class Assembler:
         "RESET": "110000",
     }
     func = {
-        # I-type
-        "IN": "",
-        "OUT": "",
-        "LDM": "",
-        "IADD": "",
-        "LDD": "",
-        "STD": "",
-        "PUSH": "",
-        "POP": "",
-        "NOP": "",
-        "SETC": "",
-        "CLRC": "",
-        # R-type
         "NOT": "011",
         "INC": "111",
         "DEC": "110",
@@ -84,11 +71,6 @@ class Assembler:
         "JC": "001",
         "JMP": "000",
         "CALL": "000",
-        "RET": "101100",
-        "RTI": "101101",
-        #Ohters
-        "INT": "101011",
-        "RESET": "110000",
     }
         
     def assemble(self, inputFilename: str, outputFilename: str):
@@ -132,33 +114,32 @@ class Assembler:
         print(inst_parts)
         if inst_parts[0] in self.opcodes:
             opcode = self.opcodes[inst_parts[0]]
-            if opcode.startswith("0"):  # I-type instruction
-                if inst_parts[0] == "NOT" or inst_parts[0] == "INC" or inst_parts[0] == "DEC" or inst_parts[0] == "MOV":
-                    opcode += self.register_indices[inst_parts[2]] + "000" + self.register_indices[inst_parts[1]] + self.func[inst_parts[0]]
-                elif inst_parts[0] == "ADD" or inst_parts[0] == "SUB" or inst_parts[0] == "AND" or inst_parts[0] == "OR":
-                    opcode += self.register_indices[inst_parts[2]] + self.register_indices[inst_parts[3]] + self.register_indices[inst_parts[1]] + self.func[inst_parts[0]]               
-                elif inst_parts[0] == "IN":
-                    opcode += "000" + self.register_indices[inst_parts[1]] + "000000"
-                elif inst_parts[0] == "OUT":
-                    opcode += self.register_indices[inst_parts[1]] + "000000000"
-                elif inst_parts[0] == "IADD":
-                    opcode += self.register_indices[inst_parts[2]] + self.register_indices[inst_parts[1]] + "0000" + inst_parts[3]
-                elif inst_parts[0] == "LDM":
-                    opcode += "000" + self.register_indices[inst_parts[1]] + "0000" + inst_parts[2]
-                elif inst_parts[0] == "LDD":
-                    opcode += self.register_indices[inst_parts[2]] + self.register_indices[inst_parts[1]] + "000000"
-                elif inst_parts[0] == "STD":
-                    opcode += self.register_indices[inst_parts[1]] + self.register_indices[inst_parts[2]] + "000000"
-                elif inst_parts[0] == "PUSH" or inst_parts[0] == "POP":
-                    opcode += "000" + self.register_indices[inst_parts[1]] + "000000"
-                elif inst_parts[0] == "JZ" or inst_parts[0] == "JC" or inst_parts[0] == "JMP" or inst_parts[0] == "CALL":
-                    opcode += self.register_indices[inst_parts[1]] + "000000" + self.func[inst_parts[0]]
-                elif inst_parts[0] == "RET" or inst_parts[0] == "RTI" or inst_parts[0] == "INT" or inst_parts[0] == "RESET":
-                    opcode += "000000000000"
-                elif inst_parts[0] == "NOP" or inst_parts[0] == "SETC" or inst_parts[0] == "CLRC":
-                    opcode = opcode
-                else: # Invalid instruction
-                    opcode = None
+            if inst_parts[0] == "NOT" or inst_parts[0] == "INC" or inst_parts[0] == "DEC" or inst_parts[0] == "MOV":
+                opcode += self.register_indices[inst_parts[2]] + "000" + self.register_indices[inst_parts[1]] + self.func[inst_parts[0]]
+            elif inst_parts[0] == "ADD" or inst_parts[0] == "SUB" or inst_parts[0] == "AND" or inst_parts[0] == "OR":
+                opcode += self.register_indices[inst_parts[2]] + self.register_indices[inst_parts[3]] + self.register_indices[inst_parts[1]] + self.func[inst_parts[0]]               
+            elif inst_parts[0] == "IN":
+                opcode += "000" + self.register_indices[inst_parts[1]] + "000000"
+            elif inst_parts[0] == "OUT":
+                opcode += self.register_indices[inst_parts[1]] + "000000000"
+            elif inst_parts[0] == "IADD":
+                opcode += self.register_indices[inst_parts[2]] + self.register_indices[inst_parts[1]] + "0000" + inst_parts[3]
+            elif inst_parts[0] == "LDM":
+                opcode += "000" + self.register_indices[inst_parts[1]] + "0000" + inst_parts[2]
+            elif inst_parts[0] == "LDD":
+                opcode += self.register_indices[inst_parts[2]] + self.register_indices[inst_parts[1]] + "000000"
+            elif inst_parts[0] == "STD":
+                opcode += self.register_indices[inst_parts[1]] + self.register_indices[inst_parts[2]] + "000000"
+            elif inst_parts[0] == "PUSH" or inst_parts[0] == "POP":
+                opcode += "000" + self.register_indices[inst_parts[1]] + "000000"
+            elif inst_parts[0] == "JZ" or inst_parts[0] == "JC" or inst_parts[0] == "JMP" or inst_parts[0] == "CALL":
+                opcode += self.register_indices[inst_parts[1]] + "000000" + self.func[inst_parts[0]]
+            elif inst_parts[0] == "RET" or inst_parts[0] == "RTI" or inst_parts[0] == "INT" or inst_parts[0] == "RESET":
+                opcode += "000000000000"
+            elif inst_parts[0] == "NOP" or inst_parts[0] == "SETC" or inst_parts[0] == "CLRC":
+                opcode = opcode
+            else: # Invalid instruction
+                opcode = None
             if opcode is not None:
                 while len(opcode) < 32:
                         opcode += "0"

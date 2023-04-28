@@ -1,18 +1,18 @@
 import os
+import argparse
 from assembler import Assembler
 
-def test_assembler():
 
-    test_file_path = os.path.abspath("test.txt")
+#parse arguments for input filename, output filename, and output format in binary and hexadecimal
+parser = argparse.ArgumentParser(description="Assembler for the LC-3b ISA")
+parser.add_argument("input", help="Input file name")
+parser.add_argument("output", help="Output file name")
+parser.add_argument("-b", "--binary", action="store_true", help="Output in binary format")
+parser.add_argument("-x", "--hexadecimal", action="store_true", help="Output in hexadecimal format")
+args = parser.parse_args()
+#extract input and output filenames
+input_filename = args.input
+output_filename = args.output
 
-    # Read the assembly code from the test file
-    with open(test_file_path, "r") as f:
-        assembly_code = f.read()
-
-    # Assemble the code using the Assembler class
-    assembler = Assembler()
-    assembler.assemble("test.txt", "test_output.txt")
-
-
-
-test_assembler()
+assembler = Assembler()
+assembler.assemble(input_filename, output_filename, args.binary, args.hexadecimal)

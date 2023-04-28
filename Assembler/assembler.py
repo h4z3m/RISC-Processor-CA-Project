@@ -73,7 +73,7 @@ class Assembler:
         "CALL": "000",
     }
         
-    def assemble(self, inputFilename: str, outputFilename: str):
+    def assemble(self, inputFilename: str, outputFilename: str , binary: bool, hexadecimal: bool):
         """Assemble instructions from input file and write binary code to output file
 
         Args:
@@ -84,7 +84,7 @@ class Assembler:
             instructions = f.readlines()
         binary_instructions = []
         for inst in instructions:
-            binary_inst = self.getOpcode(inst)
+            binary_inst = self.getOpcode(inst,binary, hexadecimal)
             if binary_inst is None:
                 raise ValueError(f"Invalid instruction: {inst}")
             binary_instructions.append(binary_inst)
@@ -92,7 +92,7 @@ class Assembler:
         with open(outputFilename, 'w') as f:
             f.write("\n".join(binary_instructions))
 
-    def getOpcode(self, instruction: str):
+    def getOpcode(self, instruction: str, binary: bool, hexadecimal: bool):
         """Determine the opcode for a given instruction based on its syntax.
 
         Args:
@@ -144,5 +144,11 @@ class Assembler:
                 while len(opcode) < 32:
                         opcode += "0"
             print(opcode)
-
+        if opcode is not None:
+            if binary == True:
+                opcode = opcode
+            elif hexadecimal == True:
+                opcode = hex(int(opcode, 2))[2:].zfill(8)  
+         
+        
         return opcode

@@ -10,8 +10,8 @@ SETC
 CLRC
 in r1
 out r2
-Iadd r1, r3, 000000000000
-LDM r1, 01010010101
+Iadd r1, r3, 1111111111111110
+LDM r1, 1111111111111110
 ldd r1, r3
 std r3, r4
 push r1

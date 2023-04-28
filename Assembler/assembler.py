@@ -142,9 +142,9 @@ class Assembler:
                 elif inst_parts[0] == "OUT":
                     opcode += self.register_indices[inst_parts[1]] + "000000000"
                 elif inst_parts[0] == "IADD":
-                    opcode += self.register_indices[inst_parts[2]] + self.register_indices[inst_parts[1]] + "0000000000000000000"
+                    opcode += self.register_indices[inst_parts[2]] + self.register_indices[inst_parts[1]] + "0000" + inst_parts[3]
                 elif inst_parts[0] == "LDM":
-                    opcode += "000" + self.register_indices[inst_parts[1]] + "0000000000000000000"
+                    opcode += "000" + self.register_indices[inst_parts[1]] + "0000" + inst_parts[2]
                 elif inst_parts[0] == "LDD":
                     opcode += self.register_indices[inst_parts[2]] + self.register_indices[inst_parts[1]] + "000000"
                 elif inst_parts[0] == "STD":

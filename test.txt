@@ -10,7 +10,7 @@ SETC
 CLRC
 in r1
 out r2
-Iadd r1, r3, 000000000000
+Iadd r1, r3, 100000000001
 LDM r1, 01010010101
 ldd r1, r3
 std r3, r4
@@ -24,3 +24,4 @@ RET
 RTI
 INT
 reset
+NOP

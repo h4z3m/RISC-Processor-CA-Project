@@ -150,7 +150,7 @@ class Assembler:
                 elif inst_parts[0] == "STD":
                     opcode += self.register_indices[inst_parts[1]] + self.register_indices[inst_parts[2]] + "000000"
                 elif inst_parts[0] == "PUSH" or inst_parts[0] == "POP":
-                    opcode += "000000" + self.register_indices[inst_parts[1]] + "000000"
+                    opcode += "000" + self.register_indices[inst_parts[1]] + "000000"
                 elif inst_parts[0] == "JZ" or inst_parts[0] == "JC" or inst_parts[0] == "JMP" or inst_parts[0] == "CALL":
                     opcode += self.register_indices[inst_parts[1]] + "000000" + self.func[inst_parts[0]]
                 elif inst_parts[0] == "RET" or inst_parts[0] == "RTI" or inst_parts[0] == "INT" or inst_parts[0] == "RESET":

@@ -13,6 +13,5 @@ args = parser.parse_args()
 #extract input and output filenames
 input_filename = args.input
 output_filename = args.output
-
 assembler = Assembler()
 assembler.assemble(input_filename, output_filename, args.binary, args.hexadecimal)

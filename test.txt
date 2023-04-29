@@ -1,27 +1,22 @@
-not r1, r2
-inc r3, R4
-dec r3, R5
-mov r4, R6
-add r1, r2, r3
-sub r4, r5, r3
-and r2, r1, r3
-or r3, r4, r6 
-SETC
-CLRC
-in r1
-out r2
-Iadd r1, r3, 000000000000
-LDM r1, 01010010101
-ldd r1, r3
-std r3, r4
-push r1
-pop r4
-jz r1
-jmp r2
-jc r3
-call r1
-RET
-RTI
-INT
-reset
+IN R5
+.ORG 40
+INC R5, R5
+INC R5, R5
+IN R1
+IN R2
+IN R3
+IN R4
+IN R5
+NOP
+STD R1, R2
+STD R3, R4
+STD R2, R5
+INC R2, R1
+LDD R0, R1
+LDD R7, R3
+AND R1, R2, R6
+INC R1, R1
+NOP
+AND R5, R3, R4
+NOP
 NOP

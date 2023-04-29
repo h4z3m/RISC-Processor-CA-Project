@@ -71,11 +71,15 @@ class Assembler:
         current_line = 0
         max_line = 0
         for inst in instructions:
+            if inst.startswith('#') or inst.startswith('//') or inst == "\n" or inst == " " or inst == "" or inst.startswith(" "):
+                continue
             binary_inst, flag = self.getOpcode(inst)
             if flag == False:
                 # print(binary_inst)
                 if binary_inst is None:
                     raise ValueError(f"Invalid instruction: {inst}")
+                print(binary_inst)
+                print(len(binary_inst))
                 if len(binary_inst) == 32:
                     bin_instructions[current_line] = binary_inst[16:32]
                     bin_instructions[current_line + 1] = binary_inst[0:16]
@@ -117,6 +121,7 @@ class Assembler:
         Returns:
             str: Opcode in binary or None if instruction is invalid
         """
+        
         inst_parts = instruction.strip().split()
         #capatilize all parts
         inst_parts = [part.upper() for part in inst_parts]
@@ -128,6 +133,7 @@ class Assembler:
 
         opcode = None
         # print(inst_parts[0])
+        print(inst_parts)
         if inst_parts[0] in self.opcodes:
             opcode = self.opcodes[inst_parts[0]]
             if inst_parts[0] == "NOT" or inst_parts[0] == "INC" or inst_parts[0] == "DEC" or inst_parts[0] == "MOV":
@@ -140,6 +146,7 @@ class Assembler:
                 opcode += self.register_indices[inst_parts[1]] + "0000000"
             elif inst_parts[0] == "IADD":
                 opcode += self.register_indices[inst_parts[2]] + self.register_indices[inst_parts[1]] + "0000" + bin(int(inst_parts[3], 16))[2:].zfill(len(inst_parts[3])*4)
+                print("IADD", opcode)
             elif inst_parts[0] == "LDM":
                 opcode += "000" + self.register_indices[inst_parts[1]] + "0000" + bin(int(inst_parts[2], 16))[2:].zfill(len(inst_parts[2])*4)
             elif inst_parts[0] == "LDD":
@@ -157,8 +164,10 @@ class Assembler:
             return opcode, 0
             
         elif inst_parts[0] == ".ORG":
-                current_line = int(inst_parts[1])
-                return current_line, 1 
+                my_hex = inst_parts[1].encode().hex()
+                my_int = int(inst_parts[1], 16)
+                print(my_int)
+                return my_int, 1 
         else:
                 opcode = bin(int(inst_parts[0], 16))[2:].zfill(16)
                 return opcode, 0

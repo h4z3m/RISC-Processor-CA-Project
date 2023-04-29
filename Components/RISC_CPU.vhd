@@ -6,6 +6,7 @@ ENTITY RISC_CPU IS
     PORT (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
+        interrupt : IN STD_LOGIC;
         in_port : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         out_port : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         INPUT_PORT_VALUE : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
@@ -66,6 +67,7 @@ ARCHITECTURE rtl OF RISC_CPU IS
     ---- Register file output signals
     SIGNAL RegisterFile_ReadData1 : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL RegisterFile_ReadData2 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+
     ---- Fetch decode buffer signals
     SIGNAL Fetch_Decode_Enable : STD_LOGIC;
     SIGNAL Fetch_Decode_PC : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -134,6 +136,8 @@ ARCHITECTURE rtl OF RISC_CPU IS
     SIGNAL MEM2_WB_Out_WriteBackData : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL MEM2_WB_OutControlUnitOutput : STD_LOGIC_VECTOR(12 DOWNTO 0);
     SIGNAL Memory_ReturnInterrupt_Out : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL mux_before_pc_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    SIGNAL mux_before_memory_out: STD_LOGIC_VECTOR(15 DOWNTO 0);
 BEGIN
     --------------------Enable all buffers -------------------
     Fetch_Decode_Enable <= '1';
@@ -144,11 +148,35 @@ BEGIN
     --------------------Enable all buffers -------------------
 
     ProgramCounter_Enable <= '1';
+
+    mux_inst : ENTITY work.MUX
+        GENERIC MAP(
+            n => 16
+        )
+        PORT MAP(
+            in0 => ProgramCounter_Updated,
+            in1 =>  InstructionMemory_ReadData(15 downto 0),
+            sel => reset OR interrupt,
+            out1 => mux_before_pc_out
+        );
+
+    mux_4x1_inst : ENTITY work.MUX_4x1
+        GENERIC MAP(
+            n => 16
+        )
+        PORT MAP(
+            in0 => ProgramCounter_Current,
+            in1 => "0000000000000000",
+            in2 => "0000000000000001",
+            in3 => "0000000000000000",
+            sel => interrupt & reset,
+            out1 => mux_before_memory_out
+        );
     ProgramCounter : ENTITY work.D_FF GENERIC MAP (
         16
-        ) PORT MAP (ProgramCounter_Updated,
+        ) PORT MAP (mux_before_pc_out,
         clk,
-        reset,
+        '0',
         ProgramCounter_Enable,
         ProgramCounter_Current
         );
@@ -165,7 +193,7 @@ BEGIN
     Instruction_Memory : ENTITY work.Memory GENERIC MAP (
         32, 1024
         ) PORT MAP (
-        ReadAddr => ProgramCounter_Current(9 DOWNTO 0),
+        ReadAddr => mux_before_memory_out(9 DOWNTO 0),
         ReadData => InstructionMemory_ReadData,
         write_enable => '0',
         clk => clk,

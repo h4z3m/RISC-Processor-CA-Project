@@ -1,6 +1,6 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
-library work;
+LIBRARY work;
 ENTITY D_FF IS
     GENERIC (
         N : INTEGER := 16

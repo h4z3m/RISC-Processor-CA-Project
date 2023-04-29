@@ -72,7 +72,7 @@ BEGIN
             SIG_RegWrite <= '1';
             SIG_PortEN <= '0';
             SIG_FlagEN <= Instruction(29);
-            SIG_ALUop <= Instruction(16 DOWNTO 14);
+            SIG_ALUop <= Instruction(28 DOWNTO 26);
 
         ELSIF Instruction(31 DOWNTO 30) = "10" THEN
             --Instruction is J-Type

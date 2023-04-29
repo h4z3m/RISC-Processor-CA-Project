@@ -29,7 +29,7 @@ BEGIN
             IF ((Sig_aluop0 AND carry_flag) OR (NOT Sig_aluop0 AND Zero_flag)) THEN
                 PC_out <= rdst;
             ELSE
-                pc_out <= STD_LOGIC_VECTOR(to_unsigned(to_integer((signed(pc)) + 1), 16));
+                pc_out <= STD_LOGIC_VECTOR(unsigned(pc) + 1);
             END IF;
         ELSIF (SIG_Jump AND NOT SIG_Branch) THEN
             IF (SIG_MemRead) THEN
@@ -40,7 +40,7 @@ BEGIN
                 pc_out <= rdst;
             END IF;
         ELSE
-            pc_out <= STD_LOGIC_VECTOR(to_unsigned(to_integer((signed(pc)) + 1), 16));
+            pc_out <= STD_LOGIC_VECTOR(unsigned(pc) + 1);
 
         END IF;
     END PROCESS;

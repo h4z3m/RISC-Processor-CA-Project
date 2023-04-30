@@ -4,7 +4,7 @@ from assembler import Assembler
 
 
 #parse arguments for input filename, output filename, and output format in binary and hexadecimal
-parser = argparse.ArgumentParser(description="Assembler for the LC-3b ISA")
+parser = argparse.ArgumentParser(description="Assembler for the RISC like ISA")
 parser.add_argument("input", help="Input file name")
 parser.add_argument("output", help="Output file name")
 parser.add_argument("-b", "--binary", action="store_true", help="Output in binary format")

@@ -18,7 +18,7 @@ ENTITY UpdateFlagRegister IS
         aluZero : IN STD_LOGIC;
 
         -- Data mem --
-        dataMem : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        dataMem_return : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
 
         -- carry old value --
         carryOld : IN STD_LOGIC;
@@ -36,9 +36,9 @@ BEGIN
     PROCESS (ALL)
     BEGIN
         IF (memRead AND jump) THEN
-            outFlags(2) <= dataMem(2);
-            outFlags(1) <= dataMem(1);
-            outFlags(0) <= dataMem(0);
+            outFlags(2) <= dataMem_return(2);
+            outFlags(1) <= dataMem_return(1);
+            outFlags(0) <= dataMem_return(0);
         ELSE
             outFlags(1) <= aluNeg;
             outFlags(0) <= aluZero;

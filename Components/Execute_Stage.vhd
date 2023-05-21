@@ -11,7 +11,7 @@ ENTITY Execute_Stage IS
         ID_EX_RegisterFile_ReadData1 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ID_EX_RegisterFile_ReadData2 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ID_EX_RegisterFile_ImmediateVal : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        flagRegisterUpdateCircuit_dataMem : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+        flagRegisterUpdateCircuit_dataMem : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         --- Outputs ---
         OUTPUT_PORT_VALUE : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         ALU_Result : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -77,7 +77,7 @@ BEGIN
             aluCarry => ALU_Carry,
             aluNeg => ALU_Negative,
             aluZero => ALU_Zero,
-            dataMem => flagRegisterUpdateCircuit_dataMem(15 DOWNTO 13),
+            dataMem_return => flagRegisterUpdateCircuit_dataMem,
             carryOld => FlagRegisterTemp(2),
             outFlags => FlagRegisterIn
         );

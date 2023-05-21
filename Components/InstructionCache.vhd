@@ -31,7 +31,7 @@ BEGIN
             clk => clk,
             reset => reset,
             write_en => '0',
-            mode => "01",
+            mode => '1',
             word_addr => addr,
             data_in => (OTHERS => '0'),
             data_out => data

@@ -5,10 +5,11 @@ LIBRARY work;
 
 ENTITY EX_MEM1_Buffer IS
     PORT (
+        -- Inputs    
         clk : IN STD_LOGIC;
         enable : IN STD_LOGIC;
         rst : IN STD_LOGIC;
-
+        interrupt : IN STD_LOGIC;
         ControlUnitOutput : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
         FlagRegister : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         RegisterFile_ReadData2 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -19,7 +20,7 @@ ENTITY EX_MEM1_Buffer IS
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         SP : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         PORTOUT : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-
+        -- Ouputs
         EX_ControlUnitOutput : OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
         EX_FlagRegister : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         EX_RegisterFile_ReadData2 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -29,7 +30,8 @@ ENTITY EX_MEM1_Buffer IS
         EX_ALU_Result : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         EX_PC : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         EX_SP : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        EX_PORTOUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+        EX_PORTOUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        EX_Interrupt : OUT STD_LOGIC
     );
 END ENTITY EX_MEM1_Buffer;
 
@@ -94,4 +96,7 @@ BEGIN
         16
         ) PORT MAP (PORTOUT, clk, rst, enable, EX_PORTOUT
     );
+
+    EX_MEM1_FF_INTERRUPT : ENTITY work.D_FF_1 PORT MAP (interrupt, clk, rst, enable, EX_Interrupt
+        );
 END ARCHITECTURE rtl;

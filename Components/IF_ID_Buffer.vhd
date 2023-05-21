@@ -6,10 +6,12 @@ LIBRARY work;
 ENTITY IF_ID_Buffer IS
     PORT (
         clk : IN STD_LOGIC;
+        interrupt : IN STD_LOGIC;
         enable : IN STD_LOGIC;
         rst : IN STD_LOGIC;
         Instruction : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        IF_Interrupt : OUT STD_LOGIC;
         IF_PC : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         IF_Instruction : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
         IF_Instruction_Opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
@@ -47,6 +49,10 @@ BEGIN
         16
         ) PORT MAP (PC, clk, rst, enable, IF_PC
     );
+    IF_ID_FF_INTERRUPT : ENTITY work.D_FF_1 PORT MAP(
+        interrupt, clk, rst, enable, IF_Interrupt
+        );
+
     IF_Instruction <= SIG_Instruction;
     IF_Instruction_Opcode <= SIG_Instruction(31 DOWNTO 26);
     IF_Instruction_ReadAddr1 <= SIG_Instruction(25 DOWNTO 23);

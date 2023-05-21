@@ -7,32 +7,29 @@ ENTITY Memory2_Stage IS
         clk : IN STD_LOGIC;
         ---Memory
         DataMemory_ReadAddr : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        DataMemory_Mode : IN STD_LOGIC;
         WriteData : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         Write_enable : IN STD_LOGIC;
 
         ---- UPDATE PC
         SIG_MemRead : IN STD_LOGIC;
         SIG_MemToReg : IN STD_LOGIC;
-        SIG_Branch : IN STD_LOGIC;
         SIG_Jump : IN STD_LOGIC;
-        SIG_ALUop : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        Zero_flag : IN STD_LOGIC;
-        Carry_flag : IN STD_LOGIC;
         Flag_en : IN STD_LOGIC;
         Port_en : IN STD_LOGIC;
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-
         ----INPUT PORT
         Input_value : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         Input_enable : IN STD_LOGIC;
-
         Immediate_value : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-
         ALU_Result : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        -- Outputs
         PC_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        PC_Mux_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        -- PC_Mux_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
         Write_data_RDST : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        Input_port_value : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+        Input_port_value : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        DataMemory_Return_FlagRegister_Out : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+        DataMemory_Return_PC_Out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 END ENTITY Memory2_Stage;
 
@@ -43,32 +40,25 @@ ARCHITECTURE rtl OF Memory2_Stage IS
     SIGNAL After_memory_mux_2x1_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL input_port_reading : STD_LOGIC_VECTOR(15 DOWNTO 0);
 BEGIN
-    PC_Mux_out <= Decoder_out_0;
+    -- PC_Mux_out <= Decoder_out_0;
 
-    UpdateProgramCounter : ENTITY WORK.UpdatePCcircuit PORT MAP (
-        PC => PC,
-        Flag_en => Flag_en,
-        SIG_MemRead => SIG_MemRead,
-        SIG_Branch => SIG_Branch,
-        SIG_Jump => SIG_Jump,
-        SIG_AluOP0 => Sig_aluop(0),
-        Zero_flag => Zero_flag,
-        Carry_flag => Carry_flag,
-        PC_Return_Stack => Decoder_out_0(31 DOWNTO 16),
-        PC_out => PC_out,
-        rdst => DataMemory_ReadAddr
-        );
-    Data_Memory : ENTITY work.Memory GENERIC MAP (
-        32, 1024
-        ) PORT MAP (
-        ReadAddr => DataMemory_ReadAddr(9 DOWNTO 0),
-        ReadData => RDST,
-        write_enable => Write_enable,
-        clk => clk,
-        WriteData => WriteData
+    addressable_memory_inst : ENTITY work.addressable_memory
+        GENERIC MAP(
+            WORD_SIZE => 16,
+            MEM_SIZE => 1024
+        )
+        PORT MAP(
+            clk => clk,
+            reset => '0',
+            write_en => Write_enable,
+            mode => DataMemory_Mode,
+            word_addr => DataMemory_ReadAddr(9 DOWNTO 0),
+            data_in => WriteData,
+            data_out => RDST
         );
 
     input_port_reading <= Input_port_value;
+
     MUX_4x1 : ENTITY work.MUX_4x1 GENERIC MAP(16)
         PORT MAP(
             in0 => Immediate_value,
@@ -99,5 +89,6 @@ BEGIN
             sel => SIG_MemToReg,
             out1 => After_memory_mux_2x1_out(31 DOWNTO 16)
         );
-
+    DataMemory_Return_PC_Out <= After_memory_mux_2x1_out(15 DOWNTO 0);
+    DataMemory_Return_FlagRegister_Out <= After_memory_mux_2x1_out(18 DOWNTO 16);
 END ARCHITECTURE;

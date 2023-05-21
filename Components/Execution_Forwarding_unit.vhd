@@ -26,6 +26,25 @@ ARCHITECTURE Behavioral OF updatePCcircuit IS
 BEGIN
     PROCESS (ALL)
     BEGIN
-        if (id_ex_regwrite = '1' and ((id_ex_rt = IF_ID_RS and regdst = '0') or (IF_ID_RS = id_ex_rd and )))
+        if (id_ex_regwrite = '1' and ((id_ex_rt = IF_ID_RS and regdst = '0') or (IF_ID_RS = id_ex_rd and regdst = '1'))) then
+            Forward_from_ex <= '1';
+        else
+            Forward_from_ex <= '0';
+        end if;
+        if (m1_m2_regwrite = '1' and ((m2_wb_rd = IF_ID_RS and regdst = '1') or (IF_ID_RS = m2_wb_rt and regdst = '0'))) then
+            Forward_from_mem2 <= '1';
+        else
+            Forward_from_mem2 <= '0';
+        end if;
+
+        if (Forward_from_ex = '0' and Forward_from_mem2 = '0') then
+            rdst_out <= read_data1;
+        else
+            if (Forward_from_ex = '1') then
+                rdst_out <= alu_result;
+            else
+                rdst_out <= wb_data;
+            end if;
+        end if;
     END PROCESS;
 END ARCHITECTURE;

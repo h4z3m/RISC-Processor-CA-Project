@@ -3,18 +3,19 @@ USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
 ENTITY Decode_Stage IS
     PORT (
+        -- Inputs
         clk, reset : IN STD_LOGIC;
         IF_ID_Instruction : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         IF_ID_ReadAddr1 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         IF_ID_ReadAddr2 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         MEM2_WB_RegisterFile_WriteData : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         MEM2_WB_RegisterFile_WriteAddr : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        SP_CurrentValue : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+
         RegFile_RegWrite_Enable : IN STD_LOGIC;
+        -- Outputs
         IF_ID_ControlSignals : OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
         RegFile_ReadData1 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        RegFile_ReadData2 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        SP_UpdatedValue : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+        RegFile_ReadData2 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 END ENTITY Decode_Stage;
 
@@ -49,15 +50,4 @@ BEGIN
         READ_ADDR_2 => IF_ID_ReadAddr2,
         READ_PORT_2 => RegFile_ReadData2);
     IF_ID_ControlSignals <= TEMP_IF_ID_ControlSignals;
-    updatespcircuit_inst : ENTITY work.UpdateSpCircuit
-        PORT MAP(
-            SP => SP_CurrentValue,
-            SIG_MemRead => TEMP_IF_ID_ControlSignals(0),
-            SIG_MemWrite => TEMP_IF_ID_ControlSignals(1),
-            SIG_ALUsrc => TEMP_IF_ID_ControlSignals(2),
-            SIG_Branch => TEMP_IF_ID_ControlSignals(4),
-            SIG_Jump => TEMP_IF_ID_ControlSignals(5),
-            SP_Modified => SP_UpdatedValue
-        );
-
 END ARCHITECTURE rtl;

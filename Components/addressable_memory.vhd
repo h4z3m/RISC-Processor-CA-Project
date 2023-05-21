@@ -49,7 +49,7 @@ ENTITY addressable_memory IS
         -- Assume M[00] = 1234, M[01] = abcd
         -- data_out (31 downto 16) = 0000
         -- data_out (15 downto 0) = 1234
-        mode : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+        mode : IN STD_LOGIC;
         word_addr : IN STD_LOGIC_VECTOR(INTEGER(ceil(log2(real(MEM_SIZE)))) - 1 DOWNTO 0);
         data_in : IN STD_LOGIC_VECTOR(WORD_SIZE * 2 - 1 DOWNTO 0);
         data_out : OUT STD_LOGIC_VECTOR(WORD_SIZE * 2 - 1 DOWNTO 0)
@@ -66,14 +66,14 @@ BEGIN
             IF reset = '1' THEN
                 memory <= (OTHERS => (OTHERS => '0'));
             ELSIF write_en = '1' THEN
-                IF mode = "00" THEN -- Write 1 word (16 bits)
+                IF mode = '0' THEN -- Write 1 word (16 bits)
                     memory(to_integer(unsigned(word_addr))) <= data_in(WORD_SIZE - 1 DOWNTO 0);
                 ELSE -- Write 2 words (16 bits per cell, total 32 bits)
                     memory(to_integer(unsigned(word_addr)) + 1) <= data_in(WORD_SIZE * 2 - 1 DOWNTO WORD_SIZE);
                     memory(to_integer(unsigned(word_addr))) <= data_in(WORD_SIZE - 1 DOWNTO 0);
                 END IF;
             END IF;
-            IF mode = "00" THEN -- Read 1 word into most significant half-word, pad the rest with zeros
+            IF mode = '0' THEN -- Read 1 word into most significant half-word, pad the rest with zeros
                 data_out(WORD_SIZE * 2 - 1 DOWNTO WORD_SIZE) <= memory(to_integer(unsigned(word_addr)));
                 data_out(WORD_SIZE - 1 DOWNTO 0) <= (OTHERS => '0');
             ELSE -- Read 2 words 

@@ -41,6 +41,8 @@ BEGIN
                 SP_Modified <= STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(SP)) + 1), 16));
             ELSIF (SIG_MemRead = '1' AND (SIG_FlagEn OR Interrupt) = '1') THEN
                 SP_Modified <= STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(SP)) + 2), 16));
+            ELSE
+                SP_Modified <= SP;
             END IF;
         END IF;
         IF ((NOT sig_alusrc AND sig_memwrite) OR (NOT sig_alusrc AND sig_memread) OR Interrupt OR reset) THEN

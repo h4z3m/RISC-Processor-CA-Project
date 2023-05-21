@@ -1,9 +1,9 @@
 # Compile of ALU.vhd was successful.
 # Compile of ControlUnit.vhd was successful.
-# Compile of EX_MEM1_Buffer.vhd failed with 2 errors.
-# Compile of ID_EX_Buffer.vhd failed with 2 errors.
-# Compile of IF_ID_Buffer.vhd failed with 2 errors.
-# Compile of MEM1_MEM2_Buffer.vhd failed with 4 errors.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
 # Compile of MEM2_WB_Buffer.vhd was successful.
 # Compile of Memory.vhd was successful.
 # Compile of RegisterFile.vhd was successful.
@@ -13,7 +13,7 @@
 # Compile of UpdateSpCircuit.vhd was successful.
 # Compile of MUX.vhd was successful.
 # Compile of updatePCcircuit.vhd was successful.
-# Compile of RISC_CPU.vhd failed with 15 errors.
+# Compile of RISC_CPU.vhd was successful.
 # Compile of D_FF.vhd was successful.
 # Compile of Memory2_Stage.vhd was successful.
 # Compile of Memory1_Stage.vhd was successful.
@@ -23,23 +23,16 @@
 # Compile of MUX_4x1.vhd was successful.
 # Compile of addressable_memory.vhd was successful.
 # Compile of LoadUseCase_HDU.vhd was successful.
-# 25 compiles, 6 failed with 25 errors.
-# Compile of MEM1_MEM2_Buffer.vhd failed with 4 errors.
-# Compile of MEM1_MEM2_Buffer.vhd failed with 4 errors.
-# Compile of MEM1_MEM2_Buffer.vhd failed with 4 errors.
-# Compile of MEM1_MEM2_Buffer.vhd failed with 4 errors.
-# Compile of MEM1_MEM2_Buffer.vhd failed with 4 errors.
-# Compile of MEM1_MEM2_Buffer.vhd failed with 6 errors.
-# Compile of D_FF_1.vhd was successful.
-# Compile of EX_MEM1_Buffer.vhd failed with 1 errors.
-# Compile of MEM1_MEM2_Buffer.vhd was successful.
-# Compile of IF_ID_Buffer.vhd failed with 1 errors.
-# Compile of IF_ID_Buffer.vhd was successful.
-# Compile of ID_EX_Buffer.vhd was successful.
-# Compile of EX_MEM1_Buffer.vhd was successful.
-# Compile of RISC_CPU.vhd failed with 3 errors.
-# Compile of D_FF_1.vhd was successful.
 # Compile of Structural_HDU.vhd was successful.
+# Compile of D_FF_1.vhd was successful.
+# Compile of Execution_Forwarding_unit.vhd was successful.
+# Compile of OPForwardingUnit.vhd was successful.
+# 29 compiles, 0 failed with no errors.
+# Compile of OPForwardingUnit.vhd was successful.
+# Compile of Execute_Stage.vhd failed with 1 errors.
+# Compile of ALU.vhd was successful.
+# Compile of Execute_Stage.vhd failed with 1 errors.
+# Compile of Execute_Stage.vhd was successful.
 # Compile of RISC_CPU.vhd was successful.
 # Compile of ALU.vhd was successful.
 # Compile of ControlUnit.vhd was successful.
@@ -56,22 +49,25 @@
 # Compile of UpdateSpCircuit.vhd was successful.
 # Compile of MUX.vhd was successful.
 # Compile of updatePCcircuit.vhd was successful.
-# Compile of RISC_CPU.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 13 errors.
 # Compile of D_FF.vhd was successful.
 # Compile of Memory2_Stage.vhd was successful.
 # Compile of Memory1_Stage.vhd was successful.
 # Compile of Execute_Stage.vhd was successful.
-# Compile of Decode_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd failed with 2 errors.
 # Compile of Decoder_1x2.vhd was successful.
 # Compile of MUX_4x1.vhd was successful.
 # Compile of addressable_memory.vhd was successful.
 # Compile of LoadUseCase_HDU.vhd was successful.
 # Compile of Structural_HDU.vhd was successful.
 # Compile of D_FF_1.vhd was successful.
-# 27 compiles, 1 failed with no errors.
-# Compile of OPForwardingUnit.vhd failed with 1 errors.
 # Compile of Execution_Forwarding_unit.vhd was successful.
 # Compile of OPForwardingUnit.vhd was successful.
+# 29 compiles, 2 failed with 15 errors.
+# Compile of Execution_Forwarding_unit.vhd was successful.
+# Compile of Decode_Stage.vhd failed with 1 errors.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of RISC_CPU.vhd was successful.
 # Compile of ALU.vhd was successful.
 # Compile of ControlUnit.vhd was successful.
 # Compile of EX_MEM1_Buffer.vhd was successful.
@@ -102,3 +98,34 @@
 # Compile of Execution_Forwarding_unit.vhd was successful.
 # Compile of OPForwardingUnit.vhd was successful.
 # 29 compiles, 0 failed with no errors.
+# Compile of ALU.vhd was successful.
+# Compile of ControlUnit.vhd was successful.
+# Compile of EX_MEM1_Buffer.vhd was successful.
+# Compile of ID_EX_Buffer.vhd was successful.
+# Compile of IF_ID_Buffer.vhd was successful.
+# Compile of MEM1_MEM2_Buffer.vhd was successful.
+# Compile of MEM2_WB_Buffer.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.
+# Compile of MUX.vhd was successful.
+# Compile of updatePCcircuit.vhd was successful.
+# Compile of RISC_CPU.vhd failed with 1 errors.
+# Compile of D_FF.vhd was successful.
+# Compile of Memory2_Stage.vhd was successful.
+# Compile of Memory1_Stage.vhd was successful.
+# Compile of Execute_Stage.vhd was successful.
+# Compile of Decode_Stage.vhd was successful.
+# Compile of Decoder_1x2.vhd was successful.
+# Compile of MUX_4x1.vhd was successful.
+# Compile of addressable_memory.vhd was successful.
+# Compile of LoadUseCase_HDU.vhd was successful.
+# Compile of Structural_HDU.vhd was successful.
+# Compile of D_FF_1.vhd was successful.
+# Compile of Execution_Forwarding_unit.vhd was successful.
+# Compile of OPForwardingUnit.vhd was successful.
+# 29 compiles, 1 failed with 1 error.
+# Compile of RISC_CPU.vhd was successful.

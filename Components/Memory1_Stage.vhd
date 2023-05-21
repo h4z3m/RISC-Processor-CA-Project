@@ -25,6 +25,7 @@ ENTITY Memory1_Stage IS
         StackPointer_Updated : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         StackPointer_Enable : OUT STD_LOGIC;
         DataMemory_Mode : OUT STD_LOGIC
+        
     );
 END ENTITY;
 

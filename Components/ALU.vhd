@@ -9,7 +9,7 @@ ENTITY ALU IS
                 Opcode : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
                 Operand_1 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
                 Operand_2 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-                Output : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+                Result : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
                 CARRY : OUT STD_LOGIC;
                 ZERO : OUT STD_LOGIC;
                 NEGATIVE : OUT STD_LOGIC
@@ -27,7 +27,7 @@ BEGIN
         BEGIN
 
                 IF Opcode = "000" THEN -- NOP
-                        Output <= Operand_1;
+                        Result <= Operand_1;
                         ZERO <= '0';
                         CARRY <= '0';
                         NEGATIVE <= '0';
@@ -41,7 +41,7 @@ BEGIN
                         temp_output <= STD_LOGIC_VECTOR(to_unsigned(output_int, 17));
                         temppp <= ('0' & Operand_1) + ("00000000000000001");
                         -- Output <= STD_LOGIC_VECTOR(to_signed(output_int, 16));
-                        output <= temppp(15 DOWNTO 0);
+                        Result <= temppp(15 DOWNTO 0);
                         temp_output <= temppp;
 
                         IF temp_output(16) = '1' THEN
@@ -50,12 +50,12 @@ BEGIN
                                 carry <= '0';
                         END IF;
 
-                        IF Output = "0000000000000000"THEN
+                        IF Result = "0000000000000000"THEN
                                 ZERO <= '1';
                         ELSE
                                 ZERO <= '0';
                         END IF;
-                        IF Output(15) = '1' THEN
+                        IF Result(15) = '1' THEN
                                 NEGATIVE <= '1';
                         ELSE
                                 NEGATIVE <= '0';
@@ -71,7 +71,7 @@ BEGIN
 
                         temppp <= ('0' & Operand_1) + (Operand_2);
                         carry <= temppp(16);
-                        output <= temppp(15 DOWNTO 0);
+                        Result <= temppp(15 DOWNTO 0);
                         temp_output <= temppp;
                         IF temp_output(16) = '1' THEN
                                 CARRY <= '1';
@@ -79,12 +79,12 @@ BEGIN
                                 carry <= '0';
                         END IF;
 
-                        IF Output = "0000000000000000" THEN
+                        IF Result = "0000000000000000" THEN
                                 ZERO <= '1';
                         ELSE
                                 ZERO <= '0';
                         END IF;
-                        IF Output(15) = '1' THEN
+                        IF Result(15) = '1' THEN
                                 NEGATIVE <= '1';
                         ELSE
                                 NEGATIVE <= '0';
@@ -100,7 +100,7 @@ BEGIN
                         ---------------------------------------------------
                         temppp <= ('0' & Operand_1) - (Operand_2);
                         carry <= temppp(16);
-                        output <= temppp(15 DOWNTO 0);
+                        Result <= temppp(15 DOWNTO 0);
                         temp_output <= temppp;
                         ---------------------------------------------------
                         IF temp_output(16) = '1' THEN
@@ -109,12 +109,12 @@ BEGIN
                                 carry <= '0';
                         END IF;
 
-                        IF Output = "0000000000000000" THEN
+                        IF Result = "0000000000000000" THEN
                                 ZERO <= '1';
                         ELSE
                                 ZERO <= '0';
                         END IF;
-                        IF Output(15) = '1' THEN
+                        IF Result(15) = '1' THEN
                                 NEGATIVE <= '1';
                         ELSE
                                 NEGATIVE <= '0';
@@ -130,7 +130,7 @@ BEGIN
                         ---------------------------------------------------
                         temppp <= ('0' & Operand_1) - ("00000000000000001");
                         carry <= temppp(16);
-                        output <= temppp(15 DOWNTO 0);
+                        Result <= temppp(15 DOWNTO 0);
                         temp_output <= temppp;
                         ---------------------------------------------------
                         IF temp_output(16) = '1' THEN
@@ -139,12 +139,12 @@ BEGIN
                                 carry <= '0';
                         END IF;
 
-                        IF Output = "0000000000000000"THEN
+                        IF Result = "0000000000000000"THEN
                                 ZERO <= '1';
                         ELSE
                                 ZERO <= '0';
                         END IF;
-                        IF Output(15) = '1' THEN
+                        IF Result(15) = '1' THEN
                                 NEGATIVE <= '1';
                         ELSE
                                 NEGATIVE <= '0';
@@ -152,34 +152,34 @@ BEGIN
 
                 ELSIF Opcode = "001" THEN -- AND
 
-                        Output <= Operand_1 AND Operand_2;
+                        Result <= Operand_1 AND Operand_2;
                         temp_output <= (OTHERS => '0');
                         temppp <= (OTHERS => '0');
 
                         CARRY <= '0';
-                        IF Output = "0000000000000000" THEN
+                        IF Result = "0000000000000000" THEN
                                 ZERO <= '1';
                         ELSE
                                 ZERO <= '0';
                         END IF;
-                        IF Output(15) = '1' THEN
+                        IF Result(15) = '1' THEN
                                 NEGATIVE <= '1';
                         ELSE
                                 NEGATIVE <= '0';
                         END IF;
                 ELSIF Opcode = "010" THEN -- OR
 
-                        Output <= Operand_1 OR Operand_2;
+                        Result <= Operand_1 OR Operand_2;
                         temp_output <= (OTHERS => '0');
                         temppp <= (OTHERS => '0');
 
                         CARRY <= '0';
-                        IF Output = "0000000000000000" THEN
+                        IF Result = "0000000000000000" THEN
                                 ZERO <= '1';
                         ELSE
                                 ZERO <= '0';
                         END IF;
-                        IF Output(15) = '1' THEN
+                        IF Result(15) = '1' THEN
                                 NEGATIVE <= '1';
                         ELSE
                                 NEGATIVE <= '0';
@@ -188,14 +188,14 @@ BEGIN
                         temp_output <= (OTHERS => '0');
                         temppp <= (OTHERS => '0');
 
-                        Output <= NOT Operand_1;
+                        Result <= NOT Operand_1;
                         CARRY <= '0';
-                        IF Output = "0000000000000000" THEN
+                        IF Result = "0000000000000000" THEN
                                 ZERO <= '1';
                         ELSE
                                 ZERO <= '0';
                         END IF;
-                        IF Output(15) = '1' THEN
+                        IF Result(15) = '1' THEN
                                 NEGATIVE <= '1';
                         ELSE
                                 NEGATIVE <= '0';
@@ -203,7 +203,7 @@ BEGIN
                 ELSE
                         temp_output <= (OTHERS => '0');
                         temppp <= (OTHERS => '0');
-                        Output <= (OTHERS => '0');
+                        Result <= (OTHERS => '0');
                         CARRY <= '0';
                         ZERO <= '0';
                         NEGATIVE <= '0';

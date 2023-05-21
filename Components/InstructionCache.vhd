@@ -39,7 +39,7 @@ BEGIN
     -- Determine the length of the current instruction
     PROCESS (data)
     BEGIN
-        IF data(31) = "0" AND data(30) = '0' THEN
+        IF data(31) = '0' AND data(30) = '0' THEN
             instr_length <= 2;
             instruction <= data;
         ELSE

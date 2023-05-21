@@ -17,14 +17,14 @@ ENTITY Memory2_Stage IS
         SIG_Jump : IN STD_LOGIC;
         Flag_en : IN STD_LOGIC;
         Port_en : IN STD_LOGIC;
-        PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        -- PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ----INPUT PORT
         Input_value : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         Input_enable : IN STD_LOGIC;
         Immediate_value : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ALU_Result : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         -- Outputs
-        PC_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        -- PC_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         -- PC_Mux_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
         Write_data_RDST : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         Input_port_value : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);

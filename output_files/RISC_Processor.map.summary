@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Thu Apr 20 14:18:31 2023
+Analysis & Synthesis Status : Successful - Sun May 21 17:53:11 2023
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : RISC_Processor
 Top-level Entity Name : RISC_CPU
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 0
-Total pins : 50
+Total pins : 51
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

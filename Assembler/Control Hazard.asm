@@ -35,7 +35,7 @@ INC R4, R4		          #THIS SHOULDN/T EXECUTE
 Push R3
 Pop R5                               
 JMP R5                             #load-use + unconditional jump
-INC R5, R5		      #THIS SHOULDN’T HAPPEN
+INC R5, R5		      #THIS SHOULDN'T HAPPEN
 
 
 #test4 call 

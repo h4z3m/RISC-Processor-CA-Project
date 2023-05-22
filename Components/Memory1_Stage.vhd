@@ -42,7 +42,7 @@ BEGIN
         PORT MAP(
             in0 => STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(StackPointer)) + 1) MOD 1024, StackPointer'length)),
             in1 => STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(StackPointer)) + 2) MOD 1024, StackPointer'length)),
-            sel => ControlSignals(5),
+            sel => ControlSignals(5) AND ControlSignals(0) AND ControlSignals(9),
             out1 => temp_sp_after_inc
         );
     sp_mux : ENTITY work.MUX

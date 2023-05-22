@@ -31,10 +31,13 @@ ENTITY Execute_Stage IS
         MEM1_MEM2_Out_Jump : IN STD_LOGIC;
         flagRegisterUpdateCircuit_dataMem : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         flag_stall_signal : IN STD_LOGIC;
+        decode_branch : IN STD_LOGIC;
         --- Outputs ---
         OUTPUT_PORT_VALUE : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         ALU_Result : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        FlagRegisterValue : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
+        FlagRegisterValue : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+        update_pc_carry : OUT STD_LOGIC;
+        update_pc_zero : OUT STD_LOGIC
     );
 END ENTITY Execute_Stage;
 ARCHITECTURE rtl OF Execute_Stage IS
@@ -92,7 +95,9 @@ BEGIN
         );
     updateflagregister_inst : ENTITY work.UpdateFlagRegister
         PORT MAP(
+            current_flags => FlagRegisterTemp,
             flagEN => ID_EX_ControlSignals(9),
+            decode_branch => decode_branch,
             aluSrc => ID_EX_ControlSignals(2),
             jump => ID_EX_ControlSignals(5),
             memRead => ID_EX_ControlSignals(0),
@@ -107,7 +112,9 @@ BEGIN
             dataMem_return => flagRegisterUpdateCircuit_dataMem,
             carryOld => FlagRegisterTemp(2),
             carry_flag_enable => flag_enable_out,
-            outFlags => FlagRegisterIn
+            outFlags => FlagRegisterIn,
+            update_pc_carry => update_pc_carry,
+            update_pc_zero => update_pc_zero
         );
     FlagRegisterValue <= FlagRegisterTemp;
     ---------------------------------------------------------------------------------

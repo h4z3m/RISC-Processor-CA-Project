@@ -65,20 +65,20 @@ BEGIN
         IF rising_edge(clk) THEN
             IF reset = '1' THEN
                 memory <= (OTHERS => (OTHERS => '0'));
-            ELSIF write_en = '1' THEN
+                ELSIF write_en = '1' THEN
                 IF mode = '0' THEN -- Write 1 word (16 bits)
                     memory(to_integer(unsigned(word_addr))) <= data_in(WORD_SIZE - 1 DOWNTO 0);
-                    REPORT "memory" & to_string((word_addr)) & " " & to_string(data_in(WORD_SIZE - 1 DOWNTO 0));
-                ELSE -- Write 2 words (16 bits per cell, total 32 bits)
+                    -- REPORT "memory" & to_string((word_addr)) & " " & to_string(data_in(WORD_SIZE - 1 DOWNTO 0));
+                    ELSE -- Write 2 words (16 bits per cell, total 32 bits)
                     memory(to_integer(unsigned(word_addr)) + 1) <= data_in(WORD_SIZE * 2 - 1 DOWNTO WORD_SIZE);
                     memory(to_integer(unsigned(word_addr))) <= data_in(WORD_SIZE - 1 DOWNTO 0);
                 END IF;
             END IF;
-            
+
             IF mode = '0' THEN -- Read 1 word into most significant half-word, pad the rest with zeros
                 data_out(WORD_SIZE * 2 - 1 DOWNTO WORD_SIZE) <= memory(to_integer(unsigned(word_addr)));
                 data_out(WORD_SIZE - 1 DOWNTO 0) <= (OTHERS => '0');
-            ELSE -- Read 2 words 
+                ELSE -- Read 2 words 
                 data_out(WORD_SIZE * 2 - 1 DOWNTO WORD_SIZE) <= memory(to_integer(unsigned(word_addr)) + 1);
                 data_out(WORD_SIZE - 1 DOWNTO 0) <= memory(to_integer(unsigned(word_addr)));
             END IF;

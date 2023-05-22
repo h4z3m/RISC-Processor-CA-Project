@@ -23,3 +23,4 @@ run 100ps
 force -freeze sim:/risc_cpu/interrupt 1 0
 run 100ps
 force -freeze sim:/risc_cpu/interrupt 0 0
+run 2000ps

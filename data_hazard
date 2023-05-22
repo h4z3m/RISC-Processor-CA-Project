@@ -1,0 +1,30 @@
+onerror {resume}
+quietly WaveActivateNextPane {} 0
+add wave -noupdate /risc_cpu/reset
+add wave -noupdate /risc_cpu/clk
+add wave -noupdate /risc_cpu/interrupt
+add wave -noupdate /risc_cpu/ProgramCounter/D
+add wave -noupdate -expand /risc_cpu/decode_stage_inst/RegFile/Regs
+add wave -noupdate /risc_cpu/execute_stage_inst/FlagRegister/Q
+add wave -noupdate /risc_cpu/in_port
+add wave -noupdate /risc_cpu/INPUT_PORT_VALUE
+add wave -noupdate /risc_cpu/out_port
+add wave -noupdate /risc_cpu/StackPointer/Q
+TreeUpdate [SetDefaultTree]
+WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+quietly wave cursor active 0
+configure wave -namecolwidth 150
+configure wave -valuecolwidth 100
+configure wave -justifyvalue left
+configure wave -signalnamewidth 0
+configure wave -snapdistance 10
+configure wave -datasetprefix 0
+configure wave -rowmargin 4
+configure wave -childrowmargin 2
+configure wave -gridoffset 0
+configure wave -gridperiod 1
+configure wave -griddelta 40
+configure wave -timeline 0
+configure wave -timelineunits ps
+update
+WaveRestoreZoom {2859 ps} {3859 ps}

@@ -9,6 +9,8 @@ ENTITY LoadUseCase_HDU IS
     PORT (
         clk : IN STD_LOGIC;
         rst : IN STD_LOGIC;
+        Jump : IN STD_LOGIC;
+
         IF_ID_Rs : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         IF_ID_Rt : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         ID_EX_Rs : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -35,9 +37,7 @@ BEGIN
             -- Check load use condition
             IF
                 (
-                (
-                ID_EX_Rs = IF_ID_Rt)
-                OR (ID_EX_Rt = IF_ID_Rs)
+                (ID_EX_Rs = IF_ID_Rt) OR (ID_EX_Rt = IF_ID_Rs)
                 OR
                 (ID_EX_Rt = IF_ID_Rt AND ID_EX_ALUsrc = '0')
                 )
@@ -48,6 +48,8 @@ BEGIN
                 (ID_EX_MemRead = '1' AND ID_EX_RegWrite = '1')
                 OR
                 (ID_EX_PortEn = '1' AND ID_EX_RegWrite = '1')
+                OR
+                (ID_EX_RegWrite = '1' AND Jump = '1')
                 )
 
                 AND
@@ -57,13 +59,18 @@ BEGIN
                 THEN
                 is_stalling <= '1';
                 STALL_SIGNAL <= '0';
-            ELSIF counter = "000" THEN
+                IF jump = '1' THEN
+                    counter <= STD_LOGIC_VECTOR(to_unsigned(stall_cycles, counter'length));
+                    ELSE
+                    counter <= STD_LOGIC_VECTOR(to_unsigned(stall_cycles - 1, counter'length));
+                END IF;
+                ELSIF counter = "000" THEN
                 is_stalling <= '0';
                 counter <= STD_LOGIC_VECTOR(to_unsigned(stall_cycles - 1, counter'length));
                 STALL_SIGNAL <= '1';
-            ELSIF is_stalling = '1' THEN
+                ELSIF is_stalling = '1' THEN
                 counter <= STD_LOGIC_VECTOR(to_unsigned(to_integer(unsigned(counter)) - 1, 3));
-            ELSE
+                ELSE
                 is_stalling <= '0';
                 counter <= STD_LOGIC_VECTOR(to_unsigned(stall_cycles - 1, counter'length));
                 STALL_SIGNAL <= '1';

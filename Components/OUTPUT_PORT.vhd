@@ -12,12 +12,23 @@ ENTITY OUTPUT_PORT IS
     );
 END ENTITY;
 
+-- ARCHITECTURE rtl OF OUTPUT_PORT IS
+-- BEGIN
+--     PROCESS (enable, port_value)
+--     BEGIN
+--         IF enable = '1' THEN
+--             out_value <= port_value;
+--         END IF;
+--     END PROCESS;
+-- END ARCHITECTURE rtl;
 ARCHITECTURE rtl OF OUTPUT_PORT IS
+    SIGNAL latched_value : STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
 BEGIN
     PROCESS (enable, port_value)
     BEGIN
         IF enable = '1' THEN
-            out_value <= port_value;
+            latched_value <= port_value; -- Latch the input value
         END IF;
+        out_value <= latched_value; -- Assign the latched value to the output
     END PROCESS;
 END ARCHITECTURE rtl;

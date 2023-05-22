@@ -42,6 +42,7 @@ BEGIN
         ELSE
             OUT_OF_MUX_OP1 <= OP1;
         END IF;
+
         IF (((RT = OUT_OF_MUX_MEM1) AND (EX_M1_REGW = '1')) OR ((RT = WB_ADDRESS) AND (M1_M2_Regw = '1')) OR ((RT = WB_ADDRESS_M2_WB) AND (M2_WB_Regw = '1'))) THEN
             IF ((RT = OUT_OF_MUX_MEM1) AND (EX_M1_REGW = '1')) THEN
                 OUT_OF_MUX_OP2 <= ALU_RESULT;

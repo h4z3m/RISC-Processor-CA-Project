@@ -10,6 +10,7 @@ ENTITY UpdateFlagRegister IS
         aluSrc : IN STD_LOGIC;
         jump : IN STD_LOGIC;
         memRead : IN STD_LOGIC;
+        porten : IN STD_LOGIC;
         jump_mem2_stage : IN STD_LOGIC;
         memread_mem2_stage : IN STD_LOGIC;
         aluOp : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -17,6 +18,8 @@ ENTITY UpdateFlagRegister IS
         aluCarry : IN STD_LOGIC;
         aluNeg : IN STD_LOGIC;
         aluZero : IN STD_LOGIC;
+
+        stall_signal : IN STD_LOGIC;
 
         -- Data mem --
         dataMem_return : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -47,14 +50,15 @@ BEGIN
             IF (NOT aluOp(2) AND (aluOp(1) OR aluOp(0))) THEN
                 outFlags(2) <= carryOld;
             ELSE
-                IF (jump AND memread) THEN
+                -- IF (jump AND memread) THEN
+                IF flagEN AND portEn THEN
                     outFlags(2) <= aluSrc;
                 ELSE
                     outFlags(2) <= aluCarry;
                 END IF;
             END IF;
         END IF;
-        carry_flag_enable <= (flagen or (jump_mem2_stage and memread_mem2_stage));
+        carry_flag_enable <= (flagen OR (jump_mem2_stage AND memread_mem2_stage)) AND stall_signal;
     END PROCESS;
 
 END ARCHITECTURE;

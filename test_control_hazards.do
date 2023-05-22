@@ -19,4 +19,7 @@ force -freeze sim:/risc_cpu/interrupt 0 0
 force -freeze sim:/risc_cpu/in_port 44 0
 run 950ps
 force -freeze sim:/risc_cpu/reset 0 0
-run 3000ps
+run 100ps
+force -freeze sim:/risc_cpu/interrupt 1 0
+run 100ps
+force -freeze sim:/risc_cpu/interrupt 0 0

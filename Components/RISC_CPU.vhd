@@ -201,7 +201,7 @@ BEGIN
     Fetch_Decode_RST <= FLUSH_SIGNAL;
     Decode_Execute_RST <= FLUSH_SIGNAL;
     Execute_Mem1_RST <= FLUSH_SIGNAL;
-    MEM1_MEM2_RST <= FLUSH_SIGNAL;
+    MEM1_MEM2_RST <= '0';
     MEM2_WB_RST <= reset;
     --=============================================================
 
@@ -327,7 +327,8 @@ BEGIN
             clk => clk,
             reset => reset,
             PC_Reset => Fetch_Decode_Out_RESET,
-            interrupt => Fetch_Decode_Interrupt,
+            interrupt => interrupt,
+            interrupt_buffered => Fetch_Decode_Interrupt,
             External_Instruction_type => InstructionMemory_adjusted(31 DOWNTO 30),
             PC => ProgramCounter_Current,
             LoadUseCase_Stall => LOADUSECASE_STALL_SIGNAL,
@@ -372,7 +373,7 @@ BEGIN
         ReadAddr1 => Fetch_Decode_Instruction_ReadAddr1,
         ReadAddr2 => Fetch_Decode_Instruction_ReadAddr2,
         ImmediateVal => Fetch_Decode_Instruction_ImmediateVal,
-        PC => ProgramCounter_Updated,
+        PC => Fetch_Decode_PC,
 
         --- Outputs
         ID_ControlUnitOutput => Decode_Execute_Out_ControlUnitOutput,
@@ -409,7 +410,7 @@ BEGIN
             MEM2_Out_WB_Data => MEM2_WB_IN_WriteBackData,
             MEM2_Out_WB_Addr => MEM1_MEM2_Out_Writeback_RegAddr,
             flagRegisterUpdateCircuit_dataMem => DataMemory_Return_FlagRegister,
-
+            flag_stall_signal => LOADUSECASE_STALL_SIGNAL,
             MEM2_WB_Out_RegWrite => MEM2_WB_OutControlUnitOutput(7),
             MEM2_WB_Out_WB_Data => MEM2_WB_Out_WriteBackData,
             MEM2_WB_Out_WB_Addr => MEM2_WB_Out_WriteBackAddr,
@@ -492,7 +493,7 @@ BEGIN
             Writeback_RegAddr => Memory1_WritebackRegAddr,
             ImmediateVal => Execute_Mem1_Out_ImmediateVal,
             ALU_Result => Execute_Mem1_Out_ALU_Result,
-            PC => Fetch_Decode_PC,
+            PC => Execute_Mem1_Out_PC,
             PORTOUT => Execute_Mem1_Out_PORTOUT,
             DataMemory_ReadAddr => DataMemory_ReadAddr,
             DataMemory_WriteData => DataMemory_WriteData,

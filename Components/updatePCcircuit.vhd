@@ -6,6 +6,7 @@ ENTITY updatePCcircuit IS
     PORT (
         SIG_Branch : IN STD_LOGIC;
         SIG_Jump : IN STD_LOGIC;
+        Interrupt_buffered : IN STD_LOGIC;
         Reset : IN STD_LOGIC;
         Reset_buffered : IN STD_LOGIC;
         Interrupt : IN STD_LOGIC;
@@ -47,7 +48,11 @@ BEGIN
             Updated_PC <= STD_LOGIC_VECTOR(unsigned(PC) + 1);
         END IF;
 
-        IF (Interrupt OR (NOT Reset_buffered AND reset) OR (SIG_Branch AND SIG_Jump)
+        IF (
+            (NOT Reset_buffered AND reset)
+            OR
+            (NOT Interrupt_buffered AND Interrupt)
+            OR (SIG_Branch AND SIG_Jump)
             OR (NOT LoadUseCase_Stall) OR (NOT Structural_Stall)
             ) THEN
             PC_out <= PC;

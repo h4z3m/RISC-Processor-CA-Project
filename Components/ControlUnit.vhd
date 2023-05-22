@@ -16,7 +16,6 @@ ENTITY ControlUnit IS
         SIG_RegWrite : OUT STD_LOGIC;
         SIG_PortEN : OUT STD_LOGIC;
         SIG_FlagEN : OUT STD_LOGIC
-
     );
 
 END ENTITY ControlUnit;
@@ -56,7 +55,7 @@ BEGIN
                 sig_portEN <= instruction(26);
                 IF instruction(28 DOWNTO 27) = "01" THEN
                     SIG_FlagEN <= '1';
-                    SIG_ALUop <= "001";
+                    SIG_ALUop <= "100";
                 ELSE
                     SIG_FlagEN <= '0';
                     SIG_ALUop <= "000";

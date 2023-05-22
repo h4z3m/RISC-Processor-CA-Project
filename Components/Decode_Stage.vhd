@@ -7,6 +7,7 @@ ENTITY Decode_Stage IS
         clk, reset : IN STD_LOGIC;
         PC_Reset : IN STD_LOGIC;
         interrupt : IN STD_LOGIC;
+        interrupt_buffered : IN STD_LOGIC;
         LoadUseCase_Stall : IN STD_LOGIC;
         StructuralHazard_Stall : IN STD_LOGIC;
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -104,7 +105,7 @@ BEGIN
             Reset => reset,
             reset_buffered => PC_Reset,
             Interrupt => Interrupt,
-            
+            interrupt_buffered => interrupt_buffered,
             Zero_flag => Zero_flag,
             Carry_flag => Carry_flag,
             type_sig => IF_ID_Instruction(31 DOWNTO 30),

@@ -89,6 +89,6 @@ BEGIN
             sel => SIG_MemToReg,
             out1 => After_memory_mux_2x1_out
         );
-    DataMemory_Return_PC_Out <= After_memory_mux_2x1_out(15 DOWNTO 0);
-    DataMemory_Return_FlagRegister_Out <= After_memory_mux_2x1_out(18 DOWNTO 16);
+    DataMemory_Return_PC_Out <= RDST(15 DOWNTO 0);
+    DataMemory_Return_FlagRegister_Out <= RDST(18 DOWNTO 16);
 END ARCHITECTURE;

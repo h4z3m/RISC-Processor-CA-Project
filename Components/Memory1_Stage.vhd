@@ -33,14 +33,25 @@ END ENTITY;
 ARCHITECTURE rtl OF Memory1_Stage IS
     SIGNAL temp_mux_in1 : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL temp_SP : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    SIGNAL temp_sp_after_inc : STD_LOGIC_VECTOR(15 DOWNTO 0);
 BEGIN
+    sp_inc_mux : ENTITY work.MUX
+        GENERIC MAP(
+            n => StackPointer'length
+        )
+        PORT MAP(
+            in0 => STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(StackPointer)) + 1) MOD 1024, StackPointer'length)),
+            in1 => STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(StackPointer)) + 2) MOD 1024, StackPointer'length)),
+            sel => ControlSignals(5),
+            out1 => temp_sp_after_inc
+        );
     sp_mux : ENTITY work.MUX
         GENERIC MAP(
             n => StackPointer'length
         )
         PORT MAP(
             in0 => StackPointer,
-            in1 => STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(StackPointer)) + 1), StackPointer'length)),
+            in1 => temp_sp_after_inc,
             sel => ControlSignals(0),
             out1 => temp_SP
         );

@@ -250,9 +250,9 @@ class Assembler:
                 or inst_parts[0] == "SETC"
                 or inst_parts[0] == "CLRC"
             ):
-                opcode = opcode + "0000000000"
-                if inst_parts[0] == "SETC":
-                    opcode = opcode + "0000000000000000"
+                opcode = opcode + "0000000000" + "0000000000000000"
+
+                # if inst_parts[0] == "SETC":
             return opcode, 0
 
         elif inst_parts[0] == ".ORG":

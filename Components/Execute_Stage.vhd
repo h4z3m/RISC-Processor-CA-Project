@@ -30,6 +30,7 @@ ENTITY Execute_Stage IS
         MEM1_MEM2_Out_MemRead : IN STD_LOGIC;
         MEM1_MEM2_Out_Jump : IN STD_LOGIC;
         flagRegisterUpdateCircuit_dataMem : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        flag_stall_signal : IN STD_LOGIC;
         --- Outputs ---
         OUTPUT_PORT_VALUE : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         ALU_Result : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -95,12 +96,14 @@ BEGIN
             aluSrc => ID_EX_ControlSignals(2),
             jump => ID_EX_ControlSignals(5),
             memRead => ID_EX_ControlSignals(0),
+            porten => ID_EX_ControlSignals(8),
             jump_mem2_stage => MEM1_MEM2_Out_Jump,
             memRead_mem2_stage => MEM1_MEM2_Out_MemRead,
             aluOp => ID_EX_ControlSignals(12 DOWNTO 10),
             aluCarry => ALU_Carry,
             aluNeg => ALU_Negative,
             aluZero => ALU_Zero,
+            stall_signal => flag_stall_signal,
             dataMem_return => flagRegisterUpdateCircuit_dataMem,
             carryOld => FlagRegisterTemp(2),
             carry_flag_enable => flag_enable_out,

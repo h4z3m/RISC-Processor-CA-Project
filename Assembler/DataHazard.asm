@@ -17,7 +17,7 @@
 INC R0, R0					# r0 <- 1, flags -> 0
 INC R0, R0				    # R0 <- 2 , ALU-ALU FORWARDING, flags -> 0
 LDM R2, 09					# r2 <- 9
-DEC R0, R2					# r0 <- 1  M1-ALU FORWARD, flags -> 4
+DEC R0, R0					# r0 <- 1  M1-ALU FORWARD, flags -> 4
 ADD R3, R2, R0				# R3 <- 0A,forward on both parameters,flags -> 0
 IADD R4, R2, FF00				# R4 <- FF09  m2-alu forward, flags->2
 

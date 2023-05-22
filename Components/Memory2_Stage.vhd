@@ -37,8 +37,6 @@ END ENTITY Memory2_Stage;
 
 ARCHITECTURE rtl OF Memory2_Stage IS
     SIGNAL RDST : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL Decoder_out_0 : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL Decoder_out_1 : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL After_memory_mux_2x1_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL input_port_reading : STD_LOGIC_VECTOR(15 DOWNTO 0);
 BEGIN
@@ -64,10 +62,10 @@ BEGIN
     MUX_4x1 : ENTITY work.MUX_4x1 GENERIC MAP(16)
         PORT MAP(
             in0 => Immediate_value,
-            in1 => Decoder_out_1(31 DOWNTO 16),
+            in1 => After_memory_mux_2x1_out(31 DOWNTO 16),
             in2 => input_port_reading,
             in3 => (OTHERS => '0'),
-            sel => (port_en & (flag_en OR (RegDst AND RegWrite AND NOT Flag_en))),
+            sel => (port_en & (flag_en OR ((RegDst AND RegWrite AND NOT Flag_en)OR SIG_MemToReg))),
             out1 => Write_data_RDST
         );
 
@@ -77,19 +75,19 @@ BEGIN
             enable => Input_enable,
             port_value => Input_port_value
         );
-    Decoder : ENTITY work.Decoder_1x2 GENERIC MAP(32)
+    -- Decoder : ENTITY work.Decoder_1x2 GENERIC MAP(32)
+    --     PORT MAP(
+    --         sel => (SIG_Jump AND SIG_MemRead),
+    --         input => After_memory_mux_2x1_out,
+    --         output_a => Decoder_out_1,
+    --         output_b => Decoder_out_0
+    --     );
+    After_memory_mux_2x1 : ENTITY work.MUX GENERIC MAP(32)
         PORT MAP(
-            sel => (SIG_Jump AND SIG_MemRead),
-            input => After_memory_mux_2x1_out,
-            output_a => Decoder_out_1,
-            output_b => Decoder_out_0
-        );
-    After_memory_mux_2x1 : ENTITY work.MUX GENERIC MAP(16)
-        PORT MAP(
-            in0 => ALU_Result,
-            in1 => RDST(15 DOWNTO 0),
+            in0 => ALU_Result & "0000000000000000",
+            in1 => RDST,
             sel => SIG_MemToReg,
-            out1 => After_memory_mux_2x1_out(31 DOWNTO 16)
+            out1 => After_memory_mux_2x1_out
         );
     DataMemory_Return_PC_Out <= After_memory_mux_2x1_out(15 DOWNTO 0);
     DataMemory_Return_FlagRegister_Out <= After_memory_mux_2x1_out(18 DOWNTO 16);

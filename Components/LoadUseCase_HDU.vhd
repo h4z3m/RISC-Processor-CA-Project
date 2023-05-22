@@ -4,7 +4,7 @@ USE IEEE.numeric_std.ALL;
 LIBRARY work;
 ENTITY LoadUseCase_HDU IS
     GENERIC (
-        stall_cycles : INTEGER := 2
+        stall_cycles : INTEGER := 3
     );
     PORT (
         clk : IN STD_LOGIC;
@@ -16,6 +16,7 @@ ENTITY LoadUseCase_HDU IS
         ID_EX_MemRead : IN STD_LOGIC;
         ID_EX_RegWrite : IN STD_LOGIC;
         ID_EX_PortEn : IN STD_LOGIC;
+        ID_EX_ALUsrc : IN STD_LOGIC;
         STALL_SIGNAL : OUT STD_LOGIC
     );
 END ENTITY LoadUseCase_HDU;
@@ -32,14 +33,26 @@ BEGIN
         IF rising_edge(clk) THEN
 
             -- Check load use condition
-            IF (
-                (ID_EX_Rs = IF_ID_Rt) OR (ID_EX_Rt = IF_ID_Rs))
-                AND
+            IF
                 (
-                (ID_EX_MemRead = '1' AND ID_EX_RegWrite = '1')OR
-                (ID_EX_PortEn = '1' AND ID_EX_RegWrite = '1'))
+                (
+                ID_EX_Rs = IF_ID_Rt)
+                OR (ID_EX_Rt = IF_ID_Rs)
+                OR
+                (ID_EX_Rt = IF_ID_Rt AND ID_EX_ALUsrc = '0')
+                )
 
-                AND is_stalling = '0'
+                AND
+
+                (
+                (ID_EX_MemRead = '1' AND ID_EX_RegWrite = '1')
+                OR
+                (ID_EX_PortEn = '1' AND ID_EX_RegWrite = '1')
+                )
+
+                AND
+
+                (is_stalling = '0')
 
                 THEN
                 is_stalling <= '1';

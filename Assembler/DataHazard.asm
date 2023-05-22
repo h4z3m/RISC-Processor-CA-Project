@@ -17,7 +17,7 @@
 INC R0, R0					# r0 <- 1, flags -> 0
 INC R0, R0				    # R0 <- 2 , ALU-ALU FORWARDING, flags -> 0
 LDM R2, 09					# r2 <- 9
-DEC R0, R0					# r0 <- 1  M1-ALU FORWARD, flags -> 4
+DEC R0, R2					# r0 <- 1  M1-ALU FORWARD, flags -> 4
 ADD R3, R2, R0				# R3 <- 0A,forward on both parameters,flags -> 0
 IADD R4, R2, FF00				# R4 <- FF09  m2-alu forward, flags->2
 
@@ -30,7 +30,7 @@ OUT   	R4					# m1-alu forward
 #test case 3, load use test
 Push R1
 POP R7					#structural hazard
-AND R1, R5, R7				#load use
+AND R1, R5, R7				#load use   R1<-4D & 44 = 44h
 OR   R2, R1, R7				#load use and forward
 
 #test case 4, structural hazard with data hazard

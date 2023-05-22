@@ -166,7 +166,7 @@ BEGIN
     --=================== HDUs ====================================
     loadusecase_hdu_instance : ENTITY work.LoadUseCase_HDU
         GENERIC MAP(
-            stall_cycles => 2
+            stall_cycles => 3
         )
         PORT MAP(
             clk => clk,
@@ -180,7 +180,7 @@ BEGIN
             ID_EX_MemRead => Decode_Execute_Out_ControlUnitOutput(0),
             ID_EX_RegWrite => Decode_Execute_Out_ControlUnitOutput(7),
             ID_EX_PortEn => Decode_Execute_Out_ControlUnitOutput(8),
-
+            ID_EX_ALUsrc => Decode_Execute_Out_ControlUnitOutput(2),
             STALL_SIGNAL => LOADUSECASE_STALL_SIGNAL
         );
 
@@ -208,7 +208,7 @@ BEGIN
     -------------------- Buffer enable signals -------------------
     Fetch_Decode_Enable <= MEMORY_STALL_SIGNAL AND LOADUSECASE_STALL_SIGNAL;
     Decode_Execute_Enable <= MEMORY_STALL_SIGNAL;
-    Execute_Mem1_Enable <= '1';
+    Execute_Mem1_Enable <= MEMORY_STALL_SIGNAL;
     MEM1_MEM2_Enable <= '1';
     MEM2_WB_Enable <= '1';
     --=============================================================

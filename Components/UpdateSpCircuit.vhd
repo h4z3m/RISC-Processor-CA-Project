@@ -36,13 +36,13 @@ BEGIN
             SP_TEMP <= "1111111110";---------- For call/int which push 32bits to the stack
         ELSE
             IF (SIG_MemRead = '0' AND (SIG_FlagEn OR Interrupt) = '0') THEN
-                SP_TEMP <= STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(SP(9 DOWNTO 0))) - 1), 10));
+                SP_TEMP <= STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(SP(9 DOWNTO 0))) - 1)MOD 1024, 10));
             ELSIF (SIG_MemRead = '0' AND (SIG_FlagEn OR Interrupt) = '1') THEN
-                SP_TEMP <= STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(SP(9 DOWNTO 0))) - 2), 10));
+                SP_TEMP <= STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(SP(9 DOWNTO 0))) - 2)MOD 1024, 10));
             ELSIF (SIG_MemRead = '1' AND (SIG_FlagEn OR Interrupt) = '0') THEN
-                SP_TEMP <= STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(SP(9 DOWNTO 0))) + 1), 10));
+                SP_TEMP <= STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(SP(9 DOWNTO 0))) + 1)MOD 1024, 10));
             ELSIF (SIG_MemRead = '1' AND (SIG_FlagEn OR Interrupt) = '1') THEN
-                SP_TEMP <= STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(SP(9 DOWNTO 0))) + 2), 10));
+                SP_TEMP <= STD_LOGIC_VECTOR(to_unsigned(to_integer((unsigned(SP(9 DOWNTO 0))) + 2)MOD 1024, 10));
             ELSE
                 SP_TEMP <= SP(9 DOWNTO 0);
             END IF;

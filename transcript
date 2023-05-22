@@ -6,3 +6,8 @@
 # Compile of MEM1_MEM2_Buffer.vhd was successful.
 # Compile of MEM2_WB_Buffer.vhd was successful.
 # Compile of Memory.vhd was successful.
+# Compile of RegisterFile.vhd was successful.
+# Compile of UpdateFlagRegister.vhd was successful.
+# Compile of OUTPUT_PORT.vhd was successful.
+# Compile of INPUT_PORT.vhd was successful.
+# Compile of UpdateSpCircuit.vhd was successful.

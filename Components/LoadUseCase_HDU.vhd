@@ -15,6 +15,7 @@ ENTITY LoadUseCase_HDU IS
         ID_EX_Rt : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         ID_EX_MemRead : IN STD_LOGIC;
         ID_EX_RegWrite : IN STD_LOGIC;
+        ID_EX_PortEn : IN STD_LOGIC;
         STALL_SIGNAL : OUT STD_LOGIC
     );
 END ENTITY LoadUseCase_HDU;
@@ -31,9 +32,16 @@ BEGIN
         IF rising_edge(clk) THEN
 
             -- Check load use condition
-            IF ((ID_EX_Rs = IF_ID_Rt) OR (ID_EX_Rt = IF_ID_Rs))
-                AND (ID_EX_MemRead = '1')
-                AND (ID_EX_RegWrite = '1') THEN
+            IF (
+                (ID_EX_Rs = IF_ID_Rt) OR (ID_EX_Rt = IF_ID_Rs))
+                AND
+                (
+                (ID_EX_MemRead = '1' AND ID_EX_RegWrite = '1')OR
+                (ID_EX_PortEn = '1' AND ID_EX_RegWrite = '1'))
+
+                AND is_stalling = '0'
+
+                THEN
                 is_stalling <= '1';
                 STALL_SIGNAL <= '0';
             ELSIF counter = "000" THEN
@@ -45,7 +53,7 @@ BEGIN
             ELSE
                 is_stalling <= '0';
                 counter <= STD_LOGIC_VECTOR(to_unsigned(stall_cycles - 1, counter'length));
-                STALL_SIGNAL <= '0';
+                STALL_SIGNAL <= '1';
             END IF;
         END IF;
     END PROCESS;

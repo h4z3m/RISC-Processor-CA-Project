@@ -14,5 +14,10 @@ END ENTITY;
 
 ARCHITECTURE rtl OF OUTPUT_PORT IS
 BEGIN
-    out_value <= port_value WHEN enable = '1';
+    PROCESS (enable, port_value)
+    BEGIN
+        IF enable = '1' THEN
+            out_value <= port_value;
+        END IF;
+    END PROCESS;
 END ARCHITECTURE rtl;

@@ -98,8 +98,8 @@ class Assembler:
                 # print(binary_inst)
                 # print(len(binary_inst))
                 if len(binary_inst) == 32:
-                    bin_instructions[current_line] = binary_inst[16:32]
-                    bin_instructions[current_line + 1] = binary_inst[0:16]
+                    bin_instructions[current_line] = binary_inst[0:16]
+                    bin_instructions[current_line + 1] = binary_inst[16:32]
                     current_line += 2
                 else:
                     bin_instructions[current_line] = binary_inst
@@ -152,7 +152,7 @@ class Assembler:
                     part[:-1] in Assembler.register_indices
                 ):  # Check if part without comma is a register name
                     inst_parts[i] = part[:-1]  # Remove the comma
-
+        print(inst_parts)
         opcode = None
         # print(inst_parts[0])
         # print(inst_parts)
@@ -183,9 +183,18 @@ class Assembler:
                     + "0"
                 )
             elif inst_parts[0] == "IN":
-                opcode += "000" + self.register_indices[inst_parts[1]] + "0000"
+                opcode += (
+                    "000"
+                    + self.register_indices[inst_parts[1]]
+                    + "0000"
+                    + "0000000000000000"
+                )
             elif inst_parts[0] == "OUT":
-                opcode += self.register_indices[inst_parts[1]] + "0000000"
+                opcode += (
+                    self.register_indices[inst_parts[1]]
+                    + "0000000"
+                    + "0000000000000000"
+                )
             elif inst_parts[0] == "IADD":
                 opcode += (
                     self.register_indices[inst_parts[2]]
@@ -206,15 +215,22 @@ class Assembler:
                     self.register_indices[inst_parts[2]]
                     + self.register_indices[inst_parts[1]]
                     + "0000"
+                    + "0000000000000000"
                 )
             elif inst_parts[0] == "STD":
                 opcode += (
                     self.register_indices[inst_parts[1]]
                     + self.register_indices[inst_parts[2]]
                     + "0000"
+                    + "0000000000000000"
                 )
             elif inst_parts[0] == "PUSH" or inst_parts[0] == "POP":
-                opcode += "000" + self.register_indices[inst_parts[1]] + "0000"
+                opcode += (
+                    "000"
+                    + self.register_indices[inst_parts[1]]
+                    + "0000"
+                    + "0000000000000000"
+                )
             elif (
                 inst_parts[0] == "JZ"
                 or inst_parts[0] == "JC"
@@ -235,6 +251,8 @@ class Assembler:
                 or inst_parts[0] == "CLRC"
             ):
                 opcode = opcode + "0000000000"
+                if inst_parts[0] == "SETC":
+                    opcode = opcode + "0000000000000000"
             return opcode, 0
 
         elif inst_parts[0] == ".ORG":

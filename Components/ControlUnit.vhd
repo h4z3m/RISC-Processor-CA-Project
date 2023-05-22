@@ -21,7 +21,7 @@ ENTITY ControlUnit IS
 
 END ENTITY ControlUnit;
 ARCHITECTURE Behavioral OF ControlUnit IS
-    
+
 BEGIN
 
     PROCESS (Instruction)
@@ -51,7 +51,7 @@ BEGIN
                 SIG_MEMRead <= iNSTRUCTION(28);
                 SIG_MEMWrite <= '0';
                 SIG_ALUsrc <= Instruction(27);
-                SIG_ALUop <= "000";
+                SIG_ALUop <= Instruction(28 DOWNTO 26);
                 SIG_memToReg <= iNSTRUCTION(28);
                 sig_portEN <= instruction(26);
                 IF instruction(28 DOWNTO 27) = "01" THEN

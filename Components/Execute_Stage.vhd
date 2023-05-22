@@ -14,13 +14,17 @@ ENTITY Execute_Stage IS
         ID_EX_RegisterFile_ReadData2 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ID_EX_RegisterFile_ImmediateVal : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
+        Forwarded_ALU_Result : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         EX_MEM1_Out_RegWrite : IN STD_LOGIC;
 
         MEM1_Addr_MUX_Out : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
 
+        MEM1_Mem2_Out_RegWrite : IN STD_LOGIC;
         MEM2_WB_Out_RegWrite : IN STD_LOGIC;
 
+        MEM2_Out_WB_Data : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         MEM2_WB_Out_WB_Data : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        MEM2_Out_WB_Addr : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         MEM2_WB_Out_WB_Addr : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
 
         MEM1_MEM2_Out_MemRead : IN STD_LOGIC;
@@ -52,20 +56,19 @@ ARCHITECTURE rtl OF Execute_Stage IS
     SIGNAL OUT_OF_MUX_OP1 : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL OUT_OF_MUX_OP2 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-    --- temp
-    SIGNAL decoder_sel : STD_LOGIC;
-    SIGNAL TEMP_ALU_Result : STD_LOGIC_VECTOR(15 DOWNTO 0);
 BEGIN
-    ---------------------------  ALU input multiplexers  ---------------------------
-    decoder_sel <= (NOT ID_EX_ControlSignals(9) AND ID_EX_ControlSignals(8));
-    DECODER_ALU_OP1 : ENTITY WORK.Decoder_1x2 GENERIC MAP(16)
-        PORT MAP(
-            --- Not flag EN AND Port En
-            decoder_sel,
-            ID_EX_RegisterFile_ReadData1,
-            ALU_IN_1,
-            OUTPUT_PORT_VALUE
-        );
+    -- ---------------------------  ALU input multiplexers  ---------------------------
+    -- decoder_sel <= (NOT ID_EX_ControlSignals(9) AND ID_EX_ControlSignals(8));
+    -- DECODER_ALU_OP1 : ENTITY WORK.Decoder_1x2 GENERIC MAP(16)
+    --     PORT MAP(
+    --         --- Not flag EN AND Port En
+    --         decoder_sel,
+    --         ID_EX_RegisterFile_ReadData1,
+    --         ALU_IN_1,
+    --         OUTPUT_PORT_VALUE
+    --     );
+    ALU_IN_1 <= ID_EX_RegisterFile_ReadData1;
+    OUTPUT_PORT_VALUE <= OUT_OF_MUX_OP1;
     MUX_ALU_OP2 : ENTITY WORK.MUX
         GENERIC MAP(16)
         PORT MAP(
@@ -117,20 +120,23 @@ BEGIN
         NEGATIVE => ALU_Negative
         );
     ---------------------------------------------------------------------------------
-    TEMP_ALU_Result <= ALU_Result;
     opforwardingunit_inst : ENTITY work.OPForwardingUnit
         PORT MAP(
             -- Inputs
             RS => ID_EX_RegisterFile_ReadAddr1,
             RT => ID_EX_RegisterFile_ReadAddr2,
             Ex_M1_Regw => EX_MEM1_Out_RegWrite,
-            M2_WB_Regw => MEM2_WB_Out_RegWrite,
-            WB_DATA => MEM2_WB_Out_WB_Data,
-            ALU_RESULT => TEMP_ALU_Result,
+            M1_M2_Regw => MEM1_Mem2_Out_RegWrite,
+            WB_DATA => MEM2_Out_WB_Data,
+            ALU_RESULT => Forwarded_ALU_Result,
             OP1 => ALU_IN_1,
             OP2 => ID_EX_RegisterFile_ReadData2,
-            WB_ADDRESS => MEM2_WB_Out_WB_Addr,
+            WB_ADDRESS => MEM2_Out_WB_Addr,
             OUT_OF_MUX_MEM1 => MEM1_Addr_MUX_Out,
+
+            M2_WB_Regw => MEM2_WB_Out_RegWrite,
+            WB_DATA_M2_WB => MEM2_WB_Out_WB_Data,
+            WB_ADDRESS_M2_WB => MEM2_WB_Out_WB_Addr,
             -- Outputs
             OUT_OF_MUX_OP1 => OUT_OF_MUX_OP1,
             OUT_OF_MUX_OP2 => OUT_OF_MUX_OP2

@@ -5,8 +5,12 @@ ENTITY Decode_Stage IS
     PORT (
         -- Inputs
         clk, reset : IN STD_LOGIC;
+        PC_Reset : IN STD_LOGIC;
         interrupt : IN STD_LOGIC;
+        LoadUseCase_Stall : IN STD_LOGIC;
+        StructuralHazard_Stall : IN STD_LOGIC;
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        External_Instruction_type : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
         IF_ID_Instruction : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         IF_ID_ReadAddr1 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         IF_ID_ReadAddr2 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -97,16 +101,17 @@ BEGIN
             SIG_Branch => TEMP_IF_ID_ControlSignals(4),
             SIG_Jump => TEMP_IF_ID_ControlSignals(5),
             SIG_AluOP0 => TEMP_IF_ID_ControlSignals(10),
-
-            Reset => Reset,
+            Reset => reset,
+            reset_buffered => PC_Reset,
             Interrupt => Interrupt,
-
+            
             Zero_flag => Zero_flag,
             Carry_flag => Carry_flag,
             type_sig => IF_ID_Instruction(31 DOWNTO 30),
-
+            external_type_sig => External_Instruction_type,
             rdst => PC_RDST,
-
+            LoadUseCase_Stall => LoadUseCase_Stall,
+            Structural_Stall => StructuralHazard_Stall,
             PC => PC,
             PC_out => PC_out
         );

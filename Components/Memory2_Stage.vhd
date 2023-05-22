@@ -17,6 +17,8 @@ ENTITY Memory2_Stage IS
         SIG_Jump : IN STD_LOGIC;
         Flag_en : IN STD_LOGIC;
         Port_en : IN STD_LOGIC;
+        RegWrite : IN STD_LOGIC;
+        RegDst : IN STD_LOGIC;
         -- PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ----INPUT PORT
         Input_value : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -65,7 +67,7 @@ BEGIN
             in1 => Decoder_out_1(31 DOWNTO 16),
             in2 => input_port_reading,
             in3 => (OTHERS => '0'),
-            sel => (port_en & (sig_memtoreg OR flag_en)),
+            sel => (port_en & (flag_en OR (RegDst AND RegWrite AND NOT Flag_en))),
             out1 => Write_data_RDST
         );
 

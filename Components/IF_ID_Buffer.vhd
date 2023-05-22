@@ -11,6 +11,8 @@ ENTITY IF_ID_Buffer IS
         rst : IN STD_LOGIC;
         Instruction : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        PC_RST : IN STD_LOGIC;
+        IF_PC_RST : OUT STD_LOGIC;
         IF_Interrupt : OUT STD_LOGIC;
         IF_PC : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         IF_Instruction : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -51,6 +53,9 @@ BEGIN
     );
     IF_ID_FF_INTERRUPT : ENTITY work.D_FF_1 PORT MAP(
         interrupt, clk, rst, enable, IF_Interrupt
+        );
+    IF_ID_FF_RESET : ENTITY work.D_FF_1 PORT MAP(
+        PC_RST, clk, '0', enable, IF_PC_RST
         );
 
     IF_Instruction <= SIG_Instruction;

@@ -42,9 +42,10 @@ BEGIN
                         temppp <= ('0' & Operand_1) + ("00000000000000001");
                         -- Output <= STD_LOGIC_VECTOR(to_signed(output_int, 16));
                         Result <= temppp(15 DOWNTO 0);
-                        temp_output <= temppp;
-
-                        IF temp_output(16) = '1' THEN
+                        -- temp_output <= temppp;
+                        REPORT "Result = " & to_string(Result);
+                        REPORT "Tempp=" & to_string(temppp);
+                        IF temppp(16) = '1' THEN
                                 CARRY <= '1';
                         ELSE
                                 carry <= '0';
@@ -72,8 +73,8 @@ BEGIN
                         temppp <= ('0' & Operand_1) + (Operand_2);
                         carry <= temppp(16);
                         Result <= temppp(15 DOWNTO 0);
-                        temp_output <= temppp;
-                        IF temp_output(16) = '1' THEN
+                        -- temp_output <= temppp;
+                        IF temppp(16) = '1' THEN
                                 CARRY <= '1';
                         ELSE
                                 carry <= '0';
@@ -101,9 +102,9 @@ BEGIN
                         temppp <= ('0' & Operand_1) - (Operand_2);
                         carry <= temppp(16);
                         Result <= temppp(15 DOWNTO 0);
-                        temp_output <= temppp;
+                        -- temp_output <= temppp;
                         ---------------------------------------------------
-                        IF temp_output(16) = '1' THEN
+                        IF temppp(16) = '1' THEN
                                 CARRY <= '1';
                         ELSE
                                 carry <= '0';
@@ -131,9 +132,10 @@ BEGIN
                         temppp <= ('0' & Operand_1) - ("00000000000000001");
                         carry <= temppp(16);
                         Result <= temppp(15 DOWNTO 0);
-                        temp_output <= temppp;
+                        -- temp_output <= temppp;
                         ---------------------------------------------------
-                        IF temp_output(16) = '1' THEN
+
+                        IF temppp(16) = '1' THEN
                                 CARRY <= '1';
                         ELSE
                                 carry <= '0';

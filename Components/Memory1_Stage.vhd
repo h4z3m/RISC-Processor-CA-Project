@@ -14,6 +14,7 @@ ENTITY Memory1_Stage IS
         PC : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         Execute_Mem1_Out_FlagRegister : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         ReadData2 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        ImmediateValue : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         --Write_back_address_mux_2x1
         Write_back_address_mux_2x1_in0 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         Write_back_address_mux_2x1_in1 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -24,8 +25,8 @@ ENTITY Memory1_Stage IS
         Write_back_address_mux_2x1_out : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         StackPointer_Updated : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         StackPointer_Enable : OUT STD_LOGIC;
-        DataMemory_Mode : OUT STD_LOGIC
-        
+        DataMemory_Mode : OUT STD_LOGIC;
+        Forwarded_ALU_Result : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 END ENTITY;
 
@@ -77,5 +78,15 @@ BEGIN
             SP_Modified => StackPointer_Updated,
             SP_Enable => StackPointer_Enable,
             SP_MODE => DataMemory_Mode
+        );
+    mux_inst : ENTITY work.MUX
+        GENERIC MAP(
+            n => 16
+        )
+        PORT MAP(
+            in0 => ImmediateValue,
+            in1 => ALU_Result,
+            sel => ControlSignals(6),
+            out1 => Forwarded_ALU_Result
         );
 END ARCHITECTURE rtl;

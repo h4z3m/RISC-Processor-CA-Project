@@ -13,7 +13,7 @@ LIBRARY work;
 ENTITY addressable_memory IS
     GENERIC (
         WORD_SIZE : INTEGER := 16;
-        MEM_SIZE : INTEGER := 512
+        MEM_SIZE : INTEGER := 1024
     );
     PORT (
         clk : IN STD_LOGIC;
@@ -68,11 +68,13 @@ BEGIN
             ELSIF write_en = '1' THEN
                 IF mode = '0' THEN -- Write 1 word (16 bits)
                     memory(to_integer(unsigned(word_addr))) <= data_in(WORD_SIZE - 1 DOWNTO 0);
+                    REPORT "memory" & to_string((word_addr)) & " " & to_string(data_in(WORD_SIZE - 1 DOWNTO 0));
                 ELSE -- Write 2 words (16 bits per cell, total 32 bits)
                     memory(to_integer(unsigned(word_addr)) + 1) <= data_in(WORD_SIZE * 2 - 1 DOWNTO WORD_SIZE);
                     memory(to_integer(unsigned(word_addr))) <= data_in(WORD_SIZE - 1 DOWNTO 0);
                 END IF;
             END IF;
+            
             IF mode = '0' THEN -- Read 1 word into most significant half-word, pad the rest with zeros
                 data_out(WORD_SIZE * 2 - 1 DOWNTO WORD_SIZE) <= memory(to_integer(unsigned(word_addr)));
                 data_out(WORD_SIZE - 1 DOWNTO 0) <= (OTHERS => '0');

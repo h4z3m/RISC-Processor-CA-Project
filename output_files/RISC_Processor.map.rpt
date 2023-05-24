@@ -1,5 +1,5 @@
 Analysis & Elaboration report for RISC_Processor
-Mon May 22 21:02:16 2023
+Wed May 24 15:35:03 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -9,8 +9,81 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  4. Parameter Settings for User Entity Instance: LoadUseCase_HDU:loadusecase_hdu_instance
+  5. Parameter Settings for User Entity Instance: Structural_HDU:structural_hdu_inst
+  6. Parameter Settings for User Entity Instance: MUX:mux_inst
+  7. Parameter Settings for User Entity Instance: MUX:mux_before_pc
+  8. Parameter Settings for User Entity Instance: D_FF:ProgramCounter
+  9. Parameter Settings for User Entity Instance: MUX_4x1:mux_4x1_inst
+ 10. Parameter Settings for User Entity Instance: D_FF:StackPointer
+ 11. Parameter Settings for User Entity Instance: addressable_memory_big_endian:Instruction_Cache
+ 12. Parameter Settings for User Entity Instance: MUX:inst_cache_or_interrupt_mux
+ 13. Parameter Settings for User Entity Instance: IF_ID_Buffer:Fetch_Decode_Buffer|D_FF:IF_ID_FF
+ 14. Parameter Settings for User Entity Instance: IF_ID_Buffer:Fetch_Decode_Buffer|D_FF:IF_ID_FF_PC
+ 15. Parameter Settings for User Entity Instance: Decode_Stage:decode_stage_inst|RegisterFile:RegFile
+ 16. Parameter Settings for User Entity Instance: Decode_Stage:decode_stage_inst|updatePCcircuit:updatepccircuit_inst|MUX:mux_inst
+ 17. Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_ControlUnitOutput
+ 18. Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_RegisterFile_ReadData1
+ 19. Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_RegisterFile_ReadData2
+ 20. Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_RS
+ 21. Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_WriteAddr
+ 22. Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_ReadAddr2
+ 23. Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_ImmediateVal
+ 24. Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_PC
+ 25. Parameter Settings for User Entity Instance: Execute_Stage:execute_stage_inst|MUX:MUX_ALU_OP2
+ 26. Parameter Settings for User Entity Instance: Execute_Stage:execute_stage_inst|D_FF:FlagRegister
+ 27. Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_ControlUnitOutput
+ 28. Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_FlagRegister
+ 29. Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_RegisterFile_ReadData2
+ 30. Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_WriteAddr
+ 31. Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_ReadAddr2
+ 32. Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_ImmediateVal
+ 33. Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_ALU_RESULT
+ 34. Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_PC
+ 35. Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_SP
+ 36. Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_PORTOUT
+ 37. Parameter Settings for User Entity Instance: Memory1_Stage:memory1_stage_inst|MUX:sp_inc_mux
+ 38. Parameter Settings for User Entity Instance: Memory1_Stage:memory1_stage_inst|MUX:sp_mux
+ 39. Parameter Settings for User Entity Instance: Memory1_Stage:memory1_stage_inst|MUX:Data_Memory_ReadAddr_MUX
+ 40. Parameter Settings for User Entity Instance: Memory1_Stage:memory1_stage_inst|MUX:Data_Memory_WriteData_MUX
+ 41. Parameter Settings for User Entity Instance: Memory1_Stage:memory1_stage_inst|MUX:Write_back_address_mux_2x1
+ 42. Parameter Settings for User Entity Instance: Memory1_Stage:memory1_stage_inst|MUX:mux_inst
+ 43. Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_ControlUnitOutput
+ 44. Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_FlagRegister
+ 45. Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_Writeback_RegAddr
+ 46. Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_ImmediateVal
+ 47. Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_ALU_RESULT
+ 48. Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_PC
+ 49. Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_PORTOUT
+ 50. Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_DataMemory_ReadAddr
+ 51. Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_DataMemory_WriteData
+ 52. Parameter Settings for User Entity Instance: Memory2_Stage:memory2_stage_inst|addressable_memory:addressable_memory_inst
+ 53. Parameter Settings for User Entity Instance: Memory2_Stage:memory2_stage_inst|MUX_4x1:MUX_4x1
+ 54. Parameter Settings for User Entity Instance: Memory2_Stage:memory2_stage_inst|INPUT_PORT:input_port_inst
+ 55. Parameter Settings for User Entity Instance: Memory2_Stage:memory2_stage_inst|MUX:After_memory_mux_2x1
+ 56. Parameter Settings for User Entity Instance: MEM2_WB_Buffer:mem2_wb_buffer_inst|D_FF:MEM2_WB_FF_WriteBackAddr
+ 57. Parameter Settings for User Entity Instance: MEM2_WB_Buffer:mem2_wb_buffer_inst|D_FF:MEM2_WB_FF_WriteBackData
+ 58. Parameter Settings for User Entity Instance: MEM2_WB_Buffer:mem2_wb_buffer_inst|D_FF:MEM2_WB_FF_PORTOUT
+ 59. Parameter Settings for User Entity Instance: MEM2_WB_Buffer:mem2_wb_buffer_inst|D_FF:MEM2_WB_FF_ControlUnitOutput
+ 60. Parameter Settings for User Entity Instance: OUTPUT_PORT:output_port_inst
+ 61. Analysis & Elaboration Settings
+ 62. Port Connectivity Checks: "MEM2_WB_Buffer:mem2_wb_buffer_inst"
+ 63. Port Connectivity Checks: "Memory2_Stage:memory2_stage_inst|MUX:After_memory_mux_2x1"
+ 64. Port Connectivity Checks: "Memory2_Stage:memory2_stage_inst|MUX_4x1:MUX_4x1"
+ 65. Port Connectivity Checks: "Memory2_Stage:memory2_stage_inst|addressable_memory:addressable_memory_inst"
+ 66. Port Connectivity Checks: "MEM1_MEM2_Buffer:mem1_mem2_buffer_inst"
+ 67. Port Connectivity Checks: "Memory1_Stage:memory1_stage_inst|MUX:Data_Memory_WriteData_MUX"
+ 68. Port Connectivity Checks: "Memory1_Stage:memory1_stage_inst|MUX:sp_inc_mux"
+ 69. Port Connectivity Checks: "EX_MEM1_Buffer:ex_mem1_buffer_inst"
+ 70. Port Connectivity Checks: "Decode_Stage:decode_stage_inst|updatePCcircuit:updatepccircuit_inst|MUX:mux_inst"
+ 71. Port Connectivity Checks: "IF_ID_Buffer:Fetch_Decode_Buffer|D_FF_1:IF_ID_FF_RESET"
+ 72. Port Connectivity Checks: "IF_ID_Buffer:Fetch_Decode_Buffer"
+ 73. Port Connectivity Checks: "MUX:inst_cache_or_interrupt_mux"
+ 74. Port Connectivity Checks: "addressable_memory_big_endian:Instruction_Cache"
+ 75. Port Connectivity Checks: "D_FF:StackPointer"
+ 76. Port Connectivity Checks: "MUX_4x1:mux_4x1_inst"
+ 77. Port Connectivity Checks: "D_FF:ProgramCounter"
+ 78. Analysis & Elaboration Messages
 
 
 
@@ -37,7 +110,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Failed - Mon May 22 21:02:16 2023           ;
+; Analysis & Elaboration Status ; Successful - Wed May 24 15:35:03 2023       ;
 ; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                 ; RISC_Processor                              ;
 ; Top-level Entity Name         ; RISC_CPU                                    ;
@@ -66,6 +139,579 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 +----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LoadUseCase_HDU:loadusecase_hdu_instance ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; stall_cycles   ; 3     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Structural_HDU:structural_hdu_inst ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; stall_cycles   ; 1     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX:mux_inst ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; n              ; 16    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX:mux_before_pc ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; n              ; 16    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: D_FF:ProgramCounter ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; n              ; 16    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX_4x1:mux_4x1_inst ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; n              ; 16    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: D_FF:StackPointer ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; n              ; 16    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: addressable_memory_big_endian:Instruction_Cache ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; word_size      ; 16    ; Signed Integer                                                      ;
+; mem_size       ; 1024  ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX:inst_cache_or_interrupt_mux ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IF_ID_Buffer:Fetch_Decode_Buffer|D_FF:IF_ID_FF ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IF_ID_Buffer:Fetch_Decode_Buffer|D_FF:IF_ID_FF_PC ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Decode_Stage:decode_stage_inst|RegisterFile:RegFile ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                                          ;
+; reg_count      ; 8     ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Decode_Stage:decode_stage_inst|updatePCcircuit:updatepccircuit_inst|MUX:mux_inst ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                 ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+; n              ; 2     ; Signed Integer                                                                                       ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_ControlUnitOutput ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; n              ; 13    ; Signed Integer                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_RegisterFile_ReadData1 ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_RegisterFile_ReadData2 ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_RS ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_WriteAddr ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_ReadAddr2 ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_ImmediateVal ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_PC ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Execute_Stage:execute_stage_inst|MUX:MUX_ALU_OP2 ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Execute_Stage:execute_stage_inst|D_FF:FlagRegister ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_ControlUnitOutput ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; n              ; 13    ; Signed Integer                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_FlagRegister ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_RegisterFile_ReadData2 ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                                ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_WriteAddr ;
++----------------+-------+----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                             ;
++----------------+-------+----------------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_ReadAddr2 ;
++----------------+-------+----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                             ;
++----------------+-------+----------------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_ImmediateVal ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_ALU_RESULT ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_PC ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_SP ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_MEM1_Buffer:ex_mem1_buffer_inst|D_FF:EX_MEM1_FF_PORTOUT ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory1_Stage:memory1_stage_inst|MUX:sp_inc_mux ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory1_Stage:memory1_stage_inst|MUX:sp_mux ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory1_Stage:memory1_stage_inst|MUX:Data_Memory_ReadAddr_MUX ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory1_Stage:memory1_stage_inst|MUX:Data_Memory_WriteData_MUX ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory1_Stage:memory1_stage_inst|MUX:Write_back_address_mux_2x1 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory1_Stage:memory1_stage_inst|MUX:mux_inst ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_ControlUnitOutput ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+; n              ; 13    ; Signed Integer                                                                                 ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_FlagRegister ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_Writeback_RegAddr ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                                                 ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_ImmediateVal ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_ALU_RESULT ;
++----------------+-------+--------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_PC ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_PORTOUT ;
++----------------+-------+--------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_DataMemory_ReadAddr ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM1_MEM2_Buffer:mem1_mem2_buffer_inst|D_FF:MEM1_MEM2_FF_DataMemory_WriteData ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory2_Stage:memory2_stage_inst|addressable_memory:addressable_memory_inst ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; word_size      ; 16    ; Signed Integer                                                                                  ;
+; mem_size       ; 1024  ; Signed Integer                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory2_Stage:memory2_stage_inst|MUX_4x1:MUX_4x1 ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory2_Stage:memory2_stage_inst|INPUT_PORT:input_port_inst ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory2_Stage:memory2_stage_inst|MUX:After_memory_mux_2x1 ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM2_WB_Buffer:mem2_wb_buffer_inst|D_FF:MEM2_WB_FF_WriteBackAddr ;
++----------------+-------+--------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM2_WB_Buffer:mem2_wb_buffer_inst|D_FF:MEM2_WB_FF_WriteBackData ;
++----------------+-------+--------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM2_WB_Buffer:mem2_wb_buffer_inst|D_FF:MEM2_WB_FF_PORTOUT ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM2_WB_Buffer:mem2_wb_buffer_inst|D_FF:MEM2_WB_FF_ControlUnitOutput ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; n              ; 13    ; Signed Integer                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: OUTPUT_PORT:output_port_inst ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; n              ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -156,16 +802,182 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MEM2_WB_Buffer:mem2_wb_buffer_inst"                                                                          ;
++-------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                          ; Type   ; Severity ; Details                                                                             ;
++-------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; enable                        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; mem2_controlunitoutput[12..9] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; mem2_controlunitoutput[6..3]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; mem2_controlunitoutput[1..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Memory2_Stage:memory2_stage_inst|MUX:After_memory_mux_2x1"                                 ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; in0[15..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; out1[15..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Memory2_Stage:memory2_stage_inst|MUX_4x1:MUX_4x1" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; in3  ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Memory2_Stage:memory2_stage_inst|addressable_memory:addressable_memory_inst" ;
++-------+-------+----------+------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                      ;
++-------+-------+----------+------------------------------------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                                                 ;
++-------+-------+----------+------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MEM1_MEM2_Buffer:mem1_mem2_buffer_inst"                                                          ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; enable            ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; rst               ; Input  ; Info     ; Stuck at GND                                                                        ;
+; mem1_flagregister ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Memory1_Stage:memory1_stage_inst|MUX:Data_Memory_WriteData_MUX" ;
++-------------+-------+----------+-----------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                   ;
++-------------+-------+----------+-----------------------------------------------------------+
+; in0[31..16] ; Input ; Info     ; Stuck at GND                                              ;
+; in1[31..19] ; Input ; Info     ; Stuck at GND                                              ;
++-------------+-------+----------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "Memory1_Stage:memory1_stage_inst|MUX:sp_inc_mux" ;
++-------------+-------+----------+--------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                    ;
++-------------+-------+----------+--------------------------------------------+
+; in0[15..10] ; Input ; Info     ; Stuck at GND                               ;
+; in1[15..10] ; Input ; Info     ; Stuck at GND                               ;
++-------------+-------+----------+--------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "EX_MEM1_Buffer:ex_mem1_buffer_inst"                                                  ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; ex_sp ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decode_Stage:decode_stage_inst|updatePCcircuit:updatepccircuit_inst|MUX:mux_inst"   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "IF_ID_Buffer:Fetch_Decode_Buffer|D_FF_1:IF_ID_FF_RESET" ;
++------+-------+----------+----------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                  ;
++------+-------+----------+----------------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                             ;
++------+-------+----------+----------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "IF_ID_Buffer:Fetch_Decode_Buffer"                                                                    ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                  ; Type   ; Severity ; Details                                                                             ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; if_instruction_opcode ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "MUX:inst_cache_or_interrupt_mux" ;
++------+-------+----------+-----------------------------------+
+; Port ; Type  ; Severity ; Details                           ;
++------+-------+----------+-----------------------------------+
+; in1  ; Input ; Info     ; Stuck at GND                      ;
++------+-------+----------+-----------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "addressable_memory_big_endian:Instruction_Cache" ;
++----------+-------+----------+-----------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                       ;
++----------+-------+----------+-----------------------------------------------+
+; reset    ; Input ; Info     ; Stuck at GND                                  ;
+; write_en ; Input ; Info     ; Stuck at GND                                  ;
+; mode     ; Input ; Info     ; Stuck at VCC                                  ;
+; data_in  ; Input ; Info     ; Stuck at GND                                  ;
++----------+-------+----------+-----------------------------------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "D_FF:StackPointer" ;
++------+-------+----------+---------------------+
+; Port ; Type  ; Severity ; Details             ;
++------+-------+----------+---------------------+
+; rst  ; Input ; Info     ; Stuck at GND        ;
++------+-------+----------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MUX_4x1:mux_4x1_inst"                                                                       ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; in1          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; in2[15..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; in2[0]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; in3          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; out1[15..10] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "D_FF:ProgramCounter" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; rst  ; Input ; Info     ; Stuck at GND          ;
+; en   ; Input ; Info     ; Stuck at VCC          ;
++------+-------+----------+-----------------------+
+
+
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon May 22 21:02:05 2023
+    Info: Processing started: Wed May 24 15:34:38 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RISC_Processor -c RISC_Processor --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file components/instruction_width_select.vhd
+    Info (12022): Found design unit 1: Instruction_width_select-Behavioral File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Instruction_width_select.vhd Line: 14
+    Info (12023): Found entity 1: Instruction_width_select File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Instruction_width_select.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file components/addressable_memory_big_endian.vhd
+    Info (12022): Found design unit 1: addressable_memory_big_endian-rtl File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/addressable_memory_big_endian.vhd Line: 59
+    Info (12023): Found entity 1: addressable_memory_big_endian File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/addressable_memory_big_endian.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file components/addressable_memory_tb.vhd
     Info (12022): Found design unit 1: addressable_memory_tb-sim File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/addressable_memory_tb.vhd Line: 8
     Info (12023): Found entity 1: addressable_memory_tb File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/addressable_memory_tb.vhd Line: 5
@@ -257,11 +1069,91 @@ Info (12021): Found 2 design units, including 1 entities, in source file compone
 Info (12021): Found 2 design units, including 1 entities, in source file components/mux_4x1.vhd
     Info (12022): Found design unit 1: MUX_4x1-when_else_mux File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MUX_4x1.vhd Line: 11
     Info (12023): Found entity 1: MUX_4x1 File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/MUX_4x1.vhd Line: 4
-Error (10481): VHDL Use Clause error at RISC_CPU.vhd(272): design library "work" does not contain primary unit "addressable_memory_big_endian". Verify that the primary unit exists in the library and has been successfully compiled. File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 272
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 1 error, 2 warnings
-    Error: Peak virtual memory: 4840 megabytes
-    Error: Processing ended: Mon May 22 21:02:16 2023
-    Error: Elapsed time: 00:00:11
-    Error: Total CPU time (on all processors): 00:00:32
+Info (12127): Elaborating entity "RISC_CPU" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at RISC_CPU.vhd(84): object "Fetch_Decode_Instruction_Opcode" assigned a value but never read File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 84
+Warning (10541): VHDL Signal Declaration warning at RISC_CPU.vhd(102): used implicit default value for signal "Decode_Execute_Out_SP" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 102
+Warning (10036): Verilog HDL or VHDL warning at RISC_CPU.vhd(122): object "Execute_Mem1_Out_SP" assigned a value but never read File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 122
+Warning (10036): Verilog HDL or VHDL warning at RISC_CPU.vhd(132): object "MEM1_MEM2_Out_FLAGREGISTER" assigned a value but never read File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 132
+Info (12128): Elaborating entity "LoadUseCase_HDU" for hierarchy "LoadUseCase_HDU:loadusecase_hdu_instance" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 169
+Info (12128): Elaborating entity "Structural_HDU" for hierarchy "Structural_HDU:structural_hdu_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 190
+Info (12128): Elaborating entity "MUX" for hierarchy "MUX:mux_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 219
+Info (12128): Elaborating entity "D_FF" for hierarchy "D_FF:ProgramCounter" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 240
+Info (12128): Elaborating entity "MUX_4x1" for hierarchy "MUX_4x1:mux_4x1_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 250
+Info (12128): Elaborating entity "addressable_memory_big_endian" for hierarchy "addressable_memory_big_endian:Instruction_Cache" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 272
+Info (12128): Elaborating entity "Instruction_width_select" for hierarchy "Instruction_width_select:instruction_width_select_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 287
+Info (12128): Elaborating entity "MUX" for hierarchy "MUX:inst_cache_or_interrupt_mux" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 293
+Info (12128): Elaborating entity "IF_ID_Buffer" for hierarchy "IF_ID_Buffer:Fetch_Decode_Buffer" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 305
+Info (12128): Elaborating entity "D_FF" for hierarchy "IF_ID_Buffer:Fetch_Decode_Buffer|D_FF:IF_ID_FF" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/IF_ID_Buffer.vhd Line: 46
+Info (12128): Elaborating entity "D_FF_1" for hierarchy "IF_ID_Buffer:Fetch_Decode_Buffer|D_FF_1:IF_ID_FF_INTERRUPT" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/IF_ID_Buffer.vhd Line: 54
+Info (12128): Elaborating entity "Decode_Stage" for hierarchy "Decode_Stage:decode_stage_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 327
+Info (12128): Elaborating entity "ControlUnit" for hierarchy "Decode_Stage:decode_stage_inst|ControlUnit:ControlUnit" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Decode_Stage.vhd Line: 59
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "Decode_Stage:decode_stage_inst|RegisterFile:RegFile" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Decode_Stage.vhd Line: 74
+Info (12128): Elaborating entity "Execution_Forwarding_unit" for hierarchy "Decode_Stage:decode_stage_inst|Execution_Forwarding_unit:execution_forwarding_unit_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Decode_Stage.vhd Line: 89
+Info (12128): Elaborating entity "updatePCcircuit" for hierarchy "Decode_Stage:decode_stage_inst|updatePCcircuit:updatepccircuit_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Decode_Stage.vhd Line: 116
+Warning (10036): Verilog HDL or VHDL warning at updatePCcircuit.vhd(30): object "mux_out_type_signal" assigned a value but never read File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/updatePCcircuit.vhd Line: 30
+Info (12128): Elaborating entity "MUX" for hierarchy "Decode_Stage:decode_stage_inst|updatePCcircuit:updatepccircuit_inst|MUX:mux_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/updatePCcircuit.vhd Line: 32
+Info (12128): Elaborating entity "ID_EX_Buffer" for hierarchy "ID_EX_Buffer:Decode_Execute_Buffer" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 376
+Info (12128): Elaborating entity "D_FF" for hierarchy "ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_ControlUnitOutput" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ID_EX_Buffer.vhd Line: 48
+Info (12128): Elaborating entity "D_FF" for hierarchy "ID_EX_Buffer:Decode_Execute_Buffer|D_FF:ID_EX_FF_RS" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ID_EX_Buffer.vhd Line: 63
+Info (12128): Elaborating entity "Execute_Stage" for hierarchy "Execute_Stage:execute_stage_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 404
+Info (12128): Elaborating entity "UpdateFlagRegister" for hierarchy "Execute_Stage:execute_stage_inst|UpdateFlagRegister:updateflagregister_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Execute_Stage.vhd Line: 96
+Info (12128): Elaborating entity "ALU" for hierarchy "Execute_Stage:execute_stage_inst|ALU:ALU" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Execute_Stage.vhd Line: 123
+Warning (10036): Verilog HDL or VHDL warning at ALU.vhd(20): object "temp_output" assigned a value but never read File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/ALU.vhd Line: 20
+Info (12128): Elaborating entity "OPForwardingUnit" for hierarchy "Execute_Stage:execute_stage_inst|OPForwardingUnit:opforwardingunit_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Execute_Stage.vhd Line: 133
+Info (12128): Elaborating entity "EX_MEM1_Buffer" for hierarchy "EX_MEM1_Buffer:ex_mem1_buffer_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 441
+Info (12128): Elaborating entity "Memory1_Stage" for hierarchy "Memory1_Stage:memory1_stage_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 475
+Info (12128): Elaborating entity "MUX" for hierarchy "Memory1_Stage:memory1_stage_inst|MUX:Write_back_address_mux_2x1" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory1_Stage.vhd Line: 82
+Info (12128): Elaborating entity "UpdateSpCircuit" for hierarchy "Memory1_Stage:memory1_stage_inst|UpdateSpCircuit:updatespcircuit_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory1_Stage.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at UpdateSpCircuit.vhd(28): signal "SP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at UpdateSpCircuit.vhd(39): signal "SP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd Line: 39
+Warning (10492): VHDL Process Statement warning at UpdateSpCircuit.vhd(41): signal "SP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at UpdateSpCircuit.vhd(43): signal "SP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd Line: 43
+Warning (10492): VHDL Process Statement warning at UpdateSpCircuit.vhd(45): signal "SP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd Line: 45
+Warning (10492): VHDL Process Statement warning at UpdateSpCircuit.vhd(47): signal "SP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/UpdateSpCircuit.vhd Line: 47
+Info (12128): Elaborating entity "MEM1_MEM2_Buffer" for hierarchy "MEM1_MEM2_Buffer:mem1_mem2_buffer_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 500
+Info (12128): Elaborating entity "Memory2_Stage" for hierarchy "Memory2_Stage:memory2_stage_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 533
+Info (12128): Elaborating entity "addressable_memory" for hierarchy "Memory2_Stage:memory2_stage_inst|addressable_memory:addressable_memory_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory2_Stage.vhd Line: 45
+Info (12128): Elaborating entity "INPUT_PORT" for hierarchy "Memory2_Stage:memory2_stage_inst|INPUT_PORT:input_port_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/Memory2_Stage.vhd Line: 72
+Info (10041): Inferred latch for "port_value[0]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[1]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[2]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[3]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[4]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[5]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[6]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[7]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[8]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[9]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[10]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[11]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[12]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[13]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[14]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (10041): Inferred latch for "port_value[15]" at INPUT_PORT.vhd(17) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/INPUT_PORT.vhd Line: 17
+Info (12128): Elaborating entity "MEM2_WB_Buffer" for hierarchy "MEM2_WB_Buffer:mem2_wb_buffer_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 563
+Info (12128): Elaborating entity "OUTPUT_PORT" for hierarchy "OUTPUT_PORT:output_port_inst" File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/RISC_CPU.vhd Line: 581
+Warning (10492): VHDL Process Statement warning at OUTPUT_PORT.vhd(32): signal "latched_value" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 32
+Warning (10631): VHDL Process Statement warning at OUTPUT_PORT.vhd(27): inferring latch(es) for signal or variable "latched_value", which holds its previous value in one or more paths through the process File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[0]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[1]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[2]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[3]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[4]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[5]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[6]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[7]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[8]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[9]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[10]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[11]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[12]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[13]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[14]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info (10041): Inferred latch for "latched_value[15]" at OUTPUT_PORT.vhd(27) File: C:/Users/h4z3m/Desktop/Files/College/3rd/2nd Semester/CMPN301/Project/Components/OUTPUT_PORT.vhd Line: 27
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 5130 megabytes
+    Info: Processing ended: Wed May 24 15:35:03 2023
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:44
 
 

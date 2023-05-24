@@ -6032,3 +6032,5 @@ run
 # ** Note: SP_Modified = 0000001111111100
 #    Time: 4050 ps  Iteration: 1  Instance: /risc_cpu/memory1_stage_inst/updatespcircuit_inst
 run
+# End time: 21:34:50 on May 22,2023, Elapsed time: 0:19:56
+# Errors: 0, Warnings: 26

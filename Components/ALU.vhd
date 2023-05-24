@@ -43,8 +43,8 @@ BEGIN
                         -- Output <= STD_LOGIC_VECTOR(to_signed(output_int, 16));
                         Result <= temppp(15 DOWNTO 0);
                         -- temp_output <= temppp;
-                        REPORT "Result = " & to_string(Result);
-                        REPORT "Tempp=" & to_string(temppp);
+--                        REPORT "Result = " & to_string(Result);
+--                        REPORT "Tempp=" & to_string(temppp);
                         IF temppp(16) = '1' THEN
                                 CARRY <= '1';
                         ELSE
